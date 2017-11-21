@@ -39,7 +39,6 @@ public class UserFormView extends UserForm {
                 .bind ( User::getUserStatus, User::setUserStatus );
         binder.bindInstanceFields(this);
 
-        // This controls all buttons and functionality of the webpage.
         save.addClickListener((Button.ClickListener) clickListener ->{
             if (!addPressed) sql.refresh(this);
             else {

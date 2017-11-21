@@ -1,7 +1,7 @@
 
 public class User {
-    private int userId, checkedOutBooks, limitOfBooks, forirghschoolId, numPhone;
-    private String userStatus, email;
+    private int userId, checkedOutBooks, limitOfBooks, forirghschoolId;
+    private String userStatus;
 
     private String userName;
     public User (int id, String name, int books, int limit, int schoolId, String status) {
@@ -58,21 +58,5 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public int getNumPhone() {
-        return numPhone;
-    }
-
-    public void setNumPhone(int numPhone) {
-        this.numPhone = numPhone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }
