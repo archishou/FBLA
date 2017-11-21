@@ -10,6 +10,9 @@
     </facet>
     <facet type="gwt" name="GWT">
       <configuration>
+        <setting name="compilerMaxHeapSize" value="1024" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
+        <setting name="gwtSdkUrl" value="file://" />
         <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
@@ -38,5 +41,6 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-client-compiled:8.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-themes:8.1.5" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
+    <orderEntry type="library" name="carousel" level="project" />
   </component>
 </module>
