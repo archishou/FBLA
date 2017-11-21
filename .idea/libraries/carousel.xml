@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="carousel">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Desktop/carousel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/carousel.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Desktop/carousel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/libs/carousel.jar!/" />
     </SOURCES>
   </library>
 </component>
