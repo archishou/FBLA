@@ -20,6 +20,7 @@ import java.util.List;
 public class MyUI extends UI {
     UserFormView userEditor = new UserFormView();
     SignInView sign = new SignInView();
+    private Home home = new Home();
     private SQL sql = new SQL();
     private TabSheet tabSheet = new TabSheet();
     private SQLController sqlController;
@@ -68,6 +69,8 @@ public class MyUI extends UI {
                 splitPanel.setFirstComponent(userGrid);
                 splitPanel.setSecondComponent(userEditor);
                 splitPanel.setCaption("User Data");
+                home.setCaption("Home");
+                tabSheet.addComponent(home);
                 tabSheet.addComponent(splitPanel);
                 setContent(tabSheet);
             }
