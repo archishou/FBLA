@@ -41,16 +41,5 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-client-compiled:8.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-themes:8.1.5" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../Libraries/carousel.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../Libraries/carousel.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

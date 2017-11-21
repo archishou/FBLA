@@ -2,46 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/carousel.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/FormDesign.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/FormDesign.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/FormDesign.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/HomeV.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyFormView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SQL/SQL$Database.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SQL/SQL$Table.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SQL/SQL.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/HomeV.java" afterPath="$PROJECT_DIR$/src/main/java/HomeView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/HomeView.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyUI.class" afterPath="$PROJECT_DIR$/target/classes/MyUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/favicon.ico" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI$MyUIServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SignInView.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SignInView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/Signin.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/Signin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/atmosphere-runtime-2.4.11.vaadin2.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/atmosphere-runtime-2.4.11.vaadin2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/flute-1.3.0.gg2.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/flute-1.3.0.gg2.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/gentyref-1.2.0.vaadin1.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/gentyref-1.2.0.vaadin1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/jsoup-1.8.3.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/jsoup-1.8.3.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.6.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.6.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/sac-1.3.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/sac-1.3.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-client-compiled-8.1.5.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-client-compiled-8.1.5.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-push-8.1.5.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-push-8.1.5.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-sass-compiler-0.9.13.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-sass-compiler-0.9.13.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-server-8.1.5.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-server-8.1.5.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-shared-8.1.5.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-shared-8.1.5.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-slf4j-jdk14-1.6.1.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-slf4j-jdk14-1.6.1.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-themes-8.1.5.jar" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/lib/vaadin-themes-8.1.5.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css" afterPath="$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/addons.scss" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/addons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/mytheme.scss" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/mytheme.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/styles.css" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/styles.scss" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/VAADIN/themes/mytheme/styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/README" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/Signin.html" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/Signin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vaadin-app.iml" afterPath="$PROJECT_DIR$/vaadin-app.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,14 +53,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+            <state relative-caret-position="526">
+              <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#init#0;class#MyUI#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+              <folding>
+                <marker date="1511303541000" expanded="true" signature="85790:85814" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85790:85831" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85790:85849" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85790:85862" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85790:85877" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85912:88570" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85925:88555" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85979:86371" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="85998:86356" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86113:86336" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86153:86302" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86174:86280" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86421:86733" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86440:86718" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86514:86698" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86554:86664" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86575:86642" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86784:87049" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86803:87034" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86836:87014" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86876:86980" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="86897:86958" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87092:87398" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87111:87383" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87185:87363" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87225:87329" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87246:87307" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87449:87768" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87468:87753" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87549:87733" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87589:87699" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87610:87677" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87803:88109" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87822:88094" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87896:88074" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87936:88040" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="87957:88018" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="88161:88541" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="88180:88526" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="88322:88506" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="88362:88472" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="88383:88450" ph="..." />
+                <marker date="1511303541000" expanded="true" signature="88425:88450" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,19 +155,6 @@
             <state relative-caret-position="517">
               <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/HomeView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#init#0;class#HomeView#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -205,11 +213,11 @@
         <option value="$PROJECT_DIR$/src/main/java/SQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/UserFormView.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Home.html" />
-        <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/HomeV.java" />
         <option value="$PROJECT_DIR$/.idea/carousel.xml" />
         <option value="$PROJECT_DIR$/src/main/java/HomeView.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
       </list>
     </option>
   </component>
@@ -624,7 +632,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69882000" />
+    <option name="totallyTimeSpent" value="70286000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -651,14 +659,14 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37627432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33827618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5829472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19275825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -888,7 +896,6 @@
           <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -951,7 +958,6 @@
           <caret line="92" column="126" lean-forward="false" selection-start-line="92" selection-start-column="126" selection-end-line="92" selection-end-column="126" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1007,7 +1013,6 @@
           <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1200,27 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1681">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <marker date="1511303136000" expanded="true" signature="87668:87693" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -1232,10 +1216,69 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/HomeView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <marker date="1511303541000" expanded="true" signature="85790:85814" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85790:85831" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85790:85849" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85790:85862" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85790:85877" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85912:88570" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85925:88555" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85979:86371" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="85998:86356" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86113:86336" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86153:86302" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86174:86280" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86421:86733" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86440:86718" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86514:86698" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86554:86664" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86575:86642" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86784:87049" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86803:87034" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86836:87014" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86876:86980" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="86897:86958" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87092:87398" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87111:87383" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87185:87363" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87225:87329" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87246:87307" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87449:87768" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87468:87753" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87549:87733" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87589:87699" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87610:87677" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87803:88109" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87822:88094" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87896:88074" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87936:88040" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="87957:88018" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="88161:88541" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="88180:88526" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="88322:88506" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="88362:88472" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="88383:88450" ph="..." />
+            <marker date="1511303541000" expanded="true" signature="88425:88450" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="69" column="51" lean-forward="false" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#HomeView#0" expanded="true" />
           </folding>
         </state>
       </provider>
