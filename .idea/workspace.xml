@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Book.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/BookForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/BookForm.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/User.java" afterPath="$PROJECT_DIR$/src/main/java/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserFormView.java" afterPath="$PROJECT_DIR$/src/main/java/UserFormView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,64 +59,101 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="306">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="e#147#148#0" expanded="true" />
+                <element signature="e#172#173#0" expanded="true" />
+                <element signature="e#205#206#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#261#262#0" expanded="true" />
+                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#551#552#0" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#754#755#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
+                <element signature="e#904#905#0" expanded="true" />
+                <element signature="e#944#945#0" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserForm.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
+          <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookForm.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/BookForm.html">
+          <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="120">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               <folding>
-                <marker date="1511304352000" expanded="true" signature="86791:86833" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86791:86851" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86791:86864" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86791:86879" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86816:86833" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86914:89572" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86927:89557" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="86981:87373" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87000:87358" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87115:87338" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87155:87304" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87176:87282" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87423:87735" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87442:87720" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87516:87700" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87556:87666" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87577:87644" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87786:88051" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87805:88036" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87838:88016" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87878:87982" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="87899:87960" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88094:88400" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88113:88385" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88187:88365" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88227:88331" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88248:88309" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88451:88770" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88470:88755" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88551:88735" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88591:88701" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88612:88679" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88805:89111" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88824:89096" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88898:89076" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88938:89042" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="88959:89020" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="89163:89543" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="89182:89528" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="89324:89508" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="89364:89474" ph="..." />
-                <marker date="1511304352000" expanded="true" signature="89385:89452" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85814:85832" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85814:85845" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85814:85860" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85895:88553" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85908:88538" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85962:86354" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="85981:86339" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86096:86319" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86136:86285" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86157:86263" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86404:86716" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86423:86701" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86497:86681" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86537:86647" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86558:86625" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86767:87032" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86786:87017" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86819:86997" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86859:86963" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="86880:86941" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87075:87381" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87094:87366" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87168:87346" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87208:87312" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87229:87290" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87432:87751" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87451:87736" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87532:87716" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87572:87682" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87593:87660" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87786:88092" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87805:88077" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87879:88057" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87919:88023" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="87940:88001" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="88144:88524" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="88163:88509" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="88305:88489" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="88345:88455" ph="..." />
+                <marker date="1511304615000" expanded="true" signature="88366:88433" ph="..." />
               </folding>
             </state>
           </provider>
@@ -150,8 +185,8 @@
       <file leaf-file-name="UserForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/UserForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+            <state relative-caret-position="195">
+              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -179,8 +214,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Designer2Companion" />
         <option value="Class" />
+        <option value="Designer2Companion" />
       </list>
     </option>
   </component>
@@ -232,6 +267,7 @@
         <option value="$PROJECT_DIR$/src/main/java/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/UserFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/BookForm.html" />
       </list>
     </option>
   </component>
@@ -324,51 +360,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="vaadin-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vaadin-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vaadin-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vaadin-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="VAADIN" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vaadin-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vaadin-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="VAADIN" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vaadin-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vaadin-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="VAADIN" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="mytheme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vaadin-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vaadin-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="VAADIN" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="mytheme" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -393,7 +384,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last.edited.regexp" value="jadlkfj,jdfakj" />
-    <property name="designer-theme-cache.timestamp" value="1511300074000" />
+    <property name="designer-theme-cache.timestamp" value="1511303621000" />
     <property name="designer-theme-cache.name" value="mytheme" />
   </component>
   <component name="RecentsManager">
@@ -646,7 +637,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70917000" />
+    <option name="totallyTimeSpent" value="71204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,16 +650,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.28679246" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34398296" sideWeight="0.84986097" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.71320754" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34398296" sideWeight="0.15013902" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.49668247" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -681,7 +671,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16240682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -796,14 +786,6 @@
     <option name="serverPort" value="54099" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Signin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1017,11 +999,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
-      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SignInView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1204,8 +1181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/UserForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        <state relative-caret-position="195">
+          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1223,51 +1200,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="120">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding>
-            <marker date="1511304352000" expanded="true" signature="86791:86833" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86791:86851" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86791:86864" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86791:86879" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86816:86833" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86914:89572" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86927:89557" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="86981:87373" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87000:87358" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87115:87338" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87155:87304" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87176:87282" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87423:87735" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87442:87720" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87516:87700" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87556:87666" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87577:87644" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87786:88051" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87805:88036" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87838:88016" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87878:87982" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="87899:87960" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88094:88400" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88113:88385" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88187:88365" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88227:88331" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88248:88309" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88451:88770" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88470:88755" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88551:88735" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88591:88701" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88612:88679" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88805:89111" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88824:89096" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88898:89076" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88938:89042" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="88959:89020" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="89163:89543" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="89182:89528" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="89324:89508" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="89364:89474" ph="..." />
-            <marker date="1511304352000" expanded="true" signature="89385:89452" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85814:85832" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85814:85845" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85814:85860" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85895:88553" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85908:88538" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85962:86354" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="85981:86339" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86096:86319" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86136:86285" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86157:86263" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86404:86716" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86423:86701" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86497:86681" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86537:86647" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86558:86625" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86767:87032" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86786:87017" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86819:86997" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86859:86963" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="86880:86941" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87075:87381" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87094:87366" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87168:87346" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87208:87312" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87229:87290" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87432:87751" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87451:87736" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87532:87716" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87572:87682" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87593:87660" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87786:88092" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87805:88077" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87879:88057" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87919:88023" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="87940:88001" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="88144:88524" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="88163:88509" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="88305:88489" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="88345:88455" ph="..." />
+            <marker date="1511304615000" expanded="true" signature="88366:88433" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1282,10 +1257,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
+          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
+      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/BookForm.html">
+      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
+        <state />
       </provider>
     </entry>
   </component>
