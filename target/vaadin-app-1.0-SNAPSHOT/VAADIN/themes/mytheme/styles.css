@@ -14787,3 +14787,11 @@ div.v-layout.v-horizontal.v-widget {
 .mytheme .v-label {
 	color: white;
 }
+
+.mytheme .v-caption {
+	color: white;
+}
+
+.mytheme .v-credentials {
+	color: red;
+}
