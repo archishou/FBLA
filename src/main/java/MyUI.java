@@ -4,10 +4,7 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
-import com.vaadin.ui.HorizontalSplitPanel;
-import com.vaadin.ui.UI;
+import com.vaadin.ui.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +21,7 @@ public class MyUI extends UI {
     UserFormView userEditor = new UserFormView();
     SignInView sign = new SignInView();
     private SQL sql = new SQL();
+    private TabSheet tabSheet = new TabSheet();
     private SQLController sqlController;
     String u, p;
     boolean credTrue;
@@ -46,6 +44,7 @@ public class MyUI extends UI {
             u = sign.username.getValue();
             credTrue = sign.isCred(u,p);
             if (credTrue) {
+                tabSheet.setSizeFull();
                 sign.setVisible(false);
                 addUsers();
                 userGrid.setItems(users);
@@ -70,7 +69,9 @@ public class MyUI extends UI {
 
                 splitPanel.setFirstComponent(userGrid);
                 splitPanel.setSecondComponent(userEditor);
-                setContent(splitPanel);
+                splitPanel.setCaption("User Data");
+                tabSheet.addComponent(splitPanel);
+                setContent(tabSheet);
             }
             else {
                 sign.signInError.setVisible(true);
