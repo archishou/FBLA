@@ -12,6 +12,7 @@ public class BookFormView extends BookForm {
     private Binder<Book> binder = new Binder<>(Book.class);
     private boolean checkOutClicked = false;
     private boolean addClicked = false;
+    public UserFormView userFormView;
     private SQL sql;
     private Grid<Book> grid;
     private List<Book> books;
@@ -38,7 +39,8 @@ public class BookFormView extends BookForm {
                 if (sql.sqlController.userId.contains(id))
                     UserFormView.getUserById(id).setCheckedOutBooks(UserFormView.getUserById(id).getCheckedOutBooks() + 1);
                 userId.setValue("");
-                sql.refresh(this);
+                sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(UserFormView.getUserById(id).getCheckedOutBooks()), id);
+                sql.commit();
                 userId.setVisible(false);
             }
         });
@@ -74,5 +76,13 @@ public class BookFormView extends BookForm {
     }
     public void setSql(SQL sql) {
         this.sql = sql;
+    }
+
+    public UserFormView getUserFormView() {
+        return userFormView;
+    }
+
+    public void setUserFormView(UserFormView userFormView) {
+        this.userFormView = userFormView;
     }
 }

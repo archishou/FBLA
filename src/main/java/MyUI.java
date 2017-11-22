@@ -44,6 +44,7 @@ public class MyUI extends UI {
         bookEditor.setGrid(bookGrid);
         bookEditor.setList(books);
         bookEditor.setSql(sql);
+        bookEditor.setUserFormView(userEditor);
         sql.connect(SQL.Database.USERS);
         userEditor.setSQL(sql);
         setContent(sign);

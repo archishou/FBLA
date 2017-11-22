@@ -162,13 +162,8 @@ public class SQL {
     public void editUser(Table t, String col, String edit, int id){
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         String sql = "UPDATE " + t.table + " SET "+  col + "= " +  "'" + edit + "'" + " WHERE id="+ String.valueOf(id) + ";";
+        System.out.println(sql);
         runStatement(sql);
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE users.Users SET updatedDate = ?");
-            preparedStatement.setDate(1, sqlDate);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         commit();
     }
     public void print(Table t){
@@ -308,13 +303,7 @@ public class SQL {
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
         commit();
     }
-    public void refresh (BookFormView formView) {
-        int id = Integer.parseInt(formView.id.getValue().replaceAll(",",""));
-        System.out.println(id);
-        editUser(Table.USERS, "numbooks", formView.checkedOut.getValue(), id);
-        commit();
-    }
-    private void commit () {
+    void commit() {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("COMMIT;");
             preparedStatement.executeUpdate();
