@@ -5,7 +5,7 @@ import java.util.*;
 public class SQLController {
     public List<String> userName, schoolName, author, bookName;
     public List<Integer> userId, checkedOutBooks, limitOfBooks, forirghschoolId, bookId, schoolId, transactionId, forirghUserId, forirghBookId, fine, tLim, sLim ;
-    public List<Boolean> userStatus;
+    public List<Boolean> userStatus, checkOut;
     public SQLController () {
         userId = new ArrayList<>();
         userName = new ArrayList<>();
@@ -24,5 +24,6 @@ public class SQLController {
         transactionId = new ArrayList<>();
         forirghBookId = new ArrayList<>();
         forirghUserId = new ArrayList<>();
+        checkOut = new ArrayList<>();
     }
 }

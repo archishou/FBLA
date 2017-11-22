@@ -18,17 +18,20 @@ import java.util.List;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
-    UserFormView userEditor = new UserFormView();
-    SignInView sign = new SignInView();
+    private UserFormView userEditor = new UserFormView();
+    private BookFormView bookEditor = new BookFormView();
+    private SignInView sign = new SignInView();
     private Home home = new Home();
     private SQL sql = new SQL();
     private TabSheet tabSheet = new TabSheet();
     private SQLController sqlController;
-    String u, p;
-    boolean credTrue;
+    private String u, p;
+    private boolean credTrue;
     private List<User> users = new ArrayList<>();
-    HorizontalSplitPanel splitPanel = new HorizontalSplitPanel();
-    Grid<User> userGrid = new Grid<>(User.class);
+    private HorizontalSplitPanel usersSplitPanel = new HorizontalSplitPanel();
+    private HorizontalSplitPanel bookSplitPanel = new HorizontalSplitPanel();
+    private Grid<User> userGrid = new Grid<>(User.class);
+    Grid<Book> bookGrid = new Grid<>(Book.class);
     boolean currentState = false;
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -48,9 +51,9 @@ public class MyUI extends UI {
                 tabSheet.setSizeFull();
                 sign.setVisible(false);
                 addUsers();
+                userEditor.setSizeFull();
                 userGrid.setItems(users);
                 userGrid.setSizeFull();
-                userEditor.setSizeFull();
                 userGrid.removeAllColumns();
                 userGrid.addColumn(User::getUserId).setCaption("USER ID");
                 userGrid.addColumn(User::getUserName).setCaption("NAME");
@@ -59,18 +62,28 @@ public class MyUI extends UI {
                 userGrid.addColumn(User::getLimitOfBooks).setCaption("BOOK LIMIT");
                 userGrid.addColumn(User::getForirghschoolId).setCaption("SCHOOL ID");
                 userGrid.asSingleSelect().addValueChangeListener(evt -> userEditor.setUser(evt.getValue()));
+                bookEditor.setSizeFull();
+                bookGrid.setSizeFull();
+                bookGrid.removeAllColumns();
+                bookGrid.addColumn(Book::getId).setCaption("Book ID");
+                bookGrid.addColumn(Book::getBookName).setCaption("Book Name");
+                bookGrid.addColumn(Book::getAuthor).setCaption("Author");
+                bookGrid.addColumn(Book::getCheckedOut).setCaption("Checked Out");
                 userGrid.addSelectionListener(event -> {
                     userEditor.delete.setVisible(true);
                     userEditor.cancel.setVisible(true);
                     userEditor.add.setVisible(false);
                 });
-
-                splitPanel.setFirstComponent(userGrid);
-                splitPanel.setSecondComponent(userEditor);
-                splitPanel.setCaption("User Data");
+                bookSplitPanel.setFirstComponent(bookGrid);
+                bookSplitPanel.setSecondComponent(bookEditor);
+                bookSplitPanel.setCaption("Books");
+                usersSplitPanel.setFirstComponent(userGrid);
+                usersSplitPanel.setSecondComponent(userEditor);
+                usersSplitPanel.setCaption("User Data");
                 home.setCaption("Home");
                 tabSheet.addComponent(home);
-                tabSheet.addComponent(splitPanel);
+                tabSheet.addComponent(usersSplitPanel);
+                tabSheet.addComponent(bookSplitPanel);
                 setContent(tabSheet);
             }
             else {

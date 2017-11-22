@@ -87,11 +87,11 @@ public class SQL {
             System.out.println("Failed to make connection!");
         }
     }
-    public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status, int numPhone, String email, Table t){
+    public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status, Table t){
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
                 preparedStatement.setInt(1, id);
                 preparedStatement.setString(2, name);
                 preparedStatement.setInt(3, numBooks);
@@ -100,12 +100,6 @@ public class SQL {
                 if (status.contains("s"))
                     preparedStatement.setBoolean(6, false);
                 else preparedStatement.setBoolean(6, true);
-                preparedStatement.setInt(7, numPhone);
-                preparedStatement.setString(8, email);
-                preparedStatement.setDate(9, sqlDate);
-                preparedStatement.setString(10, "foo");
-                preparedStatement.setDate(9, sqlDate);
-                preparedStatement.setString(10, "foo");
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 System.out.println("Prepared Statement Failed! Check output console");
@@ -118,7 +112,7 @@ public class SQL {
     }
     public void addUser(User user){
         addUser(Integer.valueOf(user.getUserId()), user.getUserName(), user.getCheckedOutBooks(), user.getLimitOfBooks(),
-                user.getForirghschoolId(), user.getUserStatus(), user.getNumPhone(), user.getEmail(), Table.USERS);
+                user.getForirghschoolId(), user.getUserStatus(), Table.USERS);
     }
     public void addSchool(int id, String name, Table t){
         if (connection != null) {
@@ -287,8 +281,7 @@ public class SQL {
                 sqlController.bookId.add(resultSet.getInt("id"));
                 sqlController.author.add(resultSet.getString("author"));
                 sqlController.bookName.add(resultSet.getString("name"));
-                sqlController.tLim.add(resultSet.getInt("tLim"));
-                sqlController.sLim.add(resultSet.getInt("sLim"));
+                sqlController.checkOut.add(resultSet.getBoolean("checkOut"));
             }
         }
         catch (SQLException e) { e.printStackTrace(); }
