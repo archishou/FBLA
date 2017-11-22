@@ -8,11 +8,12 @@
  <body>
   <vaadin-horizontal-layout size-full margin>
    <vaadin-vertical-layout size-full margin="false" :expand>
-    <vaadin-form-layout size-auto margin="false">
+    <vaadin-form-layout size-auto margin="false" _id="layout">
      <vaadin-text-field caption="Book ID" readonly _id="id"></vaadin-text-field>
      <vaadin-text-field caption="Book Name" readonly _id="name"></vaadin-text-field>
-     <vaadin-text-field caption="Author" readonly _id="checkOutBooks"></vaadin-text-field>
-     <vaadin-text-field caption="Checked Out" _id="limitOfBooks"></vaadin-text-field>
+     <vaadin-text-field caption="Author" readonly _id="author"></vaadin-text-field>
+     <vaadin-text-field caption="Checked Out" _id="checkedOut"></vaadin-text-field>
+     <vaadin-text-field caption="User ID" _id="userId"></vaadin-text-field>
     </vaadin-form-layout>
     <vaadin-absolute-layout margin="">
      <vaadin-button style-name="danger" width="99px" plain-text _id="delete" :top="66px" :left="0px">
@@ -24,8 +25,8 @@
      <vaadin-button style-name="link" width="108px" plain-text _id="cancel" :top="66px" :left="225px">
        Cancel 
      </vaadin-button>
-     <vaadin-button style-name="button" width="108px" plain-text _id="add" :top="0px" :left="225px">
-       Add 
+     <vaadin-button style-name="button" width="108px" plain-text _id="checkOut" :top="0px" :left="225px">
+       Check Out 
      </vaadin-button>
      <vaadin-label visible="false" plain-text _id="nSave" :top="141px" :left="0px">
        UNABLE TO SAVE 

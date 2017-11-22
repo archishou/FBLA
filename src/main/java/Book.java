@@ -2,9 +2,8 @@
 
 
 public class Book {
-    private int id, tLim, sLim;
-    private boolean checkedOut;
-    private String author, bookName;
+    private int id;
+    private String author, bookName, checkedOut;
     public int getId() {
         return id;
     }
@@ -13,27 +12,11 @@ public class Book {
         this.id = id;
     }
 
-    public int gettLim() {
-        return tLim;
-    }
-
-    public void settLim(int tLim) {
-        this.tLim = tLim;
-    }
-
-    public int getsLim() {
-        return sLim;
-    }
-
-    public void setsLim(int sLim) {
-        this.sLim = sLim;
-    }
-
-    public boolean isCheckedOut() {
+    public String getCheckedOut() {
         return checkedOut;
     }
 
-    public void setCheckedOut(boolean checkedOut) {
+    public void setCheckedOut(String checkedOut) {
         this.checkedOut = checkedOut;
     }
 
