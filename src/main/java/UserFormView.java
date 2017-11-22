@@ -107,7 +107,9 @@ public class UserFormView extends UserForm {
         }
         return getUser;
     }
-    private int genID (){ return initId+= 2; }
+    private int genID (){
+        return sql.genID(SQL.Table.USERS) + 2;
+    }
 
 
 }

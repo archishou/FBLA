@@ -207,10 +207,9 @@ public class SQL {
         ResultSet rs = null;
         if (connection != null){
             try {
-                String SQL = sql;
-                System.out.println(SQL);
+                System.out.println(sql);
                 stmt = connection.createStatement();
-                rs = stmt.executeQuery(SQL);
+                rs = stmt.executeQuery(sql);
             } catch (SQLException l) {
                 l.printStackTrace();
             }
@@ -302,6 +301,18 @@ public class SQL {
         System.out.println(id);
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
         commit();
+    }
+    int genID (Table table) {
+        ResultSet resultSet = getResultSet("SELECT id from users." + table.table + " ORDER BY id DESC LIMIT 1;");
+        int id = 0;
+        try {
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
     void commit() {
         try {

@@ -44,7 +44,20 @@ public class BookFormView extends BookForm {
                 userId.setVisible(false);
             }
         });
+        add.addClickListener((Button.ClickListener) click ->{
+           addClicked = true;
+           checkOutClicked = false;
+           delete.setVisible(false);
+           checkOut.setVisible(false);
+           id.setValue(String.valueOf(genID()));
+           userId.setCaption("Copies");
+           userId.setVisible(true);
+           id.setReadOnly(true);
+           checkedOut.setValue("AVAILABLE");
+
+        });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
+            userId.setCaption("User ID");
             addClicked = false;
             checkOutClicked = true;
             author.setReadOnly(true);
@@ -55,6 +68,8 @@ public class BookFormView extends BookForm {
             checkedOut.setReadOnly(true);
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
+            addClicked = false;
+            checkOutClicked = false;
             cancel.setVisible(false);
             userId.setValue("");
             userId.setVisible(false);
@@ -84,5 +99,8 @@ public class BookFormView extends BookForm {
 
     public void setUserFormView(UserFormView userFormView) {
         this.userFormView = userFormView;
+    }
+    private int genID (){
+        return sql.genID(SQL.Table.BOOK) + 2;
     }
 }
