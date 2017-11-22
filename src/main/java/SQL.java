@@ -308,6 +308,12 @@ public class SQL {
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
         commit();
     }
+    public void refresh (BookFormView formView) {
+        int id = Integer.parseInt(formView.id.getValue().replaceAll(",",""));
+        System.out.println(id);
+        editUser(Table.USERS, "numbooks", formView.checkedOut.getValue(), id);
+        commit();
+    }
     private void commit () {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("COMMIT;");

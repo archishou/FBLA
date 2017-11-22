@@ -28,6 +28,7 @@ public class MyUI extends UI {
     private String u, p;
     private boolean credTrue;
     private List<User> users = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
     private HorizontalSplitPanel usersSplitPanel = new HorizontalSplitPanel();
     private HorizontalSplitPanel bookSplitPanel = new HorizontalSplitPanel();
     private Grid<User> userGrid = new Grid<>(User.class);
@@ -40,6 +41,9 @@ public class MyUI extends UI {
         userEditor.cancel.setVisible(currentState);
         userEditor.setGrid(userGrid);
         userEditor.setList(users);
+        bookEditor.setGrid(bookGrid);
+        bookEditor.setList(books);
+        bookEditor.setSql(sql);
         sql.connect(SQL.Database.USERS);
         userEditor.setSQL(sql);
         setContent(sign);
@@ -51,6 +55,7 @@ public class MyUI extends UI {
                 tabSheet.setSizeFull();
                 sign.setVisible(false);
                 addUsers();
+                addBooks();
                 userEditor.setSizeFull();
                 userGrid.setItems(users);
                 userGrid.setSizeFull();
@@ -62,17 +67,26 @@ public class MyUI extends UI {
                 userGrid.addColumn(User::getLimitOfBooks).setCaption("BOOK LIMIT");
                 userGrid.addColumn(User::getForirghschoolId).setCaption("SCHOOL ID");
                 userGrid.asSingleSelect().addValueChangeListener(evt -> userEditor.setUser(evt.getValue()));
+                userGrid.addSelectionListener(event -> {
+                    userEditor.delete.setVisible(true);
+                    userEditor.cancel.setVisible(true);
+                    userEditor.add.setVisible(false);
+                });
                 bookEditor.setSizeFull();
+                bookGrid.setItems(books);
                 bookGrid.setSizeFull();
                 bookGrid.removeAllColumns();
                 bookGrid.addColumn(Book::getId).setCaption("Book ID");
                 bookGrid.addColumn(Book::getBookName).setCaption("Book Name");
                 bookGrid.addColumn(Book::getAuthor).setCaption("Author");
                 bookGrid.addColumn(Book::getCheckedOut).setCaption("Checked Out");
-                userGrid.addSelectionListener(event -> {
-                    userEditor.delete.setVisible(true);
-                    userEditor.cancel.setVisible(true);
-                    userEditor.add.setVisible(false);
+                bookGrid.asSingleSelect().addValueChangeListener(evt -> {
+                    bookEditor.setBook(evt.getValue());
+                    if (evt.getValue().getCheckedOut().equals("CHECKED OUT")) {
+                        bookEditor.checkOut.setVisible(false);
+                    }
+                    bookEditor.userId.setVisible(false);
+                    bookEditor.cancel.setVisible(true);
                 });
                 bookSplitPanel.setFirstComponent(bookGrid);
                 bookSplitPanel.setSecondComponent(bookEditor);
@@ -108,6 +122,17 @@ public class MyUI extends UI {
                     sqlController.limitOfBooks.get(loopIteration),sqlController.forirghschoolId.get(loopIteration),t));
             loopIteration++;
         }
-
     }
+    private void addBooks () {
+        int i = sqlController.bookId.size();
+        int loopIteration = 0;
+        String checkedOut;
+        while (loopIteration < i) {
+            if (sqlController.checkOut.get(loopIteration)) checkedOut = "CHECKED OUT";
+            else checkedOut = "AVAILABLE";
+            books.add(new Book(sqlController.bookId.get(loopIteration), sqlController.author.get(loopIteration),
+                    sqlController.bookName.get(loopIteration), checkedOut));
+            loopIteration++;
+        }
+     }
 }

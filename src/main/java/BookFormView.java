@@ -1,10 +1,22 @@
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
+import com.vaadin.event.ListenerMethod;
+import com.vaadin.server.DefaultErrorHandler;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Grid;
 import com.vaadin.ui.TextField;
+
+import java.util.List;
 
 public class BookFormView extends BookForm {
     private Binder<Book> binder = new Binder<>(Book.class);
+    private boolean checkOutClicked = false;
+    private boolean addClicked = false;
+    private SQL sql;
+    private Grid<Book> grid;
+    private List<Book> books;
     public BookFormView () {
+        cancel.setComponentError(null);
         userId.setVisible(false);
         binder.forField(this.id)
                 .withNullRepresentation ("")
@@ -20,5 +32,47 @@ public class BookFormView extends BookForm {
                 .withNullRepresentation("")
                 .bind(Book::getCheckedOut, Book::setCheckedOut);
         binder.bindInstanceFields(this);
+        save.addClickListener((Button.ClickListener) click -> {
+            if (checkOutClicked && isNumeric(userId.getValue())) {
+                int id = Integer.parseInt(userId.getValue());
+                if (sql.sqlController.userId.contains(id))
+                    UserFormView.getUserById(id).setCheckedOutBooks(UserFormView.getUserById(id).getCheckedOutBooks() + 1);
+                userId.setValue("");
+                sql.refresh(this);
+                userId.setVisible(false);
+            }
+        });
+        checkOut.addClickListener((Button.ClickListener) clickListener -> {
+            addClicked = false;
+            checkOutClicked = true;
+            author.setReadOnly(true);
+            name.setReadOnly(true);
+            id.setReadOnly(true);
+            cancel.setVisible(true);
+            userId.setVisible(true);
+            checkedOut.setReadOnly(true);
+        });
+        cancel.addClickListener((Button.ClickListener) clickListener -> {
+            cancel.setVisible(false);
+            userId.setValue("");
+            userId.setVisible(false);
+            grid.deselectAll();
+        });
+
+    }
+    public boolean isNumeric(String str) {
+        return str.matches("-?\\d+(\\.\\d+)?");
+    }
+    void setBook(Book value) {
+        binder.setBean(value);
+    }
+    void setGrid(Grid<Book> grid) {
+        this.grid = grid;
+    }
+    void setList(List<Book> list) {
+        this.books = list;
+    }
+    public void setSql(SQL sql) {
+        this.sql = sql;
     }
 }

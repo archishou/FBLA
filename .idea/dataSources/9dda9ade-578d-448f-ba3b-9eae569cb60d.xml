@@ -18,6 +18,7 @@
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <column id="12" parent="6" name="author">
       <Position>2</Position>
@@ -27,149 +28,121 @@
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="14" parent="6" name="tLim">
+    <column id="14" parent="6" name="checkOut">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>tinyint(1)|0</DataType>
     </column>
-    <column id="15" parent="6" name="sLim">
-      <Position>5</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <key id="16" parent="6" name="PRIMARY">
+    <key id="15" parent="6" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="17" parent="7" name="schoolid">
+    <column id="16" parent="7" name="schoolid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="7" name="schoolName">
+    <column id="17" parent="7" name="schoolName">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="19" parent="7" name="PRIMARY">
+    <key id="18" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>schoolid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="20" parent="8" name="idSettings">
+    <column id="19" parent="8" name="idSettings">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="8" name="tLim">
+    <column id="20" parent="8" name="tLim">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="22" parent="8" name="sLim">
+    <column id="21" parent="8" name="sLim">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="23" parent="8" name="PRIMARY">
+    <key id="22" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idSettings</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="24" parent="9" name="transactId">
+    <column id="23" parent="9" name="transactId">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="9" name="userId">
+    <column id="24" parent="9" name="userId">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="26" parent="9" name="bookId">
+    <column id="25" parent="9" name="bookId">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="27" parent="9" name="fine">
+    <column id="26" parent="9" name="fine">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="28" parent="9" name="bookId">
+    <index id="27" parent="9" name="bookId">
       <ColNames>bookId</ColNames>
     </index>
-    <index id="29" parent="9" name="userId">
+    <index id="28" parent="9" name="userId">
       <ColNames>userId</ColNames>
     </index>
-    <key id="30" parent="9" name="PRIMARY">
+    <key id="29" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>transactId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="31" parent="9" name="transactions_ibfk_1">
+    <foreign-key id="30" parent="9" name="transactions_ibfk_1">
       <ColNames>userId</ColNames>
       <RefSchemaName>users</RefSchemaName>
       <RefTableName>Users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="32" parent="9" name="transactions_ibfk_2">
+    <foreign-key id="31" parent="9" name="transactions_ibfk_2">
       <ColNames>bookId</ColNames>
       <RefSchemaName>users</RefSchemaName>
       <RefTableName>Books</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="33" parent="10" name="id">
+    <column id="32" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="10" name="name">
+    <column id="33" parent="10" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="35" parent="10" name="numbooks">
+    <column id="34" parent="10" name="numbooks">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="36" parent="10" name="bookLim">
+    <column id="35" parent="10" name="bookLim">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="37" parent="10" name="schoolid">
+    <column id="36" parent="10" name="schoolid">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="38" parent="10" name="teacherYN">
+    <column id="37" parent="10" name="teacherYN">
       <Position>6</Position>
       <DataType>tinyint(1)|0</DataType>
     </column>
-    <column id="39" parent="10" name="numberPhone">
-      <Position>7</Position>
-      <DataType>int(10)|0</DataType>
-    </column>
-    <column id="40" parent="10" name="email">
-      <Position>8</Position>
-      <DataType>varchar(45)|0</DataType>
-    </column>
-    <column id="41" parent="10" name="creationDate">
-      <Position>9</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <column id="42" parent="10" name="createdBy">
-      <Position>10</Position>
-      <DataType>varchar(45)|0</DataType>
-    </column>
-    <column id="43" parent="10" name="updatedDate">
-      <Position>11</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <column id="44" parent="10" name="updatedBy">
-      <Position>12</Position>
-      <DataType>varchar(45)|0</DataType>
-    </column>
-    <index id="45" parent="10" name="schoolid">
+    <index id="38" parent="10" name="schoolid">
       <ColNames>schoolid</ColNames>
     </index>
-    <key id="46" parent="10" name="PRIMARY">
+    <key id="39" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="47" parent="10" name="users_ibfk_1">
+    <foreign-key id="40" parent="10" name="users_ibfk_1">
       <ColNames>schoolid</ColNames>
       <RefSchemaName>users</RefSchemaName>
       <RefTableName>Schools</RefTableName>

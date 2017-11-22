@@ -12,7 +12,7 @@ public class UserFormView extends UserForm {
     private int initId = 3769891;
     private SQL sql;
     private Binder<User> binder = new Binder<>(User.class);
-    private List<User> users;
+    private static List<User> users;
     private Grid<User> grid;
     private boolean addPressed = false;
     UserFormView() {
@@ -99,7 +99,7 @@ public class UserFormView extends UserForm {
         return Integer.parseInt(i.replaceAll(",", ""));
     }
     protected void setGrid(Grid<User> userGrid){this.grid=userGrid;}
-    private User getUserById(int id){
+    public static User getUserById(int id){
         User getUser = null;
         for (User user: users){
             if (Integer.parseInt(user.getUserId()) == id)
