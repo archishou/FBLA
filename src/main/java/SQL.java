@@ -49,16 +49,14 @@ public class SQL {
         }
         loadData();
     }
-    public void addBook(int bookId, String author, String name, int tLim, int sLim, int copies, Table t) {
+    public void addBook(int bookId, String author, String name, boolean checkedOut, Table t) {
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?)");
                 preparedStatement.setInt(1, bookId);
                 preparedStatement.setString(2, author);
                 preparedStatement.setString(3, name);
-                preparedStatement.setInt(4,tLim);
-                preparedStatement.setInt(5,sLim);
-                preparedStatement.setInt(6,copies);
+                preparedStatement.setBoolean(4,checkedOut);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 System.out.println("Prepared Statement Failed! Check output console");
@@ -209,7 +207,7 @@ public class SQL {
             }
         }
     }
-    private ResultSet getResultSet(String sql) {
+    ResultSet getResultSet(String sql) {
         ResultSet rs = null;
         if (connection != null){
             try {

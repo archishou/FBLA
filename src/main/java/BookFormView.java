@@ -6,6 +6,8 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.TextField;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class BookFormView extends BookForm {
@@ -49,9 +51,14 @@ public class BookFormView extends BookForm {
                 String name = this.name.getValue();
                 String author = this.author.getValue();
                 int loopIterations = 0;
+                int id;
                 while (loopIterations < copies) {
-                    
+                    id = genID();
+                    sql.addBook(id, author, name, false, SQL.Table.BOOK);
+                    loopIterations++;
                 }
+                addBooks();
+                grid.setItems(books);
             }
         });
         add.addClickListener((Button.ClickListener) click ->{
@@ -118,5 +125,26 @@ public class BookFormView extends BookForm {
     }
     private int genID (){
         return sql.genID(SQL.Table.BOOK) + 2;
+    }
+    private void addBooks () {
+        books.clear();
+        ResultSet resultSet = sql.getResultSet("SELECT * FROM users.Books");
+        String author, name;
+        int id;
+        Object checkOut;
+        String checkOutValue;
+        try {
+            while (resultSet.next()) {
+                author = resultSet.getString("author");
+                name = resultSet.getString("name");
+                id = resultSet.getInt("id");
+                checkOut = resultSet.getBoolean("checkOut");
+                if (checkOut == "true") checkOutValue = "CHECKED OUT";
+                else checkOutValue = "AVAILABLE";
+                books.add(new Book(id, author, name, checkOutValue));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
