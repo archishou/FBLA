@@ -1,11 +1,7 @@
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
-import com.vaadin.event.ListenerMethod;
-import com.vaadin.server.DefaultErrorHandler;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
-import com.vaadin.ui.TextField;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -116,9 +112,6 @@ public class BookFormView extends BookForm {
         this.sql = sql;
     }
 
-    public UserFormView getUserFormView() {
-        return userFormView;
-    }
 
     public void setUserFormView(UserFormView userFormView) {
         this.userFormView = userFormView;
