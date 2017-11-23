@@ -88,6 +88,7 @@ public class MyUI extends UI {
                     }
                     bookEditor.userId.setVisible(false);
                     bookEditor.cancel.setVisible(true);
+                    bookEditor.add.setVisible(false);
                 });
                 bookSplitPanel.setFirstComponent(bookGrid);
                 bookSplitPanel.setSecondComponent(bookEditor);

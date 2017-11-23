@@ -44,6 +44,15 @@ public class BookFormView extends BookForm {
                 sql.commit();
                 userId.setVisible(false);
             }
+            if (addClicked) {
+                int copies = Integer.parseInt(userId.getValue());
+                String name = this.name.getValue();
+                String author = this.author.getValue();
+                int loopIterations = 0;
+                while (loopIterations < copies) {
+                    
+                }
+            }
         });
         add.addClickListener((Button.ClickListener) click ->{
            addClicked = true;
@@ -55,7 +64,8 @@ public class BookFormView extends BookForm {
            userId.setVisible(true);
            id.setReadOnly(true);
            checkedOut.setValue("AVAILABLE");
-
+           author.setReadOnly(false);
+           name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
             userId.setCaption("User ID");
@@ -69,12 +79,17 @@ public class BookFormView extends BookForm {
             checkedOut.setReadOnly(true);
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
+            add.setVisible(true);
+            checkedOut.setVisible(true);
             addClicked = false;
             checkOutClicked = false;
             cancel.setVisible(false);
             userId.setValue("");
             userId.setVisible(false);
             grid.deselectAll();
+        });
+        delete.addClickListener((Button.ClickListener) click ->{
+           add.setVisible(true);
         });
 
     }
