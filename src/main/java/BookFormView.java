@@ -40,6 +40,7 @@ public class BookFormView extends BookForm {
                     UserFormView.getUserById(id).setCheckedOutBooks(UserFormView.getUserById(id).getCheckedOutBooks() + 1);
                 userId.setValue("");
                 sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(UserFormView.getUserById(id).getCheckedOutBooks()), id);
+                sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
                 sql.commit();
                 userId.setVisible(false);
             }

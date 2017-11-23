@@ -166,6 +166,12 @@ public class SQL {
         runStatement(sql);
         commit();
     }
+    public void edit(Table t, String col, Object edit, int id) {
+        String sql = "UPDATE " + t.table + " SET "+  col + "= "  + edit.toString()  + " WHERE id="+ String.valueOf(id) + ";";
+        System.out.println(sql);
+        runStatement(sql);
+        commit();
+    }
     public void print(Table t){
         PreparedStatement preparedStatement = null;
         try {
