@@ -1,3 +1,4 @@
+import Models.Book;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.ui.Button;
@@ -71,7 +72,7 @@ public class BookFormView extends BookForm {
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
-            userId.setCaption("User ID");
+            userId.setCaption("Models.User ID");
             addClicked = false;
             checkOutClicked = true;
             author.setReadOnly(true);

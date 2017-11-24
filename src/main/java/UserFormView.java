@@ -1,6 +1,7 @@
 
 
 
+import Models.User;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.ui.Button;

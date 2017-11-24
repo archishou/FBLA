@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/NumberField.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Book.java" afterPath="$PROJECT_DIR$/src/main/java/Models/Book.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/User.java" afterPath="$PROJECT_DIR$/src/main/java/Models/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BookFormView.java" afterPath="$PROJECT_DIR$/src/main/java/BookFormView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SQL.java" afterPath="$PROJECT_DIR$/src/main/java/SQL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserForm.java" afterPath="$PROJECT_DIR$/src/main/java/UserForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserFormView.java" afterPath="$PROJECT_DIR$/src/main/java/UserFormView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/UserForm.html" afterPath="$PROJECT_DIR$/src/main/resources/UserForm.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,17 +77,17 @@
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="209" column="4" lean-forward="false" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
+            <state relative-caret-position="22">
+              <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#SQL#0;class#SQL#0" expanded="true" />
+                <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
                 <element signature="method#connect#0;class#SQL#0" expanded="true" />
                 <element signature="method#addBook#0;class#SQL#0" expanded="true" />
                 <element signature="method#addUser#0;class#SQL#0" expanded="true" />
                 <element signature="method#addUser#1;class#SQL#0" expanded="true" />
-                <element signature="e#5981#5982#0" expanded="true" />
-                <element signature="e#6058#6059#0" expanded="true" />
+                <element signature="method#addSchool#0;class#SQL#0" expanded="true" />
+                <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
                 <element signature="method#editUser#0;class#SQL#0" expanded="true" />
                 <element signature="method#edit#0;class#SQL#0" expanded="true" />
                 <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
@@ -88,34 +97,22 @@
                 <element signature="method#loadData#0;class#SQL#0" expanded="true" />
                 <element signature="method#refresh#0;class#SQL#0" expanded="true" />
                 <element signature="method#genID#0;class#SQL#0" expanded="true" />
-                <marker date="1511458603000" expanded="true" signature="1630:1680" ph="Insert into users.missingValue... " />
-                <marker date="1511458603000" expanded="true" signature="2569:2623" ph="Insert into users.missingValue... " />
-                <marker date="1511458603000" expanded="true" signature="3829:3875" ph="Insert into users.missingValue... " />
-                <marker date="1511458603000" expanded="true" signature="4551:4601" ph="Insert into users.missingValue... " />
-                <marker date="1511458603000" expanded="true" signature="5257:5298" ph="SELECT 1 FRO... missingValue" />
-                <marker date="1511458603000" expanded="true" signature="6843:6863" ph="Select * fro... missingValue" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SQLController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SQLController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-              <folding>
-                <element signature="method#SQLController#0;class#SQLController#0" expanded="true" />
+                <marker date="1511486280000" expanded="true" signature="1600:1650" ph="Insert into users.missingValue... " />
+                <marker date="1511486280000" expanded="true" signature="2539:2593" ph="Insert into users.missingValue... " />
+                <marker date="1511486280000" expanded="true" signature="3799:3845" ph="Insert into users.missingValue... " />
+                <marker date="1511486280000" expanded="true" signature="4521:4571" ph="Insert into users.missingValue... " />
+                <marker date="1511486280000" expanded="true" signature="5241:5282" ph="SELECT 1 FRO... missingValue" />
+                <marker date="1511486280000" expanded="true" signature="6827:6847" ph="Select * fro... missingValue" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Models/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding>
                 <element signature="method#Book#0;class#Book#0" expanded="true" />
               </folding>
@@ -123,28 +120,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserFormView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
+      <file leaf-file-name="BookForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BookForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="79" column="18" lean-forward="false" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+            <state relative-caret-position="195">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Home.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Signin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Signin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SignInView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="38" />
               <folding>
-                <element signature="method#getUserById#0;class#UserFormView#0" expanded="true" />
-                <element signature="e#4439#4440#0" expanded="true" />
-                <element signature="e#4492#4493#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+      <file leaf-file-name="UserForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/UserForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="138" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserFormView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-513">
+              <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding>
-                <element signature="method#init#0;class#MyUI#0" expanded="true" />
-                <element signature="method#addBooks#0;class#MyUI#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#UserFormView#0;class#UserFormView#0" expanded="true" />
+                <element signature="method#getUserById#0;class#UserFormView#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,15 +189,20 @@
       <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="114" column="4" lean-forward="false" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
+            <state relative-caret-position="36">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-138">
+              <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1368#2632#0" expanded="false" />
-                <element signature="e#2687#3125#0" expanded="false" />
-                <element signature="e#3185#3547#0" expanded="false" />
-                <element signature="e#3605#3918#0" expanded="false" />
-                <element signature="e#3976#4028#0" expanded="false" />
+                <element signature="method#addBooks#0;class#MyUI#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -212,9 +253,6 @@
         <option value="$PROJECT_DIR$/src/main/java/testFile.html" />
         <option value="$PROJECT_DIR$/src/main/java/NumberField.java" />
         <option value="$PROJECT_DIR$/.gitattributes" />
-        <option value="$PROJECT_DIR$/src/main/resources/UserForm.html" />
-        <option value="$PROJECT_DIR$/src/main/java/SignInView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserForm.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9dda9ade-578d-448f-ba3b-9eae569cb60d/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/Home.html" />
         <option value="$PROJECT_DIR$/src/main/java/HomeV.java" />
@@ -225,13 +263,20 @@
         <option value="$PROJECT_DIR$/src/main/java/SQLController.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/Book.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/BookForm.html" />
         <option value="src:table:/f1c973a8/9dda9ade-578d-448f-ba3b-9eae569cb60d/users.Books" />
         <option value="$PROJECT_DIR$/src/main/java/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/BookFormView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Models/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Models/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Views/SignInView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SignInView.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/BookForm.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/UserForm.html" />
+        <option value="$PROJECT_DIR$/src/main/java/Views/UserForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/UserFormView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/UserForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SQL.java" />
       </list>
     </option>
   </component>
@@ -285,7 +330,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,8 +369,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -343,7 +388,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last.edited.regexp" value="jadlkfj,jdfakj" />
-    <property name="designer-theme-cache.timestamp" value="1511359425000" />
+    <property name="designer-theme-cache.timestamp" value="1511458936000" />
     <property name="designer-theme-cache.name" value="mytheme" />
   </component>
   <component name="RecentsManager">
@@ -594,12 +639,14 @@
       <workItem from="1511297864151" duration="2383000" />
       <workItem from="1511321465479" duration="2719000" />
       <workItem from="1511325290644" duration="6915000" />
-      <workItem from="1511453740863" duration="3994000" />
+      <workItem from="1511453740863" duration="4950000" />
+      <workItem from="1511485245175" duration="1000" />
+      <workItem from="1511485266701" duration="753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84985000" />
+    <option name="totallyTimeSpent" value="86695000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,33 +667,33 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993513" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5063898" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16867469" sideWeight="0.87752926" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32993513" sideWeight="0.48722044" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.48722044" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19914803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20127796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.49668247" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.83127964" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.16872038" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.8340249" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.16597511" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="100" y="122" width="1720" height="974" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.49361023" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -722,23 +769,23 @@
   </component>
   <component name="designer2.settings">
     <option name="autodetectServerAddress" value="true" />
-    <option name="serverIp" value="192.168.0.4" />
+    <option name="serverIp" value="192.168.1.15" />
     <option name="serverPort" value="54099" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="314" column="18" lean-forward="false" selection-start-line="314" selection-start-column="18" selection-end-line="314" selection-end-column="18" />
+        <state relative-caret-position="705">
+          <caret line="299" column="25" lean-forward="false" selection-start-line="299" selection-start-column="25" selection-end-line="299" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#SQL#0;class#SQL#0" expanded="true" />
+            <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
             <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#addBook#0;class#SQL#0" expanded="true" />
             <element signature="method#addUser#0;class#SQL#0" expanded="true" />
             <element signature="method#addUser#1;class#SQL#0" expanded="true" />
-            <element signature="e#5981#5982#0" expanded="true" />
-            <element signature="e#6058#6059#0" expanded="true" />
+            <element signature="method#addSchool#0;class#SQL#0" expanded="true" />
+            <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
             <element signature="method#editUser#0;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
             <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
@@ -748,71 +795,122 @@
             <element signature="method#loadData#0;class#SQL#0" expanded="true" />
             <element signature="method#refresh#0;class#SQL#0" expanded="true" />
             <element signature="method#genID#0;class#SQL#0" expanded="true" />
-            <marker date="1511458603000" expanded="true" signature="1630:1680" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="2569:2623" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="3829:3875" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="4551:4601" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="5257:5298" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1511458603000" expanded="true" signature="6843:6863" ph="Select * fro... missingValue" />
+            <marker date="1511486280000" expanded="true" signature="1600:1650" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="2539:2593" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="3799:3845" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="4521:4571" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="5241:5282" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1511486280000" expanded="true" signature="6827:6847" ph="Select * fro... missingValue" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SQLController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="method#SQLController#0;class#SQLController#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="109" column="3" lean-forward="true" selection-start-line="109" selection-start-column="3" selection-end-line="111" selection-end-column="5" />
-          <folding>
-            <element signature="method#getUserById#0;class#UserFormView#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
-            <element signature="e#4492#4493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
             <element signature="method#Book#0;class#Book#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BookForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Signin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SignInView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1368#2632#0" expanded="false" />
-            <element signature="e#2687#3125#0" expanded="false" />
-            <element signature="e#3185#3547#0" expanded="false" />
-            <element signature="e#3605#3918#0" expanded="false" />
-            <element signature="e#3976#4028#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
-      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Signin.html">
-      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserFormView#0;class#UserFormView#0" expanded="true" />
+            <element signature="method#getUserById#0;class#UserFormView#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="method#Book#0;class#Book#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BookForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Signin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SignInView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/BookForm.html">
@@ -820,67 +918,24 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Home.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
       <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="method#Book#0;class#Book#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SQLController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="method#SQLController#0;class#SQLController#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="79" column="18" lean-forward="false" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
-          <folding>
-            <element signature="method#getUserById#0;class#UserFormView#0" expanded="true" />
-            <element signature="e#4439#4440#0" expanded="true" />
-            <element signature="e#4492#4493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="138" selection-end-column="5" />
-          <folding>
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
-            <element signature="method#addBooks#0;class#MyUI#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="209" column="4" lean-forward="false" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
+        <state relative-caret-position="22">
+          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#SQL#0;class#SQL#0" expanded="true" />
+            <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
             <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#addBook#0;class#SQL#0" expanded="true" />
             <element signature="method#addUser#0;class#SQL#0" expanded="true" />
             <element signature="method#addUser#1;class#SQL#0" expanded="true" />
-            <element signature="e#5981#5982#0" expanded="true" />
-            <element signature="e#6058#6059#0" expanded="true" />
+            <element signature="method#addSchool#0;class#SQL#0" expanded="true" />
+            <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
             <element signature="method#editUser#0;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
             <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
@@ -890,28 +945,51 @@
             <element signature="method#loadData#0;class#SQL#0" expanded="true" />
             <element signature="method#refresh#0;class#SQL#0" expanded="true" />
             <element signature="method#genID#0;class#SQL#0" expanded="true" />
-            <marker date="1511458603000" expanded="true" signature="1630:1680" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="2569:2623" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="3829:3875" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="4551:4601" ph="Insert into users.missingValue... " />
-            <marker date="1511458603000" expanded="true" signature="5257:5298" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1511458603000" expanded="true" signature="6843:6863" ph="Select * fro... missingValue" />
+            <marker date="1511486280000" expanded="true" signature="1600:1650" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="2539:2593" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="3799:3845" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="4521:4571" ph="Insert into users.missingValue... " />
+            <marker date="1511486280000" expanded="true" signature="5241:5282" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1511486280000" expanded="true" signature="6827:6847" ph="Select * fro... missingValue" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="60" column="21" lean-forward="false" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding>
+            <element signature="method#addBooks#0;class#MyUI#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-513">
+          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserFormView#0;class#UserFormView#0" expanded="true" />
+            <element signature="method#getUserById#0;class#UserFormView#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="114" column="4" lean-forward="false" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1368#2632#0" expanded="false" />
-            <element signature="e#2687#3125#0" expanded="false" />
-            <element signature="e#3185#3547#0" expanded="false" />
-            <element signature="e#3605#3918#0" expanded="false" />
-            <element signature="e#3976#4028#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,8 @@
 
 import javax.servlet.annotation.WebServlet;
+
+import Models.Book;
+import Models.User;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -77,8 +80,8 @@ public class MyUI extends UI {
                 bookGrid.setItems(books);
                 bookGrid.setSizeFull();
                 bookGrid.removeAllColumns();
-                bookGrid.addColumn(Book::getId).setCaption("Book ID");
-                bookGrid.addColumn(Book::getBookName).setCaption("Book Name");
+                bookGrid.addColumn(Book::getId).setCaption("Models.Book ID");
+                bookGrid.addColumn(Book::getBookName).setCaption("Models.Book Name");
                 bookGrid.addColumn(Book::getAuthor).setCaption("Author");
                 bookGrid.addColumn(Book::getCheckedOut).setCaption("Checked Out");
                 bookGrid.asSingleSelect().addValueChangeListener(evt -> {
@@ -95,7 +98,7 @@ public class MyUI extends UI {
                 bookSplitPanel.setCaption("Books");
                 usersSplitPanel.setFirstComponent(userGrid);
                 usersSplitPanel.setSecondComponent(userEditor);
-                usersSplitPanel.setCaption("User Data");
+                usersSplitPanel.setCaption("Models.User Data");
                 home.setCaption("Home");
                 tabSheet.addComponent(home);
                 tabSheet.addComponent(usersSplitPanel);

@@ -1,3 +1,4 @@
+package Models;
 
 public class User {
     private int userId, checkedOutBooks, limitOfBooks, forirghschoolId;

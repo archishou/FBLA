@@ -1,15 +1,15 @@
 
 
 
+import Models.User;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class SQL {
     private Connection connection = null;
@@ -120,7 +120,7 @@ public class SQL {
                 preparedStatement.setDouble(4, fines);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
-                System.out.println("Invalid User or Book ID");
+                System.out.println("Invalid Models.User or Models.Book ID");
                 return;
             }
         } else {
@@ -268,7 +268,7 @@ public class SQL {
         try { resultSet.close(); }
         catch (SQLException e) { e.printStackTrace(); }
     }
-    public void loadSchoolData(){
+    private void loadSchoolData(){
         ResultSet resultSet = getResultSet("SELECT * FROM users.Schools;");
         try {
             while (resultSet.next()) {
@@ -300,7 +300,7 @@ public class SQL {
         loadSchoolData();
         loadTransactionData();
     }
-    public void refresh (UserFormView u) {
+    void refresh (UserFormView u) {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));
         System.out.println(id);
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
