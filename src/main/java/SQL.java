@@ -47,7 +47,6 @@ public class SQL {
             e.printStackTrace();
             return;
         }
-        loadData();
     }
     public void addBook(int bookId, String author, String name, boolean checkedOut, Table t) {
         if (connection != null) {
@@ -237,68 +236,6 @@ public class SQL {
             q.printStackTrace();
         }
         return array;
-    }
-    public void loadUserData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Users;");
-        try {
-            while (resultSet.next()) {
-                sqlController.userId.add(resultSet.getInt("id"));
-                sqlController.userName.add(resultSet.getString("name"));
-                sqlController.checkedOutBooks.add(resultSet.getInt("numBooks"));
-                sqlController.limitOfBooks.add(resultSet.getInt("bookLim"));
-                sqlController.forirghschoolId.add(resultSet.getInt("schoolid"));
-                sqlController.userStatus.add(resultSet.getBoolean("teacherYN"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void loadBookData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Books;");
-        try {
-            while (resultSet.next()) {
-                sqlController.bookId.add(resultSet.getInt("id"));
-                sqlController.author.add(resultSet.getString("author"));
-                sqlController.bookName.add(resultSet.getString("name"));
-                sqlController.checkOut.add(resultSet.getBoolean("checkOut"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    private void loadSchoolData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Schools;");
-        try {
-            while (resultSet.next()) {
-                sqlController.schoolId.add(resultSet.getInt("schoolid"));
-                sqlController.schoolName.add(resultSet.getString("schoolname"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void loadTransactionData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Transactions;");
-        try {
-            while (resultSet.next()) {
-                sqlController.transactionId.add(resultSet.getInt("transactId"));
-                sqlController.forirghUserId.add(resultSet.getInt("userId"));
-                sqlController.forirghBookId.add(resultSet.getInt("bookId"));
-                sqlController.fine.add(resultSet.getInt("fine"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void loadData() {
-        loadUserData();
-        loadBookData();
-        loadSchoolData();
-        loadTransactionData();
     }
     void refresh (UserFormView u) {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));

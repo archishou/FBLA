@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SQL.java" afterPath="$PROJECT_DIR$/src/main/java/SQL.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SQLController.java" afterPath="$PROJECT_DIR$/src/main/java/SQLController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,12 +71,11 @@
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="-500">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="method#SQL#0;class#SQL#0" expanded="true" />
                 <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
-                <element signature="method#connect#0;class#SQL#0" expanded="true" />
                 <element signature="method#addBook#0;class#SQL#0" expanded="true" />
                 <element signature="method#addUser#0;class#SQL#0" expanded="true" />
                 <element signature="method#addUser#1;class#SQL#0" expanded="true" />
@@ -83,18 +85,25 @@
                 <element signature="method#edit#0;class#SQL#0" expanded="true" />
                 <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
                 <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
-                <element signature="method#loadUserData#0;class#SQL#0" expanded="true" />
-                <element signature="method#loadBookData#0;class#SQL#0" expanded="true" />
-                <element signature="method#loadData#0;class#SQL#0" expanded="true" />
                 <element signature="method#refresh#0;class#SQL#0" expanded="true" />
                 <element signature="method#genID#0;class#SQL#0" expanded="true" />
-                <marker date="1511486280000" expanded="true" signature="1600:1650" ph="Insert into users.missingValue... " />
-                <marker date="1511486280000" expanded="true" signature="2539:2593" ph="Insert into users.missingValue... " />
-                <marker date="1511486280000" expanded="true" signature="3799:3845" ph="Insert into users.missingValue... " />
-                <marker date="1511486280000" expanded="true" signature="4521:4571" ph="Insert into users.missingValue... " />
-                <marker date="1511486280000" expanded="true" signature="5241:5282" ph="SELECT 1 FRO... missingValue" />
-                <marker date="1511486280000" expanded="true" signature="6827:6847" ph="Select * fro... missingValue" />
+                <marker date="1511579362000" expanded="true" signature="1580:1630" ph="Insert into users.missingValue... " />
+                <marker date="1511579362000" expanded="true" signature="2519:2573" ph="Insert into users.missingValue... " />
+                <marker date="1511579362000" expanded="true" signature="3779:3825" ph="Insert into users.missingValue... " />
+                <marker date="1511579362000" expanded="true" signature="4501:4551" ph="Insert into users.missingValue... " />
+                <marker date="1511579362000" expanded="true" signature="5221:5262" ph="SELECT 1 FRO... missingValue" />
+                <marker date="1511579362000" expanded="true" signature="6807:6827" ph="Select * fro... missingValue" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="131" column="31" lean-forward="false" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,21 +177,24 @@
       <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="141" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="-3">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <folding>
+                <element signature="method#addBooks#0;class#BookFormView#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SQLController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SQLController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQLController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getList#0;class#SQLController#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#675#676#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -244,7 +256,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Book.java" />
         <option value="src:table:/f1c973a8/9dda9ade-578d-448f-ba3b-9eae569cb60d/users.Books" />
         <option value="$PROJECT_DIR$/src/main/java/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/BookFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/Models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/Models/Book.java" />
@@ -257,6 +268,7 @@
         <option value="$PROJECT_DIR$/src/main/java/UserForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/SQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/SQLController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
       </list>
     </option>
   </component>
@@ -290,6 +302,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="1174" />
@@ -621,12 +634,12 @@
       <workItem from="1511325290644" duration="6915000" />
       <workItem from="1511453740863" duration="4950000" />
       <workItem from="1511485245175" duration="1000" />
-      <workItem from="1511485266701" duration="2666000" />
+      <workItem from="1511485266701" duration="4169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88608000" />
+    <option name="totallyTimeSpent" value="90111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -760,7 +773,6 @@
           <folding>
             <element signature="method#SQL#0;class#SQL#0" expanded="true" />
             <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
-            <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#addBook#0;class#SQL#0" expanded="true" />
             <element signature="method#addUser#0;class#SQL#0" expanded="true" />
             <element signature="method#addUser#1;class#SQL#0" expanded="true" />
@@ -770,17 +782,14 @@
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
             <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
             <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
-            <element signature="method#loadUserData#0;class#SQL#0" expanded="true" />
-            <element signature="method#loadBookData#0;class#SQL#0" expanded="true" />
-            <element signature="method#loadData#0;class#SQL#0" expanded="true" />
             <element signature="method#refresh#0;class#SQL#0" expanded="true" />
             <element signature="method#genID#0;class#SQL#0" expanded="true" />
-            <marker date="1511486280000" expanded="true" signature="1600:1650" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="2539:2593" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="3799:3845" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="4521:4571" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="5241:5282" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1511486280000" expanded="true" signature="6827:6847" ph="Select * fro... missingValue" />
+            <marker date="1511579362000" expanded="true" signature="1580:1630" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="2519:2573" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="3779:3825" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="4501:4551" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="5221:5262" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1511579362000" expanded="true" signature="6807:6827" ph="Select * fro... missingValue" />
           </folding>
         </state>
       </provider>
@@ -903,38 +912,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="method#SQL#0;class#SQL#0" expanded="true" />
-            <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
-            <element signature="method#connect#0;class#SQL#0" expanded="true" />
-            <element signature="method#addBook#0;class#SQL#0" expanded="true" />
-            <element signature="method#addUser#0;class#SQL#0" expanded="true" />
-            <element signature="method#addUser#1;class#SQL#0" expanded="true" />
-            <element signature="method#addSchool#0;class#SQL#0" expanded="true" />
-            <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
-            <element signature="method#editUser#0;class#SQL#0" expanded="true" />
-            <element signature="method#edit#0;class#SQL#0" expanded="true" />
-            <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
-            <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
-            <element signature="method#loadUserData#0;class#SQL#0" expanded="true" />
-            <element signature="method#loadBookData#0;class#SQL#0" expanded="true" />
-            <element signature="method#loadData#0;class#SQL#0" expanded="true" />
-            <element signature="method#refresh#0;class#SQL#0" expanded="true" />
-            <element signature="method#genID#0;class#SQL#0" expanded="true" />
-            <marker date="1511486280000" expanded="true" signature="1600:1650" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="2539:2593" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="3799:3845" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="4521:4571" ph="Insert into users.missingValue... " />
-            <marker date="1511486280000" expanded="true" signature="5241:5282" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1511486280000" expanded="true" signature="6827:6847" ph="Select * fro... missingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-513">
@@ -955,33 +932,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="141" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="126" column="80" lean-forward="false" selection-start-line="126" selection-start-column="80" selection-end-line="126" selection-end-column="80" />
+        <state relative-caret-position="-500">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="method#init#0;class#MyUI#0" expanded="false" />
-            <element signature="method#addBooks#0;class#MyUI#0" expanded="false" />
+            <element signature="method#SQL#0;class#SQL#0" expanded="true" />
+            <element signature="method#Database#0;class#Database#0;class#SQL#0" expanded="true" />
+            <element signature="method#addBook#0;class#SQL#0" expanded="true" />
+            <element signature="method#addUser#0;class#SQL#0" expanded="true" />
+            <element signature="method#addUser#1;class#SQL#0" expanded="true" />
+            <element signature="method#addSchool#0;class#SQL#0" expanded="true" />
+            <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
+            <element signature="method#editUser#0;class#SQL#0" expanded="true" />
+            <element signature="method#edit#0;class#SQL#0" expanded="true" />
+            <element signature="method#runStatement#0;class#SQL#0" expanded="true" />
+            <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
+            <element signature="method#refresh#0;class#SQL#0" expanded="true" />
+            <element signature="method#genID#0;class#SQL#0" expanded="true" />
+            <marker date="1511579362000" expanded="true" signature="1580:1630" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="2519:2573" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="3779:3825" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="4501:4551" ph="Insert into users.missingValue... " />
+            <marker date="1511579362000" expanded="true" signature="5221:5262" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1511579362000" expanded="true" signature="6807:6827" ph="Select * fro... missingValue" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQLController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#getList#0;class#SQLController#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="method#addBooks#0;class#BookFormView#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="131" column="31" lean-forward="false" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -117,14 +117,20 @@ public class MyUI extends UI {
     public static class MyUIServlet extends VaadinServlet {}
 
     private void addUsers () {
-        int i = sqlController.userId.size();
+        int i = sqlController.getList(SQL.Table.USERS, "id").size();
         int loopIteration = 0;
         String t;
+        List<List<Object>> lists = new ArrayList<>();
+        lists.add(sqlController.getList(SQL.Table.USERS, "id"));
+        lists.add(sqlController.getList(SQL.Table.USERS, "name"));
+        lists.add(sqlController.getList(SQL.Table.USERS, "numbooks"));
+        lists.add(sqlController.getList(SQL.Table.USERS, "bookLim"));
+        lists.add(sqlController.getList(SQL.Table.USERS, "schoolid"));
         while (loopIteration < i){
-            if (sqlController.userStatus.get(loopIteration)) t = "TEACHER";
+            if (sqlController.getList(SQL.Table.USERS, "teacherYN").get(loopIteration).toString().equals("true")) t = "TEACHER";
             else t = "STUDENT";
-            users.add(new User(sqlController.userId.get(loopIteration),sqlController.userName.get(loopIteration),sqlController.checkedOutBooks.get(loopIteration),
-                    sqlController.limitOfBooks.get(loopIteration),sqlController.forirghschoolId.get(loopIteration),t));
+            users.add(new User((Integer) lists.get(0).get(loopIteration),lists.get(0).get(loopIteration).toString(),(Integer) lists.get(0).get(loopIteration),
+                    (Integer) lists.get(0).get(loopIteration),(Integer) lists.get(0).get(loopIteration),t));
             loopIteration++;
         }
     }
