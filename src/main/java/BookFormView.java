@@ -35,7 +35,7 @@ public class BookFormView extends BookForm {
         save.addClickListener((Button.ClickListener) click -> {
             if (checkOutClicked && isNumeric(userId.getValue())) {
                 int id = Integer.parseInt(userId.getValue());
-                if (sql.sqlController.userId.contains(id))
+                if (sql.sqlController.getList(SQL.Table.USERS, "id").contains(id))
                     UserFormView.getUserById(id).setCheckedOutBooks(UserFormView.getUserById(id).getCheckedOutBooks() + 1);
                 userId.setValue("");
                 sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(UserFormView.getUserById(id).getCheckedOutBooks()), id);

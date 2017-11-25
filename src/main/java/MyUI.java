@@ -135,14 +135,19 @@ public class MyUI extends UI {
         }
     }
     private void addBooks () {
-        int i = sqlController.bookId.size();
+        List<List<Object>> lists = new ArrayList<>();
+        lists.add(sqlController.getList(SQL.Table.BOOK, "id"));
+        lists.add(sqlController.getList(SQL.Table.BOOK, "author"));
+        lists.add(sqlController.getList(SQL.Table.BOOK, "name"));
+        lists.add(sqlController.getList(SQL.Table.BOOK, "checkOut"));
+        int i = lists.get(0).size();
         int loopIteration = 0;
         String checkedOut;
         while (loopIteration < i) {
-            if (sqlController.checkOut.get(loopIteration)) checkedOut = "CHECKED OUT";
+            if (lists.get(3).get(loopIteration).toString().equals("true")) checkedOut = "CHECKED OUT";
             else checkedOut = "AVAILABLE";
-            books.add(new Book(sqlController.bookId.get(loopIteration), sqlController.author.get(loopIteration),
-                    sqlController.bookName.get(loopIteration), checkedOut));
+            books.add(new Book((Integer) lists.get(0).get(loopIteration), lists.get(1).get(loopIteration).toString(),
+                    lists.get(2).get(loopIteration).toString(), checkedOut));
             loopIteration++;
         }
     }
