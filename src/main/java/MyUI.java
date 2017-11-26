@@ -121,22 +121,25 @@ public class MyUI extends UI {
         int i = sqlController.getList(SQL.Table.USERS, "id").size();
         int loopIteration = 0;
         String t;
-        List<Object> elements = new ArrayList<>();
         List<List<Object>> lists = new ArrayList<List<Object>>();
         lists.add(sqlController.getList(SQL.Table.USERS, "id"));
         lists.add(sqlController.getList(SQL.Table.USERS, "name"));
         lists.add(sqlController.getList(SQL.Table.USERS, "numbooks"));
         lists.add(sqlController.getList(SQL.Table.USERS, "bookLim"));
         lists.add(sqlController.getList(SQL.Table.USERS, "schoolid"));
-        lists.add(sqlController.getList(SQL.Table.USERS, "teacherYN"));
-        for (Object o: lists.get(5)) {
-            System.out.println(o.toString());
+        boolean teacherYN;
+        List<Object> conversionList = new ArrayList<>();
+        List<Object> convertedFromList = sqlController.getList(SQL.Table.USERS, "teacherYN");
+        for (Object o: convertedFromList) {
+            teacherYN = o.toString().equals("1");
+            conversionList.add(teacherYN);
         }
-        while (loopIteration < i){
+        lists.add(conversionList);
+        while (loopIteration < i) {
             if (lists.get(5).get(loopIteration).toString().equals("true")) t = "TEACHER";
             else t = "STUDENT";
-            users.add(new User((Integer) lists.get(0).get(loopIteration),lists.get(0).get(loopIteration).toString(),(Integer) lists.get(0).get(loopIteration),
-                    (Integer) lists.get(0).get(loopIteration),(Integer) lists.get(0).get(loopIteration),t));
+            users.add(new User((Integer) lists.get(0).get(loopIteration),lists.get(1).get(loopIteration).toString(),(Integer) lists.get(2).get(loopIteration),
+                    (Integer) lists.get(3).get(loopIteration),(Integer) lists.get(4).get(loopIteration),t));
             loopIteration++;
         }
         lists.clear();
