@@ -89,6 +89,7 @@ public class MyUI extends UI {
                     if (evt.getValue().getCheckedOut().equals("CHECKED OUT")) {
                         bookEditor.checkOut.setVisible(false);
                     }
+                    else bookEditor.checkOut.setVisible(true);
                     bookEditor.userId.setVisible(false);
                     bookEditor.cancel.setVisible(true);
                     bookEditor.add.setVisible(false);
@@ -98,7 +99,7 @@ public class MyUI extends UI {
                 bookSplitPanel.setCaption("Books");
                 usersSplitPanel.setFirstComponent(userGrid);
                 usersSplitPanel.setSecondComponent(userEditor);
-                usersSplitPanel.setCaption("Models.User Data");
+                usersSplitPanel.setCaption("User Data");
                 home.setCaption("Home");
                 tabSheet.addComponent(home);
                 tabSheet.addComponent(usersSplitPanel);

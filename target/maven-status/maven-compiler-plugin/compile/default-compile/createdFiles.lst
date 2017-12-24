@@ -4,13 +4,10 @@ Home.class
 Signin.class
 SignInView.class
 SQL$Database.class
-Book.class
 UserFormView.class
 MyUI.class
 SQL.class
-User.class
 BookForm.class
 SQL$Table.class
 UserForm.class
 BookFormView.class
-NumberField.class
