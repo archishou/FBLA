@@ -223,6 +223,7 @@ public class SQL {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));
         System.out.println(id);
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
+        editUser(Table.USERS, "name", u.name.getValue(), id);
         commit();
     }
     int genID (Table table) {

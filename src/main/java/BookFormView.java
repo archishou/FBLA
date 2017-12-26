@@ -62,7 +62,6 @@ public class BookFormView extends BookForm {
            addClicked = true;
            checkOutClicked = false;
            delete.setVisible(false);
-           checkOut.setVisible(false);
            id.setValue(String.valueOf(genID()));
            userId.setCaption("Copies");
            userId.setVisible(true);
@@ -84,7 +83,6 @@ public class BookFormView extends BookForm {
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
             add.setVisible(true);
-            checkedOut.setVisible(true);
             addClicked = false;
             checkOutClicked = false;
             cancel.setVisible(false);
@@ -97,7 +95,6 @@ public class BookFormView extends BookForm {
             sql.delete(this.id.getValue().replace(",",""), SQL.Table.BOOK);
             refresh();
         });
-
     }
     public boolean isNumeric(String str) {
         return str.matches("-?\\d+(\\.\\d+)?");
@@ -122,14 +119,17 @@ public class BookFormView extends BookForm {
     public void refresh() {
         List<Book> books = new ArrayList<>();
         int loopIteration = 0;
+        String checkedOut = "";
         while (loopIteration < sql.getList(SQL.Table.BOOK, "id").size()) {
-            books.add(new Book(Integer.parseInt(sql.getList(SQL.Table.BOOK, "id").get(loopIteration).toString()),
+            if (sql.getList(SQL.Table.BOOK, "checkOut").get(loopIteration).toString().equals("1")) checkedOut = "CHECKED OUT";
+            else checkedOut = "AVALIABLE";
+            books.add(new Book(
+                    Integer.parseInt(sql.getList(SQL.Table.BOOK, "id").get(loopIteration).toString()),
                     sql.getList(SQL.Table.BOOK, "author").get(loopIteration).toString(),
                     sql.getList(SQL.Table.BOOK, "name").get(loopIteration).toString(),
-                    sql.getList(SQL.Table.BOOK, "checkOut").get(loopIteration).toString()));
+                    checkedOut));
             loopIteration++;
         }
-        books.clear();
         grid.setItems(books);
         books = null;
     }

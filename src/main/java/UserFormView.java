@@ -40,7 +40,10 @@ public class UserFormView extends UserForm {
         binder.bindInstanceFields(this);
 
         save.addClickListener((Button.ClickListener) clickListener ->{
-            if (!addPressed) sql.refresh(this);
+            if (!addPressed) {
+                sql.refresh(this);
+                refresh();
+            }
             else {
                 if (!name.getValue().equals("") && !userType.getValue().equals("")) {
                     User user = new User(Integer.valueOf(id.getValue()), name.getValue(), Integer.valueOf(checkOutBooks.getValue()),

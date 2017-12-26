@@ -52,8 +52,8 @@ public class MyUI extends UI {
             if (credTrue) {
                 tabSheet.setSizeFull();
                 sign.setVisible(false);
-                addUsers();
-                addBooks();
+                userEditor.refresh();
+                bookEditor.refresh();
                 userEditor.setSizeFull();
                 userGrid.setSizeFull();
                 userGrid.removeAllColumns();
@@ -68,6 +68,7 @@ public class MyUI extends UI {
                     userEditor.delete.setVisible(true);
                     userEditor.cancel.setVisible(true);
                     userEditor.add.setVisible(false);
+                    userEditor.name.setReadOnly(false);
                 });
                 bookEditor.setSizeFull();
                 bookGrid.setSizeFull();
@@ -78,12 +79,15 @@ public class MyUI extends UI {
                 bookGrid.addColumn(Book::getCheckedOut).setCaption("Checked Out");
                 bookGrid.asSingleSelect().addValueChangeListener(evt -> {
                     bookEditor.setBook(evt.getValue());
-                    if (evt.getValue().getCheckedOut().equals("CHECKED OUT")) {
-                        bookEditor.checkOut.setVisible(false);
-                    }
                     bookEditor.userId.setVisible(false);
                     bookEditor.cancel.setVisible(true);
                     bookEditor.add.setVisible(false);
+                });
+                bookGrid.asSingleSelect().addValueChangeListener(evt -> {
+                    if (bookEditor.checkedOut.toString().toLowerCase().contains("c")) {
+                        bookEditor.checkOut.setVisible(false);
+                    }
+                    else bookEditor.checkedOut.setVisible(true);
                 });
                 bookSplitPanel.setFirstComponent(bookGrid);
                 bookSplitPanel.setSecondComponent(bookEditor);
@@ -107,11 +111,4 @@ public class MyUI extends UI {
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {}
-
-    private void addUsers () {
-        userEditor.refresh();
-    }
-    private void addBooks () {
-        bookEditor.refresh();
-    }
 }
