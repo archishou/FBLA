@@ -108,13 +108,19 @@ public class BookFormView extends BookForm {
             userId.setValue("");
             userId.setVisible(false);
             grid.deselectAll();
+            new Notification("Operation Canceled. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
         delete.addClickListener((Button.ClickListener) click ->{
             if (addClicked) new Notification("Click Save. ", "",
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
-            add.setVisible(true);
-            sql.delete(this.id.getValue().replace(",",""), SQL.Table.BOOK);
-            refresh();
+            else {
+                add.setVisible(true);
+                sql.delete(this.id.getValue().replace(",", ""), SQL.Table.BOOK);
+                refresh();
+                new Notification("Delete Successful. ", "",
+                        Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+            }
         });
     }
     public boolean isNumeric(String str) {
