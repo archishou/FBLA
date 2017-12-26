@@ -7,6 +7,7 @@ import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserFormView extends UserForm {
@@ -110,6 +111,25 @@ public class UserFormView extends UserForm {
     }
     private int genID (){
         return sql.genID(SQL.Table.USERS) + 2;
+    }
+    public void refresh() {
+        List<User> users = new ArrayList<>();
+        int loopIteration = 0;
+        String status;
+        while (loopIteration < sql.getList(SQL.Table.USERS, "id").size()) {
+            if (sql.getList(SQL.Table.USERS, "teacherYN").get(loopIteration).toString().equals("true")) status = "TEACHER";
+            else status = "STUDENT";
+            users.add(new User(sql.getList(SQL.Table.USERS, "id").get(loopIteration),
+                               sql.getList(SQL.Table.USERS, "name").get(loopIteration),
+                                sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration),
+                                sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration),
+                                sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration),
+                                status));
+            loopIteration++;
+        }
+        grid.setItems(users);
+        users = null;
+        System.gc();
     }
 
 

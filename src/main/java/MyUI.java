@@ -27,7 +27,6 @@ public class MyUI extends UI {
     private Home home = new Home();
     private SQL sql = new SQL();
     private TabSheet tabSheet = new TabSheet();
-    private SQLController sqlController;
     private String u, p;
     private boolean credTrue;
     private List<User> users = new ArrayList<>();
@@ -39,8 +38,6 @@ public class MyUI extends UI {
     boolean currentState = false;
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        sqlController = sql.sqlController;
-        sqlController.setSql(sql);
         userEditor.delete.setVisible(currentState);
         userEditor.cancel.setVisible(currentState);
         userEditor.setGrid(userGrid);
@@ -57,6 +54,10 @@ public class MyUI extends UI {
             u = sign.username.getValue();
             credTrue = sign.isCred(u,p);
             if (credTrue) {
+                System.out.println(sql.getList(SQL.Table.USERS, "numbooks").size());
+                for(Object o: sql.getList(SQL.Table.USERS, "schoolid")) {
+                    System.out.println(o.toString());
+                }
                 tabSheet.setSizeFull();
                 sign.setVisible(false);
                 addUsers();
@@ -118,38 +119,14 @@ public class MyUI extends UI {
     public static class MyUIServlet extends VaadinServlet {}
 
     private void addUsers () {
-        int i = sqlController.getList(SQL.Table.USERS, "id").size();
-        int loopIteration = 0;
-        String t;
-        List<List<Object>> lists = new ArrayList<List<Object>>();
-        lists.add(sqlController.getList(SQL.Table.USERS, "id"));
-        lists.add(sqlController.getList(SQL.Table.USERS, "name"));
-        lists.add(sqlController.getList(SQL.Table.USERS, "numbooks"));
-        lists.add(sqlController.getList(SQL.Table.USERS, "bookLim"));
-        lists.add(sqlController.getList(SQL.Table.USERS, "schoolid"));
-        boolean teacherYN;
-        List<Object> conversionList = new ArrayList<>();
-        List<Object> convertedFromList = sqlController.getList(SQL.Table.USERS, "teacherYN");
-        for (Object o: convertedFromList) {
-            teacherYN = o.toString().equals("1");
-            conversionList.add(teacherYN);
-        }
-        lists.add(conversionList);
-        while (loopIteration < i) {
-            if (lists.get(5).get(loopIteration).toString().equals("true")) t = "TEACHER";
-            else t = "STUDENT";
-            users.add(new User((Integer) lists.get(0).get(loopIteration),lists.get(1).get(loopIteration).toString(),(Integer) lists.get(2).get(loopIteration),
-                    (Integer) lists.get(3).get(loopIteration),(Integer) lists.get(4).get(loopIteration),t));
-            loopIteration++;
-        }
-        lists.clear();
+        userEditor.refresh();
     }
     private void addBooks () {
         List<List<Object>> lists = new ArrayList<>();
-        lists.add(sqlController.getList(SQL.Table.BOOK, "id"));
-        lists.add(sqlController.getList(SQL.Table.BOOK, "author"));
-        lists.add(sqlController.getList(SQL.Table.BOOK, "name"));
-        lists.add(sqlController.getList(SQL.Table.BOOK, "checkOut"));
+        lists.add(sql.getList(SQL.Table.BOOK, "id"));
+        lists.add(sql.getList(SQL.Table.BOOK, "author"));
+        lists.add(sql.getList(SQL.Table.BOOK, "name"));
+        lists.add(sql.getList(SQL.Table.BOOK, "checkOut"));
         int i = lists.get(0).size();
         int loopIteration = 0;
         String checkedOut;

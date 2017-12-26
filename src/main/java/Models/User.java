@@ -13,6 +13,16 @@ public class User {
         forirghschoolId = schoolId;
         userStatus = status;
     }
+
+    public User(Object id, Object name, Object books, Object limit, Object schoolId, String status) {
+        userId = Integer.valueOf(id.toString());
+        userName = (String) name;
+        checkedOutBooks = (int) books;
+        limitOfBooks = (int) limit;
+        forirghschoolId = (int) schoolId;
+        userStatus = status;
+    }
+
     public String getUserId() {
         return String.valueOf(userId);
     }

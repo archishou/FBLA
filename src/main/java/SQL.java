@@ -9,12 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class SQL {
     private Connection connection = null;
     private Statement stmt = null;
-    public SQLController sqlController = new SQLController();
 
     private Date utilDate = new Date();
     public SQL () {
@@ -210,7 +211,6 @@ public class SQL {
         ResultSet rs = null;
         if (connection != null){
             try {
-                System.out.println(sql);
                 stmt = connection.createStatement();
                 rs = stmt.executeQuery(sql);
             } catch (SQLException l) {
@@ -262,5 +262,20 @@ public class SQL {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public List<Object> getList(SQL.Table table, String coloum) {
+        List<Object> list = new ArrayList<>();
+        ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
+        String elements;
+        try {
+            while (resultSet.next()) {
+                elements = resultSet.getString(coloum);
+                list.add(elements);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
