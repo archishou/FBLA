@@ -81,22 +81,23 @@ public class BookFormView extends BookForm {
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
             if (addClicked) new Notification("Click Save. ", "",
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
-            if (checkedOut.getValue().toLowerCase().contains("u")) {
-                System.out.println(checkedOut.getValue());
-                Notification notification = new Notification("This books is already checked out", "",
-                        Notification.Type.WARNING_MESSAGE, true);
-                notification.show(Page.getCurrent());
-            }
             else {
-                userId.setCaption("User ID");
-                addClicked = false;
-                checkOutClicked = true;
-                author.setReadOnly(true);
-                name.setReadOnly(true);
-                id.setReadOnly(true);
-                cancel.setVisible(true);
-                userId.setVisible(true);
-                checkedOut.setReadOnly(true);
+                if (checkedOut.getValue().toLowerCase().contains("u")) {
+                    System.out.println(checkedOut.getValue());
+                    Notification notification = new Notification("This books is already checked out", "",
+                            Notification.Type.WARNING_MESSAGE, true);
+                    notification.show(Page.getCurrent());
+                } else {
+                    userId.setCaption("User ID");
+                    addClicked = false;
+                    checkOutClicked = true;
+                    author.setReadOnly(true);
+                    name.setReadOnly(true);
+                    id.setReadOnly(true);
+                    cancel.setVisible(true);
+                    userId.setVisible(true);
+                    checkedOut.setReadOnly(true);
+                }
             }
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
