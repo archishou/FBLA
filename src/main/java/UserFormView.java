@@ -32,7 +32,7 @@ public class UserFormView extends UserForm {
         binder.forField ( this.idSchool )
                 .withNullRepresentation ( "" )
                 .withConverter ( new StringToIntegerConverter(0, "integers only" ) )
-                .bind ( User::getForirghschoolId, User::setForirghschoolId );
+                .bind ( User::getSchoolId, User::setSchoolId);
         binder.forField ( this.name )
                 .withNullRepresentation ( "" )
                 .bind ( User::getUserName, User::setUserName );
@@ -121,15 +121,14 @@ public class UserFormView extends UserForm {
             else status = "STUDENT";
             users.add(new User(sql.getList(SQL.Table.USERS, "id").get(loopIteration),
                                sql.getList(SQL.Table.USERS, "name").get(loopIteration),
-                                sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration),
-                                sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration),
-                                sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration),
-                                status));
+                               sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration),
+                               sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration),
+                               sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration),
+                               status));
             loopIteration++;
         }
         grid.setItems(users);
         users = null;
-        System.gc();
     }
 
 

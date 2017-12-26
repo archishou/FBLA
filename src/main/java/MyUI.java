@@ -71,7 +71,7 @@ public class MyUI extends UI {
                 userGrid.addColumn(User::getUserStatus).setCaption("STATUS");
                 userGrid.addColumn(User::getCheckedOutBooks).setCaption("BOOKS CHECKED OUT");
                 userGrid.addColumn(User::getLimitOfBooks).setCaption("BOOK LIMIT");
-                userGrid.addColumn(User::getForirghschoolId).setCaption("SCHOOL ID");
+                userGrid.addColumn(User::getSchoolId).setCaption("SCHOOL ID");
                 userGrid.asSingleSelect().addValueChangeListener(evt -> userEditor.setUser(evt.getValue()));
                 userGrid.addSelectionListener(event -> {
                     userEditor.delete.setVisible(true);

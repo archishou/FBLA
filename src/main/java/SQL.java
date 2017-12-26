@@ -92,7 +92,7 @@ public class SQL {
     }
     public void addUser(User user){
         addUser(Integer.valueOf(user.getUserId()), user.getUserName(), user.getCheckedOutBooks(), user.getLimitOfBooks(),
-                user.getForirghschoolId(), user.getUserStatus(), Table.USERS);
+                user.getSchoolId(), user.getUserStatus(), Table.USERS);
     }
     public void addSchool(int id, String name, Table t){
         if (connection != null) {
@@ -218,24 +218,6 @@ public class SQL {
             }
         }
         return rs;
-    }
-    public String[] allRelatedBooks(String name){
-        int i = 0;
-        String[] array = new String[800];
-        ResultSet rs;
-        String SQL = "SELECT 1 FROM " + "Books" + " WHERE name = " + "'" + name + "'";
-        rs = getResultSet(SQL);
-        try {
-            while (rs.next()) {
-                array[i] = rs.getString(i + 1);
-                System.out.println("" + array[i]);
-                i++;
-            }
-        }
-        catch(SQLException q) {
-            q.printStackTrace();
-        }
-        return array;
     }
     void refresh (UserFormView u) {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));
