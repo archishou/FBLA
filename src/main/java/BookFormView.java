@@ -1,10 +1,12 @@
 import Models.Book;
+import Models.User;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookFormView extends BookForm {
@@ -14,7 +16,6 @@ public class BookFormView extends BookForm {
     public UserFormView userFormView;
     private SQL sql;
     private Grid<Book> grid;
-    private List<Book> books;
     public BookFormView () {
         cancel.setComponentError(null);
         userId.setVisible(false);
@@ -54,8 +55,7 @@ public class BookFormView extends BookForm {
                     sql.addBook(id, author, name, false, SQL.Table.BOOK);
                     loopIterations++;
                 }
-                addBooks();
-                grid.setItems(books);
+                refresh();
             }
         });
         add.addClickListener((Button.ClickListener) click ->{
@@ -72,7 +72,7 @@ public class BookFormView extends BookForm {
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
-            userId.setCaption("Models.User ID");
+            userId.setCaption("User ID");
             addClicked = false;
             checkOutClicked = true;
             author.setReadOnly(true);
@@ -94,6 +94,8 @@ public class BookFormView extends BookForm {
         });
         delete.addClickListener((Button.ClickListener) click ->{
            add.setVisible(true);
+            sql.delete(this.id.getValue().replace(",",""), SQL.Table.BOOK);
+            refresh();
         });
 
     }
@@ -106,9 +108,6 @@ public class BookFormView extends BookForm {
     void setGrid(Grid<Book> grid) {
         this.grid = grid;
     }
-    void setList(List<Book> list) {
-        this.books = list;
-    }
     public void setSql(SQL sql) {
         this.sql = sql;
     }
@@ -120,25 +119,18 @@ public class BookFormView extends BookForm {
     private int genID (){
         return sql.genID(SQL.Table.BOOK) + 2;
     }
-    private void addBooks () {
-        books.clear();
-        ResultSet resultSet = sql.getResultSet("SELECT * FROM users.Books");
-        String author, name;
-        int id;
-        Object checkOut;
-        String checkOutValue;
-        try {
-            while (resultSet.next()) {
-                author = resultSet.getString("author");
-                name = resultSet.getString("name");
-                id = resultSet.getInt("id");
-                checkOut = resultSet.getBoolean("checkOut");
-                if (checkOut == "true") checkOutValue = "CHECKED OUT";
-                else checkOutValue = "AVAILABLE";
-                books.add(new Book(id, author, name, checkOutValue));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public void refresh() {
+        List<Book> books = new ArrayList<>();
+        int loopIteration = 0;
+        while (loopIteration < sql.getList(SQL.Table.BOOK, "id").size()) {
+            books.add(new Book(Integer.parseInt(sql.getList(SQL.Table.BOOK, "id").get(loopIteration).toString()),
+                    sql.getList(SQL.Table.BOOK, "author").get(loopIteration).toString(),
+                    sql.getList(SQL.Table.BOOK, "name").get(loopIteration).toString(),
+                    sql.getList(SQL.Table.BOOK, "checkOut").get(loopIteration).toString()));
+            loopIteration++;
         }
+        books.clear();
+        grid.setItems(books);
+        books = null;
     }
 }

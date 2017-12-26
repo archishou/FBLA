@@ -260,4 +260,20 @@ public class SQL {
         }
         return list;
     }
+    public List<Integer> getIntegerList(SQL.Table table, String coloum) {
+        List<Integer> list = new ArrayList<>();
+        ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
+        String elements;
+        try {
+            while (resultSet.next()) {
+                elements = resultSet.getString(coloum);
+                list.add(Integer.valueOf(elements));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
+
