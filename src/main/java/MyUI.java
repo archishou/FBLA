@@ -81,7 +81,7 @@ public class MyUI extends UI {
                     bookEditor.setBook(evt.getValue());
                     bookEditor.userId.setVisible(false);
                     bookEditor.cancel.setVisible(true);
-                    bookEditor.add.setVisible(false);
+                    bookEditor.add.setVisible(true);
                     bookEditor.checkedOut.setVisible(true);
                 });
                 bookSplitPanel.setFirstComponent(bookGrid);

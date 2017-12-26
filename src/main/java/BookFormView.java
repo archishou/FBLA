@@ -40,6 +40,7 @@ public class BookFormView extends BookForm {
             if (checkOutClicked) {
                 int id = Integer.parseInt(userId.getValue().replaceAll(",",""));
                 userId.setValue("");
+                System.out.println(String.valueOf(Integer.parseInt(getUserData(id)[2])));
                 sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
                 sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
                 sql.commit();
@@ -60,20 +61,26 @@ public class BookFormView extends BookForm {
                 }
                 refresh();
             }
+            new Notification("Save Successful", "",
+                    Notification.Type.TRAY_NOTIFICATION, true).show(Page.getCurrent());
         });
         add.addClickListener((Button.ClickListener) click ->{
+           if (addClicked) new Notification("Click Save. ", "",
+                   Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
            addClicked = true;
            checkOutClicked = false;
-           delete.setVisible(false);
            id.setValue(String.valueOf(genID()));
            userId.setCaption("Copies");
            userId.setVisible(true);
            id.setReadOnly(true);
            checkedOut.setValue("AVAILABLE");
+           checkedOut.setReadOnly(true);
            author.setReadOnly(false);
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
+            if (addClicked) new Notification("Click Save. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
             if (checkedOut.getValue().toLowerCase().contains("u")) {
                 System.out.println(checkedOut.getValue());
                 Notification notification = new Notification("This books is already checked out", "",
@@ -102,7 +109,9 @@ public class BookFormView extends BookForm {
             grid.deselectAll();
         });
         delete.addClickListener((Button.ClickListener) click ->{
-           add.setVisible(true);
+            if (addClicked) new Notification("Click Save. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+            add.setVisible(true);
             sql.delete(this.id.getValue().replace(",",""), SQL.Table.BOOK);
             refresh();
         });
@@ -124,15 +133,17 @@ public class BookFormView extends BookForm {
         returnString[0] = String.valueOf(id);
         int index = 0;
         for (Integer integer: sql.getIntegerList(SQL.Table.USERS, "id")) {
-            index++;
             if (integer == id){
                 returnString[1] = String.valueOf(sql.getList(SQL.Table.USERS, "name").get(index));
                 returnString[2] = String.valueOf(sql.getList(SQL.Table.USERS, "numbooks").get(index));
                 returnString[3] = String.valueOf(sql.getList(SQL.Table.USERS, "bookLim").get(index));
                 returnString[4] = String.valueOf(sql.getList(SQL.Table.USERS, "schoolid").get(index));
                 returnString[5] = String.valueOf(sql.getList(SQL.Table.USERS, "teacherYN").get(index));
-
             }
+            index++;
+        }
+        for (String s: returnString) {
+            System.out.print(s);
         }
         return returnString;
     }
