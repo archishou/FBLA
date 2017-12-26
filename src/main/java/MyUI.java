@@ -82,12 +82,7 @@ public class MyUI extends UI {
                     bookEditor.userId.setVisible(false);
                     bookEditor.cancel.setVisible(true);
                     bookEditor.add.setVisible(false);
-                });
-                bookGrid.asSingleSelect().addValueChangeListener(evt -> {
-                    if (bookEditor.checkedOut.toString().toLowerCase().contains("c")) {
-                        bookEditor.checkOut.setVisible(false);
-                    }
-                    else bookEditor.checkedOut.setVisible(true);
+                    bookEditor.checkedOut.setVisible(true);
                 });
                 bookSplitPanel.setFirstComponent(bookGrid);
                 bookSplitPanel.setSecondComponent(bookEditor);

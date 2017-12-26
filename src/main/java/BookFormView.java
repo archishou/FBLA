@@ -2,8 +2,11 @@ import Models.Book;
 import Models.User;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
+import com.vaadin.server.Page;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.Notification;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -34,14 +37,14 @@ public class BookFormView extends BookForm {
                 .bind(Book::getCheckedOut, Book::setCheckedOut);
         binder.bindInstanceFields(this);
         save.addClickListener((Button.ClickListener) click -> {
-            if (checkOutClicked && isNumeric(userId.getValue())) {
-                int id = Integer.parseInt(userId.getValue());
-                if (sql.getList(SQL.Table.USERS, "id").contains(id))
-                    UserFormView.getUserById(id).setCheckedOutBooks(UserFormView.getUserById(id).getCheckedOutBooks() + 1);
+            if (checkOutClicked) {
+                int id = Integer.parseInt(userId.getValue().replaceAll(",",""));
                 userId.setValue("");
-                sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(UserFormView.getUserById(id).getCheckedOutBooks()), id);
+                sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
                 sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
                 sql.commit();
+                refresh();
+                userFormView.refresh();
                 userId.setVisible(false);
             }
             if (addClicked) {
@@ -71,15 +74,23 @@ public class BookFormView extends BookForm {
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
-            userId.setCaption("User ID");
-            addClicked = false;
-            checkOutClicked = true;
-            author.setReadOnly(true);
-            name.setReadOnly(true);
-            id.setReadOnly(true);
-            cancel.setVisible(true);
-            userId.setVisible(true);
-            checkedOut.setReadOnly(true);
+            if (checkedOut.getValue().toLowerCase().contains("u")) {
+                System.out.println(checkedOut.getValue());
+                Notification notification = new Notification("This books is already checked out", "",
+                        Notification.Type.WARNING_MESSAGE, true);
+                notification.show(Page.getCurrent());
+            }
+            else {
+                userId.setCaption("User ID");
+                addClicked = false;
+                checkOutClicked = true;
+                author.setReadOnly(true);
+                name.setReadOnly(true);
+                id.setReadOnly(true);
+                cancel.setVisible(true);
+                userId.setVisible(true);
+                checkedOut.setReadOnly(true);
+            }
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
             add.setVisible(true);
@@ -108,7 +119,23 @@ public class BookFormView extends BookForm {
     public void setSql(SQL sql) {
         this.sql = sql;
     }
+    public String[] getUserData(int id) {
+        String[] returnString = new String[]{"","","","","",""};
+        returnString[0] = String.valueOf(id);
+        int index = 0;
+        for (Integer integer: sql.getIntegerList(SQL.Table.USERS, "id")) {
+            index++;
+            if (integer == id){
+                returnString[1] = String.valueOf(sql.getList(SQL.Table.USERS, "name").get(index));
+                returnString[2] = String.valueOf(sql.getList(SQL.Table.USERS, "numbooks").get(index));
+                returnString[3] = String.valueOf(sql.getList(SQL.Table.USERS, "bookLim").get(index));
+                returnString[4] = String.valueOf(sql.getList(SQL.Table.USERS, "schoolid").get(index));
+                returnString[5] = String.valueOf(sql.getList(SQL.Table.USERS, "teacherYN").get(index));
 
+            }
+        }
+        return returnString;
+    }
 
     public void setUserFormView(UserFormView userFormView) {
         this.userFormView = userFormView;
