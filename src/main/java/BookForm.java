@@ -31,7 +31,7 @@ public class BookForm extends HorizontalLayout {
     protected Button checkOut;
     protected Label nSave;
     protected Button add;
-    protected Button return_;
+    protected Button returnBook;
 
     public BookForm() {
         Design.read(this);

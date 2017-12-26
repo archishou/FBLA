@@ -68,7 +68,6 @@ public class SQL {
         }
     }
     public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status, Table t){
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         if (connection != null) {
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
@@ -77,9 +76,14 @@ public class SQL {
                 preparedStatement.setInt(3, numBooks);
                 preparedStatement.setInt(4, limit);
                 preparedStatement.setInt(5,schoolId);
-                if (status.contains("s"))
+                if (status.toLowerCase().contains("s")) {
                     preparedStatement.setBoolean(6, false);
-                else preparedStatement.setBoolean(6, true);
+                    System.out.println("Set False");
+                }
+                else {
+                    preparedStatement.setBoolean(6, true);
+                    System.out.println("Set True");
+                }
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 System.out.println("Prepared Statement Failed! Check output console");
@@ -120,7 +124,7 @@ public class SQL {
                 preparedStatement.setDouble(4, fines);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
-                System.out.println("Invalid Models.User or Models.Book ID");
+                System.out.println("Invalid User or Book ID");
                 return;
             }
         } else {

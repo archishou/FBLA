@@ -111,6 +111,21 @@ public class BookFormView extends BookForm {
             new Notification("Operation Canceled. ", "",
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
+        returnBook.addClickListener((Button.ClickListener) clickListener -> {
+            if (checkedOut.getValue().toLowerCase().contains("a")) {
+                System.out.println(checkedOut.getValue());
+                Notification notification = new Notification("This books is already in stock", "",
+                        Notification.Type.WARNING_MESSAGE, true);
+                notification.show(Page.getCurrent());
+            }
+            else {
+                sql.edit(SQL.Table.BOOK, "checkOut", false, Integer.parseInt(id.getValue().replaceAll(",","")));
+                refresh();
+                Notification notification = new Notification("Returned to the library", "",
+                        Notification.Type.WARNING_MESSAGE, true);
+                notification.show(Page.getCurrent());
+            }
+        });
         delete.addClickListener((Button.ClickListener) click ->{
             if (addClicked) new Notification("Click Save. ", "",
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
@@ -122,9 +137,6 @@ public class BookFormView extends BookForm {
                         Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
             }
         });
-    }
-    public boolean isNumeric(String str) {
-        return str.matches("-?\\d+(\\.\\d+)?");
     }
     void setBook(Book value) {
         binder.setBean(value);
@@ -167,7 +179,7 @@ public class BookFormView extends BookForm {
         String checkedOut = "";
         while (loopIteration < sql.getList(SQL.Table.BOOK, "id").size()) {
             if (sql.getList(SQL.Table.BOOK, "checkOut").get(loopIteration).toString().equals("1")) checkedOut = "CHECKED OUT";
-            else checkedOut = "AVALIABLE";
+            else checkedOut = "AVAILABLE";
             books.add(new Book(
                     Integer.parseInt(sql.getList(SQL.Table.BOOK, "id").get(loopIteration).toString()),
                     sql.getList(SQL.Table.BOOK, "author").get(loopIteration).toString(),
