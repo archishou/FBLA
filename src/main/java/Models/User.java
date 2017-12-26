@@ -14,12 +14,12 @@ public class User {
         userStatus = status;
     }
 
-    public User(Object id, Object name, Object books, Object limit, Object schoolId, String status) {
-        userId = Integer.valueOf(id.toString());
-        userName = (String) name;
-        checkedOutBooks = (int) books;
-        limitOfBooks = (int) limit;
-        this.schoolId = (int) schoolId;
+    public User(String id, String name, String numBooks, String bookLim, String schoolId, String status) {
+        userId = Integer.parseInt(id);
+        userName = name;
+        checkedOutBooks = Integer.parseInt(numBooks);
+        limitOfBooks = Integer.parseInt(bookLim);
+        this.schoolId = Integer.parseInt(schoolId);
         userStatus = status;
     }
 

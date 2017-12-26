@@ -119,11 +119,11 @@ public class UserFormView extends UserForm {
         while (loopIteration < sql.getList(SQL.Table.USERS, "id").size()) {
             if (sql.getList(SQL.Table.USERS, "teacherYN").get(loopIteration).toString().equals("true")) status = "TEACHER";
             else status = "STUDENT";
-            users.add(new User(sql.getList(SQL.Table.USERS, "id").get(loopIteration),
-                               sql.getList(SQL.Table.USERS, "name").get(loopIteration),
-                               sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration),
-                               sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration),
-                               sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration),
+            users.add(new User(sql.getList(SQL.Table.USERS, "id").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "name").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration).toString(),
                                status));
             loopIteration++;
         }
