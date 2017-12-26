@@ -1,4 +1,5 @@
 import Models.Book;
+import Models.User;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.ui.Button;
@@ -14,7 +15,7 @@ public class BookFormView extends BookForm {
     public UserFormView userFormView;
     private SQL sql;
     private Grid<Book> grid;
-    private List<Book> books;
+    private static List<Book> books;
     public BookFormView () {
         cancel.setComponentError(null);
         userId.setVisible(false);
@@ -41,6 +42,8 @@ public class BookFormView extends BookForm {
                 sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(UserFormView.getUserById(id).getCheckedOutBooks()), id);
                 sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
                 sql.commit();
+                books.get(getIndexById(Integer.parseInt(this.id.getValue().replaceAll(",","")))).setCheckedOut("CHECKED OUT");
+                grid.setItems(books);
                 userId.setVisible(false);
             }
             if (addClicked) {
@@ -72,7 +75,7 @@ public class BookFormView extends BookForm {
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
-            userId.setCaption("Models.User ID");
+            userId.setCaption("User ID");
             addClicked = false;
             checkOutClicked = true;
             author.setReadOnly(true);
@@ -112,13 +115,19 @@ public class BookFormView extends BookForm {
     public void setSql(SQL sql) {
         this.sql = sql;
     }
-
-
     public void setUserFormView(UserFormView userFormView) {
         this.userFormView = userFormView;
     }
     private int genID (){
         return sql.genID(SQL.Table.BOOK) + 2;
+    }
+    public int getIndexById (int id) {
+        int index = 0;
+        for (Book book: books) {
+            index++;
+            if (book.getId() == id) break;
+        }
+        return index;
     }
     private void addBooks () {
         books.clear();
