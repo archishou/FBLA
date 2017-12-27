@@ -2,10 +2,14 @@ import Models.Book;
 import Models.User;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
+import com.vaadin.server.Page;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.Notification;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookFormView extends BookForm {
@@ -15,7 +19,6 @@ public class BookFormView extends BookForm {
     public UserFormView userFormView;
     private SQL sql;
     private Grid<Book> grid;
-    private static List<Book> books;
     public BookFormView () {
         cancel.setComponentError(null);
         userId.setVisible(false);
@@ -34,16 +37,15 @@ public class BookFormView extends BookForm {
                 .bind(Book::getCheckedOut, Book::setCheckedOut);
         binder.bindInstanceFields(this);
         save.addClickListener((Button.ClickListener) click -> {
-            if (checkOutClicked && isNumeric(userId.getValue())) {
-                int id = Integer.parseInt(userId.getValue());
-                if (sql.sqlController.userId.contains(id))
-                    UserFormView.getUserById(id).setCheckedOutBooks(UserFormView.getUserById(id).getCheckedOutBooks() + 1);
+            if (checkOutClicked) {
+                int id = Integer.parseInt(userId.getValue().replaceAll(",",""));
                 userId.setValue("");
-                sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(UserFormView.getUserById(id).getCheckedOutBooks()), id);
+                System.out.println(String.valueOf(Integer.parseInt(getUserData(id)[2])));
+                sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
                 sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
                 sql.commit();
-                books.get(getIndexById(Integer.parseInt(this.id.getValue().replaceAll(",","")))).setCheckedOut("CHECKED OUT");
-                grid.setItems(books);
+                refresh();
+                userFormView.refresh();
                 userId.setVisible(false);
             }
             if (addClicked) {
@@ -57,51 +59,84 @@ public class BookFormView extends BookForm {
                     sql.addBook(id, author, name, false, SQL.Table.BOOK);
                     loopIterations++;
                 }
-                addBooks();
-                grid.setItems(books);
+                refresh();
             }
+            new Notification("Save Successful", "",
+                    Notification.Type.TRAY_NOTIFICATION, true).show(Page.getCurrent());
         });
         add.addClickListener((Button.ClickListener) click ->{
+           if (addClicked) new Notification("Click Save. ", "",
+                   Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
            addClicked = true;
            checkOutClicked = false;
-           delete.setVisible(false);
-           checkOut.setVisible(false);
            id.setValue(String.valueOf(genID()));
            userId.setCaption("Copies");
            userId.setVisible(true);
            id.setReadOnly(true);
            checkedOut.setValue("AVAILABLE");
+           checkedOut.setReadOnly(true);
            author.setReadOnly(false);
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
-            userId.setCaption("User ID");
-            addClicked = false;
-            checkOutClicked = true;
-            author.setReadOnly(true);
-            name.setReadOnly(true);
-            id.setReadOnly(true);
-            cancel.setVisible(true);
-            userId.setVisible(true);
-            checkedOut.setReadOnly(true);
+            if (addClicked) new Notification("Click Save. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+            else {
+                if (checkedOut.getValue().toLowerCase().contains("u")) {
+                    System.out.println(checkedOut.getValue());
+                    Notification notification = new Notification("This books is already checked out", "",
+                            Notification.Type.WARNING_MESSAGE, true);
+                    notification.show(Page.getCurrent());
+                } else {
+                    userId.setCaption("User ID");
+                    addClicked = false;
+                    checkOutClicked = true;
+                    author.setReadOnly(true);
+                    name.setReadOnly(true);
+                    id.setReadOnly(true);
+                    cancel.setVisible(true);
+                    userId.setVisible(true);
+                    checkedOut.setReadOnly(true);
+                }
+            }
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
             add.setVisible(true);
-            checkedOut.setVisible(true);
             addClicked = false;
             checkOutClicked = false;
             cancel.setVisible(false);
             userId.setValue("");
             userId.setVisible(false);
             grid.deselectAll();
+            new Notification("Operation Canceled. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+        });
+        returnBook.addClickListener((Button.ClickListener) clickListener -> {
+            if (checkedOut.getValue().toLowerCase().contains("a")) {
+                System.out.println(checkedOut.getValue());
+                Notification notification = new Notification("This books is already in stock", "",
+                        Notification.Type.WARNING_MESSAGE, true);
+                notification.show(Page.getCurrent());
+            }
+            else {
+                sql.edit(SQL.Table.BOOK, "checkOut", false, Integer.parseInt(id.getValue().replaceAll(",","")));
+                refresh();
+                Notification notification = new Notification("Returned to the library", "",
+                        Notification.Type.WARNING_MESSAGE, true);
+                notification.show(Page.getCurrent());
+            }
         });
         delete.addClickListener((Button.ClickListener) click ->{
-           add.setVisible(true);
+            if (addClicked) new Notification("Click Save. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+            else {
+                add.setVisible(true);
+                sql.delete(this.id.getValue().replace(",", ""), SQL.Table.BOOK);
+                refresh();
+                new Notification("Delete Successful. ", "",
+                        Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+            }
         });
-
-    }
-    public boolean isNumeric(String str) {
-        return str.matches("-?\\d+(\\.\\d+)?");
     }
     void setBook(Book value) {
         binder.setBean(value);
@@ -109,45 +144,50 @@ public class BookFormView extends BookForm {
     void setGrid(Grid<Book> grid) {
         this.grid = grid;
     }
-    void setList(List<Book> list) {
-        this.books = list;
-    }
     public void setSql(SQL sql) {
         this.sql = sql;
     }
+    public String[] getUserData(int id) {
+        String[] returnString = new String[]{"","","","","",""};
+        returnString[0] = String.valueOf(id);
+        int index = 0;
+        for (Integer integer: sql.getIntegerList(SQL.Table.USERS, "id")) {
+            if (integer == id){
+                returnString[1] = String.valueOf(sql.getList(SQL.Table.USERS, "name").get(index));
+                returnString[2] = String.valueOf(sql.getList(SQL.Table.USERS, "numbooks").get(index));
+                returnString[3] = String.valueOf(sql.getList(SQL.Table.USERS, "bookLim").get(index));
+                returnString[4] = String.valueOf(sql.getList(SQL.Table.USERS, "schoolid").get(index));
+                returnString[5] = String.valueOf(sql.getList(SQL.Table.USERS, "teacherYN").get(index));
+            }
+            index++;
+        }
+        for (String s: returnString) {
+            System.out.print(s);
+        }
+        return returnString;
+    }
+
     public void setUserFormView(UserFormView userFormView) {
         this.userFormView = userFormView;
     }
     private int genID (){
         return sql.genID(SQL.Table.BOOK) + 2;
     }
-    public int getIndexById (int id) {
-        int index = 0;
-        for (Book book: books) {
-            index++;
-            if (book.getId() == id) break;
+    public void refresh() {
+        List<Book> books = new ArrayList<>();
+        int loopIteration = 0;
+        String checkedOut = "";
+        while (loopIteration < sql.getList(SQL.Table.BOOK, "id").size()) {
+            if (sql.getList(SQL.Table.BOOK, "checkOut").get(loopIteration).toString().equals("1")) checkedOut = "CHECKED OUT";
+            else checkedOut = "AVAILABLE";
+            books.add(new Book(
+                    Integer.parseInt(sql.getList(SQL.Table.BOOK, "id").get(loopIteration).toString()),
+                    sql.getList(SQL.Table.BOOK, "author").get(loopIteration).toString(),
+                    sql.getList(SQL.Table.BOOK, "name").get(loopIteration).toString(),
+                    checkedOut));
+            loopIteration++;
         }
-        return index;
-    }
-    private void addBooks () {
-        books.clear();
-        ResultSet resultSet = sql.getResultSet("SELECT * FROM users.Books");
-        String author, name;
-        int id;
-        Object checkOut;
-        String checkOutValue;
-        try {
-            while (resultSet.next()) {
-                author = resultSet.getString("author");
-                name = resultSet.getString("name");
-                id = resultSet.getInt("id");
-                checkOut = resultSet.getBoolean("checkOut");
-                if (checkOut == "true") checkOutValue = "CHECKED OUT";
-                else checkOutValue = "AVAILABLE";
-                books.add(new Book(id, author, name, checkOutValue));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        grid.setItems(books);
+        books = null;
     }
 }

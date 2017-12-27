@@ -1,4 +1,5 @@
-SQLController.class
+Models/Book.class
+Models/User.class
 MyUI$MyUIServlet.class
 Home.class
 Signin.class

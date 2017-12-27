@@ -1,7 +1,7 @@
 package Models;
 
 public class User {
-    private int userId, checkedOutBooks, limitOfBooks, forirghschoolId;
+    private int userId, checkedOutBooks, limitOfBooks, schoolId;
     private String userStatus;
 
     private String userName;
@@ -10,9 +10,19 @@ public class User {
         userName = name;
         checkedOutBooks = books;
         limitOfBooks = limit;
-        forirghschoolId = schoolId;
+        this.schoolId = schoolId;
         userStatus = status;
     }
+
+    public User(String id, String name, String numBooks, String bookLim, String schoolId, String status) {
+        userId = Integer.parseInt(id);
+        userName = name;
+        checkedOutBooks = Integer.parseInt(numBooks);
+        limitOfBooks = Integer.parseInt(bookLim);
+        this.schoolId = Integer.parseInt(schoolId);
+        userStatus = status;
+    }
+
     public String getUserId() {
         return String.valueOf(userId);
     }
@@ -25,8 +35,8 @@ public class User {
         return limitOfBooks;
     }
 
-    public int getForirghschoolId() {
-        return forirghschoolId;
+    public int getSchoolId() {
+        return schoolId;
     }
 
     public String getUserStatus() {
@@ -49,8 +59,8 @@ public class User {
         this.limitOfBooks = limitOfBooks;
     }
 
-    public void setForirghschoolId(int forirghschoolId) {
-        this.forirghschoolId = forirghschoolId;
+    public void setSchoolId(int schoolId) {
+        this.schoolId = schoolId;
     }
 
     public void setUserStatus(String userStatus) {

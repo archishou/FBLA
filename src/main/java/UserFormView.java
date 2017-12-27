@@ -7,13 +7,12 @@ import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserFormView extends UserForm {
-    private int initId = 3769891;
-    private SQL sql;
+    private static SQL sql;
     private Binder<User> binder = new Binder<>(User.class);
-    private static List<User> users;
     private Grid<User> grid;
     private boolean addPressed = false;
     UserFormView() {
@@ -31,7 +30,7 @@ public class UserFormView extends UserForm {
         binder.forField ( this.idSchool )
                 .withNullRepresentation ( "" )
                 .withConverter ( new StringToIntegerConverter(0, "integers only" ) )
-                .bind ( User::getForirghschoolId, User::setForirghschoolId );
+                .bind ( User::getSchoolId, User::setSchoolId);
         binder.forField ( this.name )
                 .withNullRepresentation ( "" )
                 .bind ( User::getUserName, User::setUserName );
@@ -41,14 +40,17 @@ public class UserFormView extends UserForm {
         binder.bindInstanceFields(this);
 
         save.addClickListener((Button.ClickListener) clickListener ->{
-            if (!addPressed) sql.refresh(this);
+            if (!addPressed) {
+                sql.refresh(this);
+                refresh();
+            }
             else {
                 if (!name.getValue().equals("") && !userType.getValue().equals("")) {
                     User user = new User(Integer.valueOf(id.getValue()), name.getValue(), Integer.valueOf(checkOutBooks.getValue()),
                             Integer.valueOf(limitOfBooks.getValue()), Integer.valueOf(idSchool.getValue()), userType.getValue());
-                    users.add(user);
+                    System.out.println(user.getUserStatus());
                     sql.addUser(user);
-                    grid.setItems(users);
+                    refresh();
                     addPressed = false;
                     limitOfBooks.setReadOnly(true);
                     name.setReadOnly(true);
@@ -59,16 +61,15 @@ public class UserFormView extends UserForm {
         });
         delete.addClickListener((Button.ClickListener) clickListener ->{
             sql.delete(id.getValue().replaceAll(",", ""), SQL.Table.USERS);
-            users.remove(getUserById(getID(id.getValue())));
             sql.refresh(this);
-            grid.setItems(users);
+            refresh();
             nSave.setVisible(false);
             cancel.setVisible(false);
             delete.setVisible(false);
             add.setVisible(true);
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
-            grid.setItems(users);
+            grid.deselectAll();
             nSave.setVisible(false);
             cancel.setVisible(false);
             delete.setVisible(false);
@@ -95,21 +96,47 @@ public class UserFormView extends UserForm {
     protected void setUser(User value) {
         binder.setBean(value);
     }
-    protected void setList(List<User> users){this.users = users;}
     private int getID(String i){
         return Integer.parseInt(i.replaceAll(",", ""));
     }
     protected void setGrid(Grid<User> userGrid){this.grid=userGrid;}
     public static User getUserById(int id){
-        User getUser = null;
-        for (User user: users){
-            if (Integer.parseInt(user.getUserId()) == id)
-                getUser = user;
+        int idOfUser = 0;
+        int index = 0;
+        String status = "";
+        for (Integer integer: sql.getIntegerList(SQL.Table.USERS, "id")){
+            index++;
+            if (integer == id) break;
+            if (sql.getList(SQL.Table.USERS, "teacherYN").get(index).toString().equals("true")) status = "TEACHER";
+            else status = "STUDENT";
         }
-        return getUser;
+        return new User(String.valueOf(idOfUser),
+                sql.getList(SQL.Table.USERS, "name").get(index).toString(),
+                sql.getList(SQL.Table.USERS, "numbooks").get(index).toString(),
+                sql.getList(SQL.Table.USERS, "bookLim").get(index).toString(),
+                sql.getList(SQL.Table.USERS, "schoolid").get(index).toString(),
+                status);
     }
     private int genID (){
         return sql.genID(SQL.Table.USERS) + 2;
+    }
+    public void refresh() {
+        List<User> users = new ArrayList<>();
+        int loopIteration = 0;
+        String status;
+        while (loopIteration < sql.getList(SQL.Table.USERS, "id").size()) {
+            if (sql.getList(SQL.Table.USERS, "teacherYN").get(loopIteration).toString().equals("1")) status = "TEACHER";
+            else status = "STUDENT";
+            users.add(new User(sql.getList(SQL.Table.USERS, "id").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "name").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration).toString(),
+                               sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration).toString(),
+                               status));
+            loopIteration++;
+        }
+        grid.setItems(users);
+        users = null;
     }
 
 

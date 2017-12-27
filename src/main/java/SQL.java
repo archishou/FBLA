@@ -9,12 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class SQL {
     private Connection connection = null;
     private Statement stmt = null;
-    public SQLController sqlController = new SQLController();
 
     private Date utilDate = new Date();
     public SQL () {
@@ -47,7 +48,6 @@ public class SQL {
             e.printStackTrace();
             return;
         }
-        loadData();
     }
     public void addBook(int bookId, String author, String name, boolean checkedOut, Table t) {
         if (connection != null) {
@@ -68,7 +68,6 @@ public class SQL {
         }
     }
     public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status, Table t){
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         if (connection != null) {
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
@@ -77,9 +76,14 @@ public class SQL {
                 preparedStatement.setInt(3, numBooks);
                 preparedStatement.setInt(4, limit);
                 preparedStatement.setInt(5,schoolId);
-                if (status.contains("s"))
+                if (status.toLowerCase().contains("s")) {
                     preparedStatement.setBoolean(6, false);
-                else preparedStatement.setBoolean(6, true);
+                    System.out.println("Set False");
+                }
+                else {
+                    preparedStatement.setBoolean(6, true);
+                    System.out.println("Set True");
+                }
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 System.out.println("Prepared Statement Failed! Check output console");
@@ -92,7 +96,7 @@ public class SQL {
     }
     public void addUser(User user){
         addUser(Integer.valueOf(user.getUserId()), user.getUserName(), user.getCheckedOutBooks(), user.getLimitOfBooks(),
-                user.getForirghschoolId(), user.getUserStatus(), Table.USERS);
+                user.getSchoolId(), user.getUserStatus(), Table.USERS);
     }
     public void addSchool(int id, String name, Table t){
         if (connection != null) {
@@ -120,7 +124,7 @@ public class SQL {
                 preparedStatement.setDouble(4, fines);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
-                System.out.println("Invalid Models.User or Models.Book ID");
+                System.out.println("Invalid User or Book ID");
                 return;
             }
         } else {
@@ -211,7 +215,6 @@ public class SQL {
         ResultSet rs = null;
         if (connection != null){
             try {
-                System.out.println(sql);
                 stmt = connection.createStatement();
                 rs = stmt.executeQuery(sql);
             } catch (SQLException l) {
@@ -220,90 +223,11 @@ public class SQL {
         }
         return rs;
     }
-    public String[] allRelatedBooks(String name){
-        int i = 0;
-        String[] array = new String[800];
-        ResultSet rs;
-        String SQL = "SELECT 1 FROM " + "Books" + " WHERE name = " + "'" + name + "'";
-        rs = getResultSet(SQL);
-        try {
-            while (rs.next()) {
-                array[i] = rs.getString(i + 1);
-                System.out.println("" + array[i]);
-                i++;
-            }
-        }
-        catch(SQLException q) {
-            q.printStackTrace();
-        }
-        return array;
-    }
-    public void loadUserData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Users;");
-        try {
-            while (resultSet.next()) {
-                sqlController.userId.add(resultSet.getInt("id"));
-                sqlController.userName.add(resultSet.getString("name"));
-                sqlController.checkedOutBooks.add(resultSet.getInt("numBooks"));
-                sqlController.limitOfBooks.add(resultSet.getInt("bookLim"));
-                sqlController.forirghschoolId.add(resultSet.getInt("schoolid"));
-                sqlController.userStatus.add(resultSet.getBoolean("teacherYN"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void loadBookData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Books;");
-        try {
-            while (resultSet.next()) {
-                sqlController.bookId.add(resultSet.getInt("id"));
-                sqlController.author.add(resultSet.getString("author"));
-                sqlController.bookName.add(resultSet.getString("name"));
-                sqlController.checkOut.add(resultSet.getBoolean("checkOut"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    private void loadSchoolData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Schools;");
-        try {
-            while (resultSet.next()) {
-                sqlController.schoolId.add(resultSet.getInt("schoolid"));
-                sqlController.schoolName.add(resultSet.getString("schoolname"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void loadTransactionData(){
-        ResultSet resultSet = getResultSet("SELECT * FROM users.Transactions;");
-        try {
-            while (resultSet.next()) {
-                sqlController.transactionId.add(resultSet.getInt("transactId"));
-                sqlController.forirghUserId.add(resultSet.getInt("userId"));
-                sqlController.forirghBookId.add(resultSet.getInt("bookId"));
-                sqlController.fine.add(resultSet.getInt("fine"));
-            }
-        }
-        catch (SQLException e) { e.printStackTrace(); }
-        try { resultSet.close(); }
-        catch (SQLException e) { e.printStackTrace(); }
-    }
-    public void loadData() {
-        loadUserData();
-        loadBookData();
-        loadSchoolData();
-        loadTransactionData();
-    }
     void refresh (UserFormView u) {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));
         System.out.println(id);
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
+        editUser(Table.USERS, "name", u.name.getValue(), id);
         commit();
     }
     int genID (Table table) {
@@ -326,4 +250,35 @@ public class SQL {
             e.printStackTrace();
         }
     }
+    public List<Object> getList(SQL.Table table, String coloum) {
+        List<Object> list = new ArrayList<>();
+        ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
+        String elements;
+        try {
+            while (resultSet.next()) {
+                elements = resultSet.getString(coloum);
+                list.add(elements);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public List<Integer> getIntegerList(SQL.Table table, String coloum) {
+        List<Integer> list = new ArrayList<>();
+        ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
+        String elements;
+        try {
+            while (resultSet.next()) {
+                elements = resultSet.getString(coloum);
+                list.add(Integer.valueOf(elements));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
+
