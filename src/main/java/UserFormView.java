@@ -4,8 +4,10 @@
 import Models.User;
 import com.vaadin.data.Binder;
 import com.vaadin.data.converter.StringToIntegerConverter;
+import com.vaadin.server.Page;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.Notification;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +60,8 @@ public class UserFormView extends UserForm {
                 }
                 else nSave.setVisible(true);
             }
+            new Notification("Save Success. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
         delete.addClickListener((Button.ClickListener) clickListener ->{
             sql.delete(id.getValue().replaceAll(",", ""), SQL.Table.USERS);
@@ -67,6 +71,8 @@ public class UserFormView extends UserForm {
             cancel.setVisible(false);
             delete.setVisible(false);
             add.setVisible(true);
+            new Notification("Delete Successful. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
             grid.deselectAll();
@@ -74,6 +80,8 @@ public class UserFormView extends UserForm {
             cancel.setVisible(false);
             delete.setVisible(false);
             add.setVisible(true);
+            new Notification("Operation Canceled. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
         add.addClickListener((Button.ClickListener) clickListener -> {
             id.setValue(String.valueOf(genID()));
@@ -87,6 +95,8 @@ public class UserFormView extends UserForm {
             limitOfBooks.setValue("10");
             idSchool.setValue("58");
             nSave.setVisible(false);
+            new Notification("User Added. ", "",
+                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
     }
 

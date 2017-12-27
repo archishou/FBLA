@@ -98,22 +98,6 @@ public class SQL {
         addUser(Integer.valueOf(user.getUserId()), user.getUserName(), user.getCheckedOutBooks(), user.getLimitOfBooks(),
                 user.getSchoolId(), user.getUserStatus(), Table.USERS);
     }
-    public void addSchool(int id, String name, Table t){
-        if (connection != null) {
-            try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?)");
-                preparedStatement.setInt(1, id);
-                preparedStatement.setString(2, name);
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                System.out.println("Prepared Statement Failed! Check output console");
-                e.printStackTrace();
-                return;
-            }
-        } else {
-            System.out.println("Failed to make connection!");
-        }
-    }
     public void addTransaction(int id, int userId, int bookId, double fines, Table t){
         if (connection != null) {
             try {
@@ -139,8 +123,7 @@ public class SQL {
                 System.out.println(SQL);
                 stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery(SQL);
-                if (isFilled(rs))
-                    e = true;
+                if (isFilled(rs)) e = true;
             } catch (SQLException l) {
                 l.printStackTrace();
             }
