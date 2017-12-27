@@ -12,12 +12,12 @@ public class Book {
         this.checkedOut = checkedOut;
     }
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return String.valueOf(id);
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = Integer.parseInt(id);
     }
 
     public String getCheckedOut() {

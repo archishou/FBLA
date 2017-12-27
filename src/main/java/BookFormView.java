@@ -24,7 +24,6 @@ public class BookFormView extends BookForm {
         userId.setVisible(false);
         binder.forField(this.id)
                 .withNullRepresentation ("")
-                .withConverter(new StringToIntegerConverter(0, "integers only"))
                 .bind(Book::getId, Book::setId);
         binder.forField(this.name)
                 .withNullRepresentation("")
