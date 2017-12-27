@@ -101,7 +101,7 @@ public class UserFormView extends UserForm {
     }
 
     protected void setSQL(SQL sql){
-        this.sql = sql;
+        UserFormView.sql = sql;
     }
     protected void setUser(User value) {
         binder.setBean(value);
