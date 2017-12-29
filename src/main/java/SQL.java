@@ -9,9 +9,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SQL {
     private Connection connection = null;
@@ -33,6 +38,12 @@ public class SQL {
         TRANSACTION("Transactions");
         public final String table;
         Table (String table) {this.table = table;}
+    }
+    public enum UserType {
+        TEACHER("t"),
+        STUDENT("s");
+        public final String userType;
+        UserType (String userType) {this.userType = userType;}
     }
     public void connect (Database d) {
         try { Class.forName("com.mysql.jdbc.Driver"); }
@@ -262,6 +273,42 @@ public class SQL {
             e.printStackTrace();
         }
         return list;
+    }
+    public String getDayLimit(UserType type) {
+        String returnS = "";
+        try {
+            returnS =  getResultSet("SELECT * from users.Settings WHERE idSettings = 1").getString(type.userType + "lim");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return returnS;
+    }
+    public String getDate() {
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+    public String daysInBetween(String dayStart, String dayEnd) {
+        SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yyyy");
+        String days = "";
+        try {
+            Date startDate = myFormat.parse(dayStart);
+            Date endDate = myFormat.parse(dayEnd);
+            long diff = endDate.getTime() - startDate.getTime();
+            days = String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return days;
+    }
+    public String addDays(int daysAddition) {
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Date currentDate = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(currentDate);
+        c.add(Calendar.DATE, daysAddition);
+        Date currentDatePlusOne = c.getTime();
+        return dateFormat.format(currentDatePlusOne);
     }
 }
 
