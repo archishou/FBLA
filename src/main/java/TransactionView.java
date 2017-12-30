@@ -30,6 +30,7 @@ public class TransactionView {
             bookId = Integer.parseInt(sql.getList(SQL.Table.TRANSACTION, "bookId").get(loopIteration).toString());
             bookName = BookFormView.getBookData(bookId)[2] + ": " + bookId;
             transactions.add(new Transaction(userName, bookName, daysIB));
+            if (Integer.valueOf(daysIB) <= 0) sql.editTransaction(SQL.Table.TRANSACTION, "fine", Math.abs(Integer.valueOf(daysIB)) * 10, bookId);
             loopIteration++;
         }
         grid.setItems(transactions);
