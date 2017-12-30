@@ -106,9 +106,6 @@ public class UserFormView extends UserForm {
     protected void setUser(User value) {
         binder.setBean(value);
     }
-    private int getID(String i){
-        return Integer.parseInt(i.replaceAll(",", ""));
-    }
     protected void setGrid(Grid<User> userGrid){this.grid=userGrid;}
     public static User getUserById(int id){
         int idOfUser = 0;

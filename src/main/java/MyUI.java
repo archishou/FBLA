@@ -2,6 +2,7 @@
 import javax.servlet.annotation.WebServlet;
 
 import Models.Book;
+import Models.Transaction;
 import Models.User;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -20,6 +21,7 @@ import com.vaadin.ui.*;
 public class MyUI extends UI {
     private UserFormView userEditor = new UserFormView();
     private BookFormView bookEditor = new BookFormView();
+    private TransactionView transactionEditor = new TransactionView();
     private SignInView sign = new SignInView();
     private Home home = new Home();
     private SQL sql = new SQL();
@@ -29,6 +31,7 @@ public class MyUI extends UI {
     private HorizontalSplitPanel bookSplitPanel = new HorizontalSplitPanel();
     private Grid<User> userGrid = new Grid<>(User.class);
     private Grid<Book> bookGrid = new Grid<>(Book.class);
+    private Grid<Transaction> transactionGrid = new Grid<>(Transaction.class);
     private boolean currentState = false;
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -43,11 +46,14 @@ public class MyUI extends UI {
                 bookEditor.refresh();
                 createUserPanel();
                 createBookPanel();
+                createTransactionPanel();
                 createSplitPanels();
                 home.setCaption("Home");
+                transactionGrid.setCaption("Transactions");
                 tabSheet.addComponent(home);
                 tabSheet.addComponent(usersSplitPanel);
                 tabSheet.addComponent(bookSplitPanel);
+                tabSheet.addComponent(transactionGrid);
                 setContent(tabSheet);
             }
             else {
@@ -69,9 +75,11 @@ public class MyUI extends UI {
         userEditor.cancel.setVisible(currentState);
         userEditor.setGrid(userGrid);
         bookEditor.setGrid(bookGrid);
-        bookEditor.setSql(sql);
+        transactionEditor.setGrid(transactionGrid);
         bookEditor.setUserFormView(userEditor);
         sql.connect(SQL.Database.USERS);
+        bookEditor.setSql(sql);
+        transactionEditor.setSql(sql);
         userEditor.setSQL(sql);
         setContent(sign);
     }
@@ -92,6 +100,13 @@ public class MyUI extends UI {
             userEditor.add.setVisible(false);
             userEditor.name.setReadOnly(false);
         });
+    }
+    private void createTransactionPanel() {
+        transactionGrid.setSizeFull();
+        transactionGrid.removeAllColumns();
+        transactionGrid.addColumn(Transaction::getUserId).setCaption("USER ID");
+        transactionGrid.addColumn(Transaction::getBookId).setCaption("BOOK ID");
+        transactionGrid.addColumn(Transaction::getDtr).setCaption("DAYS TILL RETURN");
     }
     private void createBookPanel () {
         bookEditor.setSizeFull();
