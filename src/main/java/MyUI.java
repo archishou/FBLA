@@ -44,6 +44,7 @@ public class MyUI extends UI {
                 sign.setVisible(false);
                 userEditor.refresh();
                 bookEditor.refresh();
+                transactionEditor.refresh();
                 createUserPanel();
                 createBookPanel();
                 createTransactionPanel();

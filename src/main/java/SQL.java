@@ -3,26 +3,19 @@
 
 import Models.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class SQL {
     private Connection connection = null;
     private Statement stmt = null;
 
-    private Date utilDate = new Date();
+    private java.util.Date utilDate = new java.util.Date();
     public SQL () {
 
     }
@@ -40,8 +33,8 @@ public class SQL {
         Table (String table) {this.table = table;}
     }
     public enum UserType {
-        TEACHER(2),
-        STUDENT(3);
+        TEACHER(1),
+        STUDENT(2);
         public final int userType;
         UserType (int userType) {this.userType = userType;}
     }
@@ -156,6 +149,9 @@ public class SQL {
     }
     public void delete(String key, Table t){
         runStatement("delete from " + t.table + " where id = " + key);
+    }
+    public void delete(String key, String column, Table t){
+        runStatement("delete from " + t.table + " where " + column + " = " + key);
     }
     public void editUser(Table t, String col, String edit, int id){
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
@@ -276,29 +272,47 @@ public class SQL {
         }
         return list;
     }
-    public String getDayLimit(UserType type) {
+    public String getDayLimit(UserType userType) {
         String returnS = "";
-
+        ResultSet rs = getResultSet("SELECT * from users.Settings WHERE idSettings = 1;");
+        ResultSetMetaData rsmd = null;
         try {
-            returnS =  getResultSet("SELECT * from users.Settings WHERE idSettings = 1;").getString(type.userType);
-            System.out.println(returnS + ": thats it");
+            rsmd = rs.getMetaData();
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("yeet");
         }
+        int columnsNumber = 0;
+        try {
+            columnsNumber = rsmd.getColumnCount();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            while (rs.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    String columnValue = rs.getString(i);
+                    returnS = returnS + (columnValue + " " + rsmd.getColumnName(i));
+                }
+                returnS = returnS + "";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        returnS = returnS.replaceAll("[^0-9]+", " ");
+        returnS = Arrays.asList(returnS.trim().split(" ")).get(userType.userType);
         return returnS;
     }
     public String getDate() {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Date date = new Date();
+        java.util.Date date = new java.util.Date();
         return dateFormat.format(date);
     }
     public String daysInBetween(String dayStart, String dayEnd) {
         SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yyyy");
         String days = "";
         try {
-            Date startDate = myFormat.parse(dayStart);
-            Date endDate = myFormat.parse(dayEnd);
+            java.util.Date startDate = myFormat.parse(dayStart);
+            java.util.Date endDate = myFormat.parse(dayEnd);
             long diff = endDate.getTime() - startDate.getTime();
             days = String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
         } catch (ParseException e) {
@@ -308,11 +322,11 @@ public class SQL {
     }
     public String addDays(int daysAddition) {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Date currentDate = new Date();
+        java.util.Date currentDate = new java.util.Date();
         Calendar c = Calendar.getInstance();
         c.setTime(currentDate);
         c.add(Calendar.DATE, daysAddition);
-        Date currentDatePlusOne = c.getTime();
+        java.util.Date currentDatePlusOne = c.getTime();
         return dateFormat.format(currentDatePlusOne);
     }
 }

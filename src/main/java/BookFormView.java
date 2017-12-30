@@ -1,14 +1,10 @@
 import Models.Book;
-import Models.User;
 import com.vaadin.data.Binder;
-import com.vaadin.data.converter.StringToIntegerConverter;
 import com.vaadin.server.Page;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Notification;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +14,7 @@ public class BookFormView extends BookForm {
     private boolean addClicked = false;
     public UserFormView userFormView;
     public TransactionView transactionView;
-    private SQL sql;
+    private static SQL sql;
     private SQL.UserType userType;
     private Grid<Book> grid;
     public BookFormView () {
@@ -126,6 +122,8 @@ public class BookFormView extends BookForm {
             }
             else {
                 sql.edit(SQL.Table.BOOK, "checkOut", false, Integer.parseInt(id.getValue().replaceAll(",","")));
+                sql.delete(this.id.getValue(), "bookId", SQL.Table.TRANSACTION);
+                transactionView.refresh();
                 refresh();
                 Notification notification = new Notification("Returned to the library", "",
                         Notification.Type.WARNING_MESSAGE, true);
@@ -153,7 +151,7 @@ public class BookFormView extends BookForm {
     public void setSql(SQL sql) {
         this.sql = sql;
     }
-    public String[] getUserData(int id) {
+    public static String[] getUserData(int id) {
         String[] returnString = new String[]{"","","","","",""};
         returnString[0] = String.valueOf(id);
         int index = 0;
@@ -164,6 +162,23 @@ public class BookFormView extends BookForm {
                 returnString[3] = String.valueOf(sql.getList(SQL.Table.USERS, "bookLim").get(index));
                 returnString[4] = String.valueOf(sql.getList(SQL.Table.USERS, "schoolid").get(index));
                 returnString[5] = String.valueOf(sql.getList(SQL.Table.USERS, "teacherYN").get(index));
+            }
+            index++;
+        }
+        for (String s: returnString) {
+            System.out.print(s);
+        }
+        return returnString;
+    }
+    public static String[] getBookData(int id) {
+        String[] returnString = new String[]{"","","",""};
+        returnString[0] = String.valueOf(id);
+        int index = 0;
+        for (Integer integer: sql.getIntegerList(SQL.Table.BOOK, "id")) {
+            if (integer == id){
+                returnString[1] = String.valueOf(sql.getList(SQL.Table.BOOK, "author").get(index));
+                returnString[2] = String.valueOf(sql.getList(SQL.Table.BOOK, "name").get(index));
+                returnString[3] = String.valueOf(sql.getList(SQL.Table.BOOK, "checkOut").get(index));
             }
             index++;
         }

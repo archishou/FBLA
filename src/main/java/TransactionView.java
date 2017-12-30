@@ -20,11 +20,16 @@ public class TransactionView {
     public void refresh () {
         List<Transaction> transactions = new ArrayList<>();
         int loopIteration = 0;
+        String daysIB, userName, bookName;
+        int userId, bookId;
         while (loopIteration < sql.getList(SQL.Table.TRANSACTION, "id").size()) {
-            transactions.add(new Transaction(
-                    sql.getList(SQL.Table.TRANSACTION, "userId").get(loopIteration).toString(),
-                    sql.getList(SQL.Table.TRANSACTION, "bookId").get(loopIteration).toString(),
-                    sql.getList(SQL.Table.TRANSACTION, "rDate").get(loopIteration).toString()));
+            daysIB = sql.daysInBetween(sql.getDate(),
+                    sql.getList(SQL.Table.TRANSACTION, "rDate").get(loopIteration).toString());
+            userId = Integer.parseInt(sql.getList(SQL.Table.TRANSACTION, "userId").get(loopIteration).toString());
+            userName = BookFormView.getUserData(userId)[1] + ": " + userId;
+            bookId = Integer.parseInt(sql.getList(SQL.Table.TRANSACTION, "bookId").get(loopIteration).toString());
+            bookName = BookFormView.getBookData(bookId)[2] + ": " + bookId;
+            transactions.add(new Transaction(userName, bookName, daysIB));
             loopIteration++;
         }
         grid.setItems(transactions);
