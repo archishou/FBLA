@@ -77,6 +77,7 @@ public class MyUI extends UI {
         bookEditor.setGrid(bookGrid);
         transactionEditor.setGrid(transactionGrid);
         bookEditor.setUserFormView(userEditor);
+        bookEditor.setTransactionView(transactionEditor);
         sql.connect(SQL.Database.USERS);
         bookEditor.setSql(sql);
         transactionEditor.setSql(sql);

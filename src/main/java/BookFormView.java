@@ -17,7 +17,9 @@ public class BookFormView extends BookForm {
     private boolean checkOutClicked = false;
     private boolean addClicked = false;
     public UserFormView userFormView;
+    public TransactionView transactionView;
     private SQL sql;
+    private SQL.UserType userType;
     private Grid<Book> grid;
     public BookFormView () {
         cancel.setComponentError(null);
@@ -42,7 +44,12 @@ public class BookFormView extends BookForm {
                 System.out.println(String.valueOf(Integer.parseInt(getUserData(id)[2])));
                 sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
                 sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
+                if (UserFormView.getUserById(id).getUserStatus().toLowerCase().contains("u")) userType = SQL.UserType.STUDENT;
+                else userType = SQL.UserType.TEACHER;
+                    sql.addTransaction(sql.genID(SQL.Table.TRANSACTION) +2, id, Integer.parseInt(this.id.getValue()),
+                            sql.getDate(), sql.addDays(Integer.parseInt(sql.getDayLimit(userType))), 0, SQL.Table.TRANSACTION);
                 sql.commit();
+                transactionView.refresh();
                 refresh();
                 userFormView.refresh();
                 userId.setVisible(false);
@@ -164,6 +171,10 @@ public class BookFormView extends BookForm {
             System.out.print(s);
         }
         return returnString;
+    }
+
+    public void setTransactionView(TransactionView transactionView) {
+        this.transactionView = transactionView;
     }
 
     public void setUserFormView(UserFormView userFormView) {

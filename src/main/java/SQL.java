@@ -40,10 +40,10 @@ public class SQL {
         Table (String table) {this.table = table;}
     }
     public enum UserType {
-        TEACHER("t"),
-        STUDENT("s");
-        public final String userType;
-        UserType (String userType) {this.userType = userType;}
+        TEACHER(2),
+        STUDENT(3);
+        public final int userType;
+        UserType (int userType) {this.userType = userType;}
     }
     public void connect (Database d) {
         try { Class.forName("com.mysql.jdbc.Driver"); }
@@ -109,14 +109,16 @@ public class SQL {
         addUser(Integer.valueOf(user.getUserId()), user.getUserName(), user.getCheckedOutBooks(), user.getLimitOfBooks(),
                 user.getSchoolId(), user.getUserStatus(), Table.USERS);
     }
-    public void addTransaction(int id, int userId, int bookId, double fines, Table t){
+    public void addTransaction(int id, int userId, int bookId, String trnDate, String rDate, double fine, Table t){
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
                 preparedStatement.setInt(1, id);
                 preparedStatement.setInt(2, userId);
                 preparedStatement.setInt(3, bookId);
-                preparedStatement.setDouble(4, fines);
+                preparedStatement.setString(4, trnDate);
+                preparedStatement.setString(5, rDate);
+                preparedStatement.setDouble(6, fine);
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 System.out.println("Invalid User or Book ID");
@@ -276,10 +278,13 @@ public class SQL {
     }
     public String getDayLimit(UserType type) {
         String returnS = "";
+
         try {
-            returnS =  getResultSet("SELECT * from users.Settings WHERE idSettings = 1").getString(type.userType + "lim");
+            returnS =  getResultSet("SELECT * from users.Settings WHERE idSettings = 1;").getString(type.userType);
+            System.out.println(returnS + ": thats it");
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("yeet");
         }
         return returnS;
     }
