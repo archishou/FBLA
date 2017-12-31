@@ -270,6 +270,19 @@ public class SQL {
         }
         return strings;
     }
+    public double getTotalFine(int id) {
+        double total = 0;
+        ResultSet rs = getResultSet("SELECT * FROM users.Transactions");
+        resetResultSet(rs);
+        try {
+            while (rs.next())
+                if (rs.getInt(2) == id) total+= rs.getInt(6);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
     public List<Integer> getIntegerList(SQL.Table table, String coloum) {
         List<Integer> list = new ArrayList<>();
         ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);

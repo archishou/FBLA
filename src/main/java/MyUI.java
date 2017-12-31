@@ -49,6 +49,7 @@ public class MyUI extends UI {
                 bookEditor.refresh();
                 transactionEditor.refresh();
                 detailFineView.refresh(3769891);
+                fineView.refresh();
                 createUserPanel();
                 createBookPanel();
                 createTransactionPanel();
@@ -61,8 +62,7 @@ public class MyUI extends UI {
                 tabSheet.addComponent(usersSplitPanel);
                 tabSheet.addComponent(bookSplitPanel);
                 tabSheet.addComponent(transactionGrid);
-                detailFineGrid.setCaption("Fines");
-                tabSheet.addComponent(detailFineGrid);
+                tabSheet.addComponent(finesSplitPanel);
                 setContent(tabSheet);
             }
             else {
@@ -78,6 +78,10 @@ public class MyUI extends UI {
         usersSplitPanel.setFirstComponent(userGrid);
         usersSplitPanel.setSecondComponent(userEditor);
         usersSplitPanel.setCaption("User Data");
+        finesSplitPanel.setSizeFull();
+        finesSplitPanel.setFirstComponent(fineGrid);
+        finesSplitPanel.setSecondComponent(detailFineGrid);
+        finesSplitPanel.setCaption("Fines");
     }
     private void initializeSQL() {
         userEditor.delete.setVisible(currentState);
