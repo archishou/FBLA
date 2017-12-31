@@ -10,7 +10,6 @@ import java.util.List;
 public class FineView {
     private Grid<Fine> fineGrid = new Grid<>(Fine.class);
     private HorizontalSplitPanel panel;
-    private Grid<DetailFine> detailFineGrid = new Grid<>(DetailFine.class);
     private SQL sql;
 
     public void setSql(SQL sql) {

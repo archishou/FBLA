@@ -263,6 +263,17 @@ public class SQL {
         }
         return list;
     }
+    public List<Object> getList(ResultSet rs, int column) {
+        List<Object> strings = new ArrayList<>();
+        try {
+            while (rs.next()) {
+                strings.add(String.valueOf(rs.getObject(column)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return strings;
+    }
     public List<Integer> getIntegerList(SQL.Table table, String coloum) {
         List<Integer> list = new ArrayList<>();
         ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
