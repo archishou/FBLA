@@ -146,6 +146,4 @@ public class UserFormView extends UserForm {
         grid.setItems(users);
         users = null;
     }
-
-
 }
