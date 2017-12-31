@@ -1,9 +1,7 @@
 
 import javax.servlet.annotation.WebServlet;
 
-import Models.Book;
-import Models.Transaction;
-import Models.User;
+import Models.*;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -21,6 +19,9 @@ import com.vaadin.ui.*;
 public class MyUI extends UI {
     private UserFormView userEditor = new UserFormView();
     private BookFormView bookEditor = new BookFormView();
+    private DetailFineView detailFineView = new DetailFineView();
+    private FineView fineView = new FineView();
+    private HorizontalSplitPanel finesSplitPanel = new HorizontalSplitPanel();
     private TransactionView transactionEditor = new TransactionView();
     private SignInView sign = new SignInView();
     private Home home = new Home();
@@ -31,7 +32,9 @@ public class MyUI extends UI {
     private HorizontalSplitPanel bookSplitPanel = new HorizontalSplitPanel();
     private Grid<User> userGrid = new Grid<>(User.class);
     private Grid<Book> bookGrid = new Grid<>(Book.class);
+    private Grid<Fine> fineGrid = new Grid<>(Fine.class);
     private Grid<Transaction> transactionGrid = new Grid<>(Transaction.class);
+    private Grid<DetailFine> detailFineGrid = new Grid<>(DetailFine.class);
     private boolean currentState = false;
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -45,16 +48,21 @@ public class MyUI extends UI {
                 userEditor.refresh();
                 bookEditor.refresh();
                 transactionEditor.refresh();
+                detailFineView.refresh(3769891);
                 createUserPanel();
                 createBookPanel();
                 createTransactionPanel();
                 createSplitPanels();
+                createFinePanel();
+                createDetailFinePanel();
                 home.setCaption("Home");
                 transactionGrid.setCaption("Transactions");
                 tabSheet.addComponent(home);
                 tabSheet.addComponent(usersSplitPanel);
                 tabSheet.addComponent(bookSplitPanel);
                 tabSheet.addComponent(transactionGrid);
+                detailFineGrid.setCaption("Fines");
+                tabSheet.addComponent(detailFineGrid);
                 setContent(tabSheet);
             }
             else {
@@ -74,6 +82,7 @@ public class MyUI extends UI {
     private void initializeSQL() {
         userEditor.delete.setVisible(currentState);
         userEditor.cancel.setVisible(currentState);
+        fineView.setFineGrid(fineGrid);
         userEditor.setGrid(userGrid);
         bookEditor.setGrid(bookGrid);
         transactionEditor.setGrid(transactionGrid);
@@ -83,6 +92,9 @@ public class MyUI extends UI {
         bookEditor.setSql(sql);
         transactionEditor.setSql(sql);
         userEditor.setSQL(sql);
+        fineView.setView(detailFineView);
+        fineView.setSql(sql);
+        detailFineView.setDetailFineGrid(detailFineGrid);
         setContent(sign);
     }
     private void createUserPanel () {
@@ -110,6 +122,19 @@ public class MyUI extends UI {
         transactionGrid.addColumn(Transaction::getBookId).setCaption("BOOK ID");
         transactionGrid.addColumn(Transaction::getDtr).setCaption("DAYS TILL RETURN");
     }
+    private void createFinePanel() {
+        fineGrid.setSizeFull();
+        fineGrid.removeAllColumns();
+        fineGrid.addColumn(Fine::getUserId).setCaption("User");
+        fineGrid.addColumn(Fine::getFine).setCaption("Current Fine");
+    }
+    private void createDetailFinePanel() {
+        detailFineGrid.setSizeFull();
+        detailFineGrid.removeAllColumns();
+        detailFineGrid.addColumn(DetailFine::getBookNames).setCaption("Book Name");
+        detailFineGrid.addColumn(DetailFine::getDaysLate).setCaption("Days Late");
+        detailFineGrid.addColumn(DetailFine::getFines).setCaption("Fines");
+    }
     private void createBookPanel () {
         bookEditor.setSizeFull();
         bookGrid.setSizeFull();
@@ -126,6 +151,7 @@ public class MyUI extends UI {
             bookEditor.checkedOut.setVisible(true);
         });
     }
+
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {}

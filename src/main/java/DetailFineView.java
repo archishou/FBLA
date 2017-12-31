@@ -6,29 +6,30 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailFineView {
-    private Grid<DetailFine> detailFineGrid = new Grid<>(DetailFine.class);
+public class DetailFineView extends Grid {
+    private Grid<DetailFine> detailFineGrid;
     private SQL sql;
     public DetailFineView () {
-        detailFineGrid.removeAllColumns();
-        detailFineGrid.setSizeFull();
-        detailFineGrid.addColumn(DetailFine::getBookNames).setCaption("Book Name");
-        detailFineGrid.addColumn(DetailFine::getDaysLate).setCaption("Days Late");
-        detailFineGrid.addColumn(DetailFine::getFines).setCaption("Fine per Book");
+
     }
 
     public void setSql(SQL sql) {
         this.sql = sql;
     }
 
+    public void setDetailFineGrid(Grid<DetailFine> detailFineGrid) {
+        this.detailFineGrid = detailFineGrid;
+    }
+
     public void refresh(int id) {
-        ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = 3769891;" + id);
-        List<Object> bookIds = sql.getList(rs, 2);
-        List<Object> transactionDate = sql.getList(rs, 3);
-        List<Object> returnDate = sql.getList(rs, 4);
-        List<Object> fines = sql.getList(rs, 5);
+        ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id);
+        List<Object> bookIds = sql.getList(rs, 3);
+        List<Object> transactionDate = sql.getList(rs, 4);
+        List<Object> returnDate = sql.getList(rs, 5);
+        List<Object> fines = sql.getList(rs, 6);
         List<DetailFine> detailFines = new ArrayList<>();
-        int loopIteration = 1;
+        int loopIteration = 0;
+        sql.resetResultSet(rs);
         try {
             while (rs.next()) {
                 detailFines.add(new DetailFine(
@@ -37,7 +38,8 @@ public class DetailFineView {
                         Integer.valueOf(sql.daysInBetween(String.valueOf(transactionDate.get(loopIteration)), String.valueOf(returnDate.get(loopIteration))))));
                 loopIteration++;
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
         detailFineGrid.setItems(detailFines);

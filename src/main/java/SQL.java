@@ -82,11 +82,9 @@ public class SQL {
                 preparedStatement.setInt(5,schoolId);
                 if (status.toLowerCase().contains("s")) {
                     preparedStatement.setBoolean(6, false);
-                    System.out.println("Set False");
                 }
                 else {
                     preparedStatement.setBoolean(6, true);
-                    System.out.println("Set True");
                 }
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
@@ -162,13 +160,11 @@ public class SQL {
     }
     public void edit(Table t, String col, Object edit, int id) {
         String sql = "UPDATE " + t.table + " SET "+  col + "= "  + edit.toString()  + " WHERE id="+ String.valueOf(id) + ";";
-        System.out.println(sql);
         runStatement(sql);
         commit();
     }
     public void editTransaction(Table t, String col, Object edit, int id) {
         String sql = "UPDATE " + t.table + " SET "+  col + "= "  + edit.toString()  + " WHERE bookId="+ String.valueOf(id) + ";";
-        System.out.println(sql);
         runStatement(sql);
         commit();
     }
@@ -223,7 +219,6 @@ public class SQL {
     }
     void refresh (UserFormView u) {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));
-        System.out.println(id);
         editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
         editUser(Table.USERS, "name", u.name.getValue(), id);
         commit();
@@ -265,6 +260,7 @@ public class SQL {
     }
     public List<Object> getList(ResultSet rs, int column) {
         List<Object> strings = new ArrayList<>();
+        resetResultSet(rs);
         try {
             while (rs.next()) {
                 strings.add(String.valueOf(rs.getObject(column)));
@@ -318,6 +314,13 @@ public class SQL {
         returnS = returnS.replaceAll("[^0-9]+", " ");
         returnS = Arrays.asList(returnS.trim().split(" ")).get(userType.userType);
         return returnS;
+    }
+    public void resetResultSet(ResultSet rs) {
+        try {
+            rs.beforeFirst();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public String getDate() {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");

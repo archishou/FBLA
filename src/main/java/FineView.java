@@ -1,19 +1,30 @@
-import Models.DetailFine;
 import Models.Fine;
-import Models.Transaction;
 import com.vaadin.ui.Grid;
-import com.vaadin.ui.HorizontalSplitPanel;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class FineView {
-    private Grid<Fine> fineGrid = new Grid<>(Fine.class);
-    private HorizontalSplitPanel panel;
+public class FineView extends Grid {
+    private Grid<Fine> fineGrid;
+    private DetailFineView view;
     private SQL sql;
 
     public void setSql(SQL sql) {
         this.sql = sql;
+        view.setSql(sql);
+        fineGrid.addSelectionListener(selectionEvent -> {
+            view.refresh(Integer.valueOf(String.valueOf(selectionEvent.getAllSelectedItems().toArray()[0])));
+        });
+    }
+
+    public void setFineGrid(Grid<Fine> fineGrid) {
+        this.fineGrid = fineGrid;
+    }
+
+    public void setView(DetailFineView view) {
+        this.view = view;
+    }
+
+    public void refresh() {
+        sql.getResultSet("SELECT * FROM users.Transactions WHERE fine > 0");
     }
 
 
