@@ -14,6 +14,7 @@ public class BookFormView extends BookForm {
     private boolean addClicked = false;
     public UserFormView userFormView;
     public TransactionView transactionView;
+    private FineView fineView;
     private static SQL sql;
     private SQL.UserType userType;
     private Grid<Book> grid;
@@ -46,6 +47,7 @@ public class BookFormView extends BookForm {
                             sql.getDate(), sql.addDays(Integer.parseInt(sql.getDayLimit(userType))), 0, SQL.Table.TRANSACTION);
                 sql.commit();
                 transactionView.refresh();
+                fineView.refresh();
                 refresh();
                 userFormView.refresh();
                 userId.setVisible(false);
@@ -190,6 +192,10 @@ public class BookFormView extends BookForm {
 
     public void setTransactionView(TransactionView transactionView) {
         this.transactionView = transactionView;
+    }
+
+    public void setFineView(FineView fineView) {
+        this.fineView = fineView;
     }
 
     public void setUserFormView(UserFormView userFormView) {
