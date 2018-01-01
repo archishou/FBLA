@@ -35,7 +35,10 @@ public class DetailFineView extends Grid {
                 detailFines.add(new DetailFine(
                         BookFormView.getBookData(Integer.parseInt(String.valueOf(bookIds.get(loopIteration))))[0],
                         Double.valueOf(String.valueOf(fines.get(loopIteration))),
-                        Integer.valueOf(sql.daysInBetween(String.valueOf(transactionDate.get(loopIteration)), String.valueOf(returnDate.get(loopIteration))))));
+                        Integer.parseInt(sql.daysInBetween(sql.getDate(),
+                                sql.getList(SQL.Table.TRANSACTION, "rDate").get(loopIteration).toString()))));
+                System.out.println(Integer.parseInt(sql.daysInBetween(sql.getDate(),
+                        sql.getList(SQL.Table.TRANSACTION, "rDate").get(loopIteration).toString())));
                 loopIteration++;
             }
         }

@@ -86,7 +86,7 @@ public class MyUI extends UI {
     private void initializeSQL() {
         userEditor.delete.setVisible(currentState);
         userEditor.cancel.setVisible(currentState);
-        fineView.setFineGrid(fineGrid);
+        fineView.setGrid(fineGrid);
         userEditor.setGrid(userGrid);
         bookEditor.setGrid(bookGrid);
         transactionEditor.setGrid(transactionGrid);
@@ -131,6 +131,10 @@ public class MyUI extends UI {
         fineGrid.removeAllColumns();
         fineGrid.addColumn(Fine::getUserId).setCaption("User");
         fineGrid.addColumn(Fine::getFine).setCaption("Current Fine");
+        fineGrid.asSingleSelect();
+        fineGrid.addItemClickListener(selectionEvent -> {
+            detailFineView.refresh(Integer.parseInt(selectionEvent.getItem().getUserId()));
+        });
     }
     private void createDetailFinePanel() {
         detailFineGrid.setSizeFull();
