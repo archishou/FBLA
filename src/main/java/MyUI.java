@@ -48,7 +48,6 @@ public class MyUI extends UI {
                 userEditor.refresh();
                 bookEditor.refresh();
                 transactionEditor.refresh();
-                detailFineView.refresh(3769891);
                 fineView.refresh();
                 createUserPanel();
                 createBookPanel();

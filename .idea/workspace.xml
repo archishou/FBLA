@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DetailFineView.class" afterPath="$PROJECT_DIR$/target/classes/DetailFineView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/FineView.class" afterPath="$PROJECT_DIR$/target/classes/FineView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyUI.class" afterPath="$PROJECT_DIR$/target/classes/MyUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SQL.class" afterPath="$PROJECT_DIR$/target/classes/SQL.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DetailFineView.java" afterPath="$PROJECT_DIR$/src/main/java/DetailFineView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/FineView.java" afterPath="$PROJECT_DIR$/src/main/java/FineView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,13 +72,13 @@
       <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="135" column="41" lean-forward="false" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+            <state relative-caret-position="208">
+              <caret line="49" column="37" lean-forward="true" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
               <folding>
-                <element signature="method#init#0;class#MyUI#0" expanded="true" />
                 <element signature="method#createSplitPanels#0;class#MyUI#0" expanded="true" />
                 <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
                 <element signature="method#createTransactionPanel#0;class#MyUI#0" expanded="true" />
+                <element signature="method#createFinePanel#0;class#MyUI#0" expanded="true" />
                 <element signature="method#createDetailFinePanel#0;class#MyUI#0" expanded="true" />
                 <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
               </folding>
@@ -93,12 +89,12 @@
       <file leaf-file-name="FineView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="294">
+              <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#FineView#0;class#FineView#0" expanded="true" />
                 <element signature="method#setSql#0;class#FineView#0" expanded="true" />
-                <element signature="method#refresh#0;class#FineView#0" expanded="true" />
                 <marker date="1514823253000" expanded="true" signature="860:925" ph="SELECT * FRO... Transactions" />
               </folding>
             </state>
@@ -120,13 +116,12 @@
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+            <state relative-caret-position="-251">
+              <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
                 <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-                <element signature="method#connect#0;class#SQL#0" expanded="true" />
                 <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
                 <element signature="method#delete#1;class#SQL#0" expanded="true" />
                 <element signature="method#edit#0;class#SQL#0" expanded="true" />
@@ -134,6 +129,7 @@
                 <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
                 <element signature="method#refresh#0;class#SQL#0" expanded="true" />
                 <element signature="method#getList#0;class#SQL#0" expanded="true" />
+                <element signature="method#getList#1;class#SQL#0" expanded="true" />
                 <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
                 <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
                 <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
@@ -165,7 +161,7 @@
       <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
+            <state relative-caret-position="-1112">
               <caret line="153" column="27" lean-forward="false" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -182,13 +178,26 @@
       <file leaf-file-name="DetailFineView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+            <state relative-caret-position="429">
+              <caret line="40" column="85" lean-forward="false" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DetailFineView#0;class#DetailFineView#0" expanded="true" />
-                <marker date="1514824102000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
-                <marker date="1514824102000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
+                <marker date="1514828891000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
+                <marker date="1514828891000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserFormView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="130" column="16" lean-forward="false" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+              <folding>
+                <element signature="method#refresh#0;class#UserFormView#0" expanded="true" />
+                <marker date="1514613283000" expanded="true" signature="6540:6547" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -197,10 +206,11 @@
       <file leaf-file-name="TransactionView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/TransactionView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="26" column="55" lean-forward="false" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+            <state relative-caret-position="225">
+              <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#refresh#0;class#TransactionView#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -735,12 +745,12 @@
       <workItem from="1514411012995" duration="95000" />
       <workItem from="1514579774791" duration="17203000" />
       <workItem from="1514698504966" duration="1953000" />
-      <workItem from="1514733818731" duration="6394000" />
+      <workItem from="1514733818731" duration="7108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140984000" />
+    <option name="totallyTimeSpent" value="141698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,10 +882,10 @@
         <state relative-caret-position="750">
           <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
           <folding>
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
             <element signature="method#createSplitPanels#0;class#MyUI#0" expanded="true" />
             <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
             <element signature="method#createTransactionPanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createFinePanel#0;class#MyUI#0" expanded="true" />
             <element signature="method#createDetailFinePanel#0;class#MyUI#0" expanded="true" />
             <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
           </folding>
@@ -890,7 +900,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
             <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-            <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
             <element signature="method#delete#1;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
@@ -898,6 +907,7 @@
             <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
             <element signature="method#refresh#0;class#SQL#0" expanded="true" />
             <element signature="method#getList#0;class#SQL#0" expanded="true" />
+            <element signature="method#getList#1;class#SQL#0" expanded="true" />
             <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
             <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
@@ -920,10 +930,10 @@
         <state relative-caret-position="240">
           <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding>
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
             <element signature="method#createSplitPanels#0;class#MyUI#0" expanded="true" />
             <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
             <element signature="method#createTransactionPanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createFinePanel#0;class#MyUI#0" expanded="true" />
             <element signature="method#createDetailFinePanel#0;class#MyUI#0" expanded="true" />
             <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
           </folding>
@@ -964,7 +974,7 @@
         <state relative-caret-position="75">
           <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
           <folding>
-            <element signature="method#refresh#0;class#UserFormView#0" expanded="false" />
+            <element signature="method#refresh#0;class#UserFormView#0" expanded="true" />
             <marker date="1514613283000" expanded="true" signature="6540:6547" ph="{...}" />
           </folding>
         </state>
@@ -994,7 +1004,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
             <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-            <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
             <element signature="method#delete#1;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
@@ -1002,6 +1011,7 @@
             <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
             <element signature="method#refresh#0;class#SQL#0" expanded="true" />
             <element signature="method#getList#0;class#SQL#0" expanded="true" />
+            <element signature="method#getList#1;class#SQL#0" expanded="true" />
             <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
             <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
@@ -1067,7 +1077,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="method#refresh#0;class#UserFormView#0" expanded="false" />
+            <element signature="method#refresh#0;class#UserFormView#0" expanded="true" />
             <marker date="1514613283000" expanded="true" signature="6540:6547" ph="{...}" />
           </folding>
         </state>
@@ -1194,17 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="method#refresh#0;class#UserFormView#0" expanded="false" />
-            <marker date="1514613283000" expanded="true" signature="6540:6547" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/8.1.5/vaadin-server-8.1.5.jar!/com/vaadin/event/selection/SelectionEvent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1243,21 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="153" column="27" lean-forward="false" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BookFormView#0;class#BookFormView#0" expanded="true" />
-            <element signature="method#getUserData#0;class#BookFormView#0" expanded="true" />
-            <element signature="method#getBookData#0;class#BookFormView#0" expanded="true" />
-            <element signature="method#refresh#0;class#BookFormView#0" expanded="true" />
-            <marker date="1514612275000" expanded="true" signature="9844:9850" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/8.1.5/vaadin-server-8.1.5.jar!/com/vaadin/ui/Grid.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -1279,15 +1263,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Fine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="method#Fine#0;class#Fine#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="43" column="22" lean-forward="false" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FineView#0;class#FineView#0" expanded="true" />
+            <element signature="method#setSql#0;class#FineView#0" expanded="true" />
+            <marker date="1514823253000" expanded="true" signature="860:925" ph="SELECT * FRO... Transactions" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+        <state relative-caret-position="-251">
+          <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
             <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-            <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
             <element signature="method#delete#1;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
@@ -1295,6 +1301,7 @@
             <element signature="method#getResultSet#0;class#SQL#0" expanded="true" />
             <element signature="method#refresh#0;class#SQL#0" expanded="true" />
             <element signature="method#getList#0;class#SQL#0" expanded="true" />
+            <element signature="method#getList#1;class#SQL#0" expanded="true" />
             <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
             <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
@@ -1312,40 +1319,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Fine.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="method#Fine#0;class#Fine#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="-1112">
+          <caret line="153" column="27" lean-forward="false" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setSql#0;class#FineView#0" expanded="true" />
-            <element signature="method#refresh#0;class#FineView#0" expanded="true" />
-            <marker date="1514823253000" expanded="true" signature="860:925" ph="SELECT * FRO... Transactions" />
+            <element signature="method#BookFormView#0;class#BookFormView#0" expanded="true" />
+            <element signature="method#getUserData#0;class#BookFormView#0" expanded="true" />
+            <element signature="method#getBookData#0;class#BookFormView#0" expanded="true" />
+            <element signature="method#refresh#0;class#BookFormView#0" expanded="true" />
+            <marker date="1514612275000" expanded="true" signature="9844:9850" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserFormView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="135" column="41" lean-forward="false" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+        <state relative-caret-position="247">
+          <caret line="130" column="16" lean-forward="false" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
           <folding>
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
-            <element signature="method#createSplitPanels#0;class#MyUI#0" expanded="true" />
-            <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
-            <element signature="method#createTransactionPanel#0;class#MyUI#0" expanded="true" />
-            <element signature="method#createDetailFinePanel#0;class#MyUI#0" expanded="true" />
-            <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#refresh#0;class#UserFormView#0" expanded="true" />
+            <marker date="1514613283000" expanded="true" signature="6540:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1361,25 +1356,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="49" column="37" lean-forward="true" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+          <folding>
+            <element signature="method#createSplitPanels#0;class#MyUI#0" expanded="true" />
+            <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createTransactionPanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createFinePanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createDetailFinePanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TransactionView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="26" column="55" lean-forward="false" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+        <state relative-caret-position="225">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#refresh#0;class#TransactionView#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        <state relative-caret-position="429">
+          <caret line="40" column="85" lean-forward="false" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#DetailFineView#0;class#DetailFineView#0" expanded="true" />
-            <marker date="1514824102000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
-            <marker date="1514824102000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
+            <marker date="1514828891000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
+            <marker date="1514828891000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
           </folding>
         </state>
       </provider>

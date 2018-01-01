@@ -24,8 +24,6 @@ public class DetailFineView extends Grid {
     public void refresh(int id) {
         ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id);
         List<Object> bookIds = sql.getList(rs, 3);
-        List<Object> transactionDate = sql.getList(rs, 4);
-        List<Object> returnDate = sql.getList(rs, 5);
         List<Object> fines = sql.getList(rs, 6);
         List<DetailFine> detailFines = new ArrayList<>();
         int loopIteration = 0;
@@ -47,8 +45,6 @@ public class DetailFineView extends Grid {
         }
         detailFineGrid.setItems(detailFines);
         bookIds = null;
-        transactionDate = null;
-        returnDate = null;
         fines = null;
         detailFines = null;
         detailFines = null;
