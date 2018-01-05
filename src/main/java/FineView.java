@@ -12,7 +12,7 @@ public class FineView extends Grid {
     private Grid<Fine> grid;
     private DetailFineView view;
     private SQL sql;
-
+//
     public FineView () {
 
     }
