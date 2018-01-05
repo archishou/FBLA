@@ -28,6 +28,7 @@ public class DetailFineView extends Grid {
         List<DetailFine> detailFines = new ArrayList<>();
         int loopIteration = 0;
         sql.resetResultSet(rs);
+        //
         try {
             while (rs.next()) {
                 detailFines.add(new DetailFine(
