@@ -97,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="217">
@@ -162,18 +162,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailFineView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DetailFineView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            <state relative-caret-position="390">
+              <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#DetailFineView#0;class#DetailFineView#0" expanded="true" />
-                <element signature="e#343#344#0" expanded="true" />
-                <element signature="e#373#374#0" expanded="true" />
-                <marker date="1514830504000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
-                <marker date="1514830504000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
+                <marker date="1515116241000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
+                <marker date="1515116241000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
               </folding>
             </state>
           </provider>
@@ -316,11 +314,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Models/Fine.java" />
         <option value="$PROJECT_DIR$/src/main/java/Models/DetailFine.java" />
         <option value="$PROJECT_DIR$/src/main/java/SQL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DetailFineView.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Home.html" />
         <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/BookFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/FineView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DetailFineView.java" />
       </list>
     </option>
   </component>
@@ -359,7 +357,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="1174" />
@@ -745,12 +743,12 @@
       <workItem from="1514579774791" duration="17203000" />
       <workItem from="1514698504966" duration="1953000" />
       <workItem from="1514733818731" duration="8802000" />
-      <workItem from="1515114966077" duration="1094000" />
+      <workItem from="1515114966077" duration="1236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144486000" />
+    <option name="totallyTimeSpent" value="144628000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -762,7 +760,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1246,21 +1244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#DetailFineView#0;class#DetailFineView#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <marker date="1514830504000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
-            <marker date="1514830504000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1358,6 +1341,19 @@
         <state relative-caret-position="217">
           <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DetailFineView#0;class#DetailFineView#0" expanded="true" />
+            <marker date="1515116241000" expanded="true" signature="573:619" ph="SELECT * FRO... Transactions" />
+            <marker date="1515116241000" expanded="true" signature="573:621" ph="SELECT * FRO... Transactions" />
+          </folding>
         </state>
       </provider>
     </entry>

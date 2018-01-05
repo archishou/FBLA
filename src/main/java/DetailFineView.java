@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailFineView extends Grid {
+public class DetailFineView extends Grid {//
     private Grid<DetailFine> detailFineGrid;
     private SQL sql;
     public DetailFineView () {
