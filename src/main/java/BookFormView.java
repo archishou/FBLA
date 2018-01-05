@@ -85,6 +85,11 @@ public class BookFormView extends BookForm {
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
             if (addClicked) new Notification("Click Save. ", "",
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+            else if (Integer.valueOf(getUserData(Integer.parseInt(this.id.getValue()))[3])
+                    >= Integer.valueOf(getUserData(Integer.parseInt(this.id.getValue()))[4])) {
+                new Notification("This user has reached their limit. Ask that they return books before checking out any new ones","",
+                        Notification.Type.HUMANIZED_MESSAGE).show(Page.getCurrent());
+            }
             else {
                 if (checkedOut.getValue().toLowerCase().contains("u")) {
                     System.out.println(checkedOut.getValue());

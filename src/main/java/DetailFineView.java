@@ -28,18 +28,20 @@ public class DetailFineView extends Grid {//
         List<DetailFine> detailFines = new ArrayList<>();
         int loopIteration = 0;
         sql.resetResultSet(rs);
-        //
         try {
             while (rs.next()) {
                 detailFines.add(new DetailFine(
                         BookFormView.getBookData(Integer.parseInt(String.valueOf(bookIds.get(loopIteration))))[0],
                         Double.valueOf(String.valueOf(fines.get(loopIteration))),
                         Integer.parseInt(sql.daysInBetween(sql.getDate(),
-                                sql.getList(SQL.Table.TRANSACTION, "rDate").get(loopIteration).toString()))));
-                System.out.println(Integer.parseInt(sql.daysInBetween(sql.getDate(),
-                        sql.getList(SQL.Table.TRANSACTION, "rDate").get(loopIteration).toString())));
+                                sql.getList(sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id), "rDate").get(loopIteration).toString()))));
+                System.out.println();
+                System.out.println("Loop Iteration: " + loopIteration);
                 loopIteration++;
             }
+            for (Object s: sql.getList(SQL.Table.TRANSACTION, "rDate"))
+                System.out.println(sql.daysInBetween(sql.getDate(),
+                        s.toString()));
         }
         catch (SQLException e) {
             e.printStackTrace();

@@ -270,6 +270,18 @@ public class SQL {
         }
         return strings;
     }
+    public List<Object> getList(ResultSet rs, String column) {
+        List<Object> strings = new ArrayList<>();
+        resetResultSet(rs);
+        try {
+            while (rs.next()) {
+                strings.add(String.valueOf(rs.getObject(column)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return strings;
+    }
     public double getTotalFine(int id) {
         double total = 0;
         ResultSet rs = getResultSet("SELECT * FROM users.Transactions");
