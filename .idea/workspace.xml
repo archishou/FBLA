@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/HelpView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BookFormView.class" afterPath="$PROJECT_DIR$/target/classes/BookFormView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DetailFineView.class" afterPath="$PROJECT_DIR$/target/classes/DetailFineView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyUI.class" afterPath="$PROJECT_DIR$/target/classes/MyUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SQL.class" afterPath="$PROJECT_DIR$/target/classes/SQL.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UserFormView.class" afterPath="$PROJECT_DIR$/target/classes/UserFormView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BookFormView.java" afterPath="$PROJECT_DIR$/src/main/java/BookFormView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DetailFineView.java" afterPath="$PROJECT_DIR$/src/main/java/DetailFineView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/SQL.java" afterPath="$PROJECT_DIR$/src/main/java/SQL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserFormView.java" afterPath="$PROJECT_DIR$/src/main/java/UserFormView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Home.html" afterPath="$PROJECT_DIR$/src/main/resources/Home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Home.html" afterPath="$PROJECT_DIR$/target/classes/Home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-    </list>
+    <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -132,16 +114,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SQL.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="50" column="41" lean-forward="false" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+            <state relative-caret-position="655">
+              <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
                 <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-                <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
+                <element signature="method#connect#0;class#SQL#0" expanded="true" />
                 <element signature="method#delete#1;class#SQL#0" expanded="true" />
                 <element signature="method#edit#0;class#SQL#0" expanded="true" />
                 <element signature="method#editTransaction#0;class#SQL#0" expanded="true" />
@@ -168,11 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getUserData#0;class#BookFormView#0" expanded="true" />
@@ -777,12 +759,12 @@
       <workItem from="1514698504966" duration="1953000" />
       <workItem from="1514733818731" duration="8802000" />
       <workItem from="1515114966077" duration="6124000" />
-      <workItem from="1515202883847" duration="2666000" />
+      <workItem from="1515202883847" duration="2760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152182000" />
+    <option name="totallyTimeSpent" value="152276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -803,15 +785,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.360519" sideWeight="0.17678382" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24281742" sideWeight="0.17305644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.360519" sideWeight="0.8232162" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24281742" sideWeight="0.83013844" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.360519" sideWeight="0.8232162" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24281742" sideWeight="0.8269436" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17092651" sideWeight="0.92608696" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17092651" sideWeight="0.073913045" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17092651" sideWeight="0.9265606" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17092651" sideWeight="0.07343941" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.6173913" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.38260868" order="3" side_tool="false" content_ui="tabs" />
@@ -952,7 +934,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
             <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-            <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
+            <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#delete#1;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
             <element signature="method#editTransaction#0;class#SQL#0" expanded="true" />
@@ -1308,22 +1290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getUserData#0;class#BookFormView#0" expanded="true" />
-            <element signature="method#getBookData#0;class#BookFormView#0" expanded="true" />
-            <element signature="method#refresh#0;class#BookFormView#0" expanded="true" />
-            <marker date="1515205659000" expanded="true" signature="6354:6401" ph="SELECT * FRO... Transactions" />
-            <marker date="1515205659000" expanded="true" signature="6354:6402" ph="SELECT * FRO... Transactions" />
-            <marker date="1515205659000" expanded="true" signature="10684:10690" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -1355,13 +1321,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="50" column="41" lean-forward="false" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        <state relative-caret-position="655">
+          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
             <element signature="method#UserType#0;class#UserType#0;class#SQL#0" expanded="true" />
-            <element signature="method#addTransaction#0;class#SQL#0" expanded="true" />
+            <element signature="method#connect#0;class#SQL#0" expanded="true" />
             <element signature="method#delete#1;class#SQL#0" expanded="true" />
             <element signature="method#edit#0;class#SQL#0" expanded="true" />
             <element signature="method#editTransaction#0;class#SQL#0" expanded="true" />
@@ -1383,6 +1349,22 @@
             <marker date="1515205510000" expanded="true" signature="8436:8501" ph="SELECT id fr... missingValue" />
             <marker date="1515205510000" expanded="true" signature="10335:10367" ph="SELECT * FRO... Transactions" />
             <marker date="1515205510000" expanded="true" signature="11248:11297" ph="SELECT * fro... Settings" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getUserData#0;class#BookFormView#0" expanded="true" />
+            <element signature="method#getBookData#0;class#BookFormView#0" expanded="true" />
+            <element signature="method#refresh#0;class#BookFormView#0" expanded="true" />
+            <marker date="1515205659000" expanded="true" signature="6354:6401" ph="SELECT * FRO... Transactions" />
+            <marker date="1515205659000" expanded="true" signature="6354:6402" ph="SELECT * FRO... Transactions" />
+            <marker date="1515205659000" expanded="true" signature="10684:10690" ph="{...}" />
           </folding>
         </state>
       </provider>
