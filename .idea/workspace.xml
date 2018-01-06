@@ -80,16 +80,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignInView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SignInView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FineView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -150,7 +140,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BookFormView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BookFormView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="172">
@@ -164,6 +154,16 @@
                 <marker date="1515205659000" expanded="true" signature="6354:6402" ph="SELECT * FRO... Transactions" />
                 <marker date="1515205659000" expanded="true" signature="10684:10690" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="68" column="78" lean-forward="false" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -759,12 +759,12 @@
       <workItem from="1514698504966" duration="1953000" />
       <workItem from="1514733818731" duration="8802000" />
       <workItem from="1515114966077" duration="6124000" />
-      <workItem from="1515202883847" duration="2760000" />
+      <workItem from="1515202883847" duration="2796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152276000" />
+    <option name="totallyTimeSpent" value="152312000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1151,14 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="68" column="78" lean-forward="false" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1366,6 +1358,14 @@
             <marker date="1515205659000" expanded="true" signature="6354:6402" ph="SELECT * FRO... Transactions" />
             <marker date="1515205659000" expanded="true" signature="10684:10690" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="68" column="78" lean-forward="false" selection-start-line="68" selection-start-column="78" selection-end-line="68" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
