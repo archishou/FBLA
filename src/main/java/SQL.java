@@ -124,7 +124,6 @@ public class SQL {
         if (connection != null){
             try {
                 String SQL = "SELECT 1 FROM " + t.table + " WHERE id = " + String.valueOf(userId);
-                System.out.println(SQL);
                 stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery(SQL);
                 if (isFilled(rs)) e = true;
@@ -154,7 +153,6 @@ public class SQL {
     public void editUser(Table t, String col, String edit, int id){
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         String sql = "UPDATE " + t.table + " SET "+  col + "= " +  "'" + edit + "'" + " WHERE id="+ String.valueOf(id) + ";";
-        System.out.println(sql);
         runStatement(sql);
         commit();
     }
@@ -270,8 +268,8 @@ public class SQL {
         }
         return strings;
     }
-    public List<Object> getList(ResultSet rs, String column) {
-        List<Object> strings = new ArrayList<>();
+    public List<String> getList(ResultSet rs, String column) {
+        List<String> strings = new ArrayList<>();
         resetResultSet(rs);
         try {
             while (rs.next()) {

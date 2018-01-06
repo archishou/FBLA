@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import Models.*;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
@@ -19,6 +20,7 @@ import com.vaadin.ui.*;
 public class MyUI extends UI {
     private UserFormView userEditor = new UserFormView();
     private BookFormView bookEditor = new BookFormView();
+    private HelpView helpView = new HelpView();
     private DetailFineView detailFineView = new DetailFineView();
     private FineView fineView = new FineView();
     private HorizontalSplitPanel finesSplitPanel = new HorizontalSplitPanel();
@@ -57,11 +59,21 @@ public class MyUI extends UI {
                 createDetailFinePanel();
                 home.setCaption("Home");
                 transactionGrid.setCaption("Transactions");
+                helpView.setCaption("Help");
                 tabSheet.addComponent(home);
                 tabSheet.addComponent(usersSplitPanel);
                 tabSheet.addComponent(bookSplitPanel);
                 tabSheet.addComponent(transactionGrid);
                 tabSheet.addComponent(finesSplitPanel);
+                tabSheet.addComponent(helpView);
+                helpView.setSizeFull();
+                tabSheet.addSelectedTabChangeListener(selectedTabChangeEvent -> {
+                    if (selectedTabChangeEvent.getComponent() == helpView) {
+                        System.out.println();
+                        System.out.println("GotHere");
+                        new Notification("Hello", Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
+                    }
+                });
                 setContent(tabSheet);
             }
             else {

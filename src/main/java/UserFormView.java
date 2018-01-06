@@ -50,7 +50,6 @@ public class UserFormView extends UserForm {
                 if (!name.getValue().equals("") && !userType.getValue().equals("")) {
                     User user = new User(Integer.valueOf(id.getValue()), name.getValue(), Integer.valueOf(checkOutBooks.getValue()),
                             Integer.valueOf(limitOfBooks.getValue()), Integer.valueOf(idSchool.getValue()), userType.getValue());
-                    System.out.println(user.getUserStatus());
                     sql.addUser(user);
                     refresh();
                     addPressed = false;
@@ -117,7 +116,6 @@ public class UserFormView extends UserForm {
             if (sql.getList(SQL.Table.USERS, "teacherYN").get(index).toString().equals("true")) status = "TEACHER";
             else status = "STUDENT";
         }
-        System.out.println(index + "Index size");
         return new User(String.valueOf(idOfUser),
                 sql.getList(SQL.Table.USERS, "name").get(index).toString(),
                 sql.getList(SQL.Table.USERS, "numbooks").get(index).toString(),

@@ -5,6 +5,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Notification;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,21 +37,28 @@ public class BookFormView extends BookForm {
         binder.bindInstanceFields(this);
         save.addClickListener((Button.ClickListener) click -> {
             if (checkOutClicked) {
-                int id = Integer.parseInt(userId.getValue().replaceAll(",",""));
-                userId.setValue("");
-                System.out.println(String.valueOf(Integer.parseInt(getUserData(id)[2])));
-                sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
-                sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",","")));
-                if (UserFormView.getUserById(id).getUserStatus().toLowerCase().contains("u")) userType = SQL.UserType.STUDENT;
-                else userType = SQL.UserType.TEACHER;
-                    sql.addTransaction(sql.genID(SQL.Table.TRANSACTION) +2, id, Integer.parseInt(this.id.getValue()),
+                if (Integer.valueOf(getUserData(Integer.parseInt(this.userId.getValue()))[2])
+                        >= Integer.valueOf(getUserData(Integer.parseInt(this.userId.getValue()))[3])) {
+                    new Notification("This user has reached their limit. Ask that they return books before checking out any new ones","",
+                            Notification.Type.HUMANIZED_MESSAGE).show(Page.getCurrent());
+                }
+                else {
+                    int id = Integer.parseInt(userId.getValue().replaceAll(",", ""));
+                    userId.setValue("");
+                    sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
+                    sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",", "")));
+                    if (UserFormView.getUserById(id).getUserStatus().toLowerCase().contains("u"))
+                        userType = SQL.UserType.STUDENT;
+                    else userType = SQL.UserType.TEACHER;
+                    sql.addTransaction(sql.genID(SQL.Table.TRANSACTION) + 2, id, Integer.parseInt(this.id.getValue()),
                             sql.getDate(), sql.addDays(Integer.parseInt(sql.getDayLimit(userType))), 0, SQL.Table.TRANSACTION);
-                sql.commit();
-                transactionView.refresh();
-                fineView.refresh();
-                refresh();
-                userFormView.refresh();
-                userId.setVisible(false);
+                    sql.commit();
+                    transactionView.refresh();
+                    fineView.refresh();
+                    refresh();
+                    userFormView.refresh();
+                    userId.setVisible(false);
+                }
             }
             if (addClicked) {
                 int copies = Integer.parseInt(userId.getValue());
@@ -85,14 +93,9 @@ public class BookFormView extends BookForm {
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
             if (addClicked) new Notification("Click Save. ", "",
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
-            else if (Integer.valueOf(getUserData(Integer.parseInt(this.id.getValue()))[3])
-                    >= Integer.valueOf(getUserData(Integer.parseInt(this.id.getValue()))[4])) {
-                new Notification("This user has reached their limit. Ask that they return books before checking out any new ones","",
-                        Notification.Type.HUMANIZED_MESSAGE).show(Page.getCurrent());
-            }
+
             else {
                 if (checkedOut.getValue().toLowerCase().contains("u")) {
-                    System.out.println(checkedOut.getValue());
                     Notification notification = new Notification("This books is already checked out", "",
                             Notification.Type.WARNING_MESSAGE, true);
                     notification.show(Page.getCurrent());
@@ -122,15 +125,18 @@ public class BookFormView extends BookForm {
         });
         returnBook.addClickListener((Button.ClickListener) clickListener -> {
             if (checkedOut.getValue().toLowerCase().contains("a")) {
-                System.out.println(checkedOut.getValue());
                 Notification notification = new Notification("This books is already in stock", "",
                         Notification.Type.WARNING_MESSAGE, true);
                 notification.show(Page.getCurrent());
             }
             else {
                 sql.edit(SQL.Table.BOOK, "checkOut", false, Integer.parseInt(id.getValue().replaceAll(",","")));
+                ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE bookId = " + Integer.parseInt(id.getValue().replaceAll(",","")));
+                int id = Integer.parseInt(sql.getList(rs, "userId").get(0));
+                sql.edit(SQL.Table.USERS, "numbooks", Integer.parseInt(getUserData(id)[2]) - 1 , id);
                 sql.delete(this.id.getValue(), "bookId", SQL.Table.TRANSACTION);
                 transactionView.refresh();
+                userFormView.refresh();
                 refresh();
                 Notification notification = new Notification("Returned to the library", "",
                         Notification.Type.WARNING_MESSAGE, true);
@@ -173,7 +179,6 @@ public class BookFormView extends BookForm {
             index++;
         }
         for (String s: returnString) {
-            System.out.print(s);
         }
         return returnString;
     }
@@ -190,7 +195,6 @@ public class BookFormView extends BookForm {
             index++;
         }
         for (String s: returnString) {
-            System.out.print(s);
         }
         return returnString;
     }

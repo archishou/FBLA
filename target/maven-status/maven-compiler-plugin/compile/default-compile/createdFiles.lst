@@ -8,6 +8,7 @@ SQL.class
 DetailFineView.class
 FineView.class
 BookFormView.class
+HelpView.class
 Models/User.class
 MyUI$MyUIServlet.class
 Home.class
