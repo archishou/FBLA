@@ -18,6 +18,7 @@ import com.vaadin.ui.*;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
+    //
     private UserFormView userEditor = new UserFormView();
     private BookFormView bookEditor = new BookFormView();
     private HelpView helpView = new HelpView();
