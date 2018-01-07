@@ -41,6 +41,5 @@
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-client-compiled:8.1.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-themes:8.1.5" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-continuation:9.3.9.v20160517" level="project" />
   </component>
 </module>
