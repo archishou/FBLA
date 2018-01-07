@@ -2,7 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/BookForm 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/BookFormView 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/MyUI 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/MyUI$MyUIServlet 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/SQLController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/META-INF/maven/org.test/vaadin-app/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/META-INF/maven/org.test/vaadin-app/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/BookForm 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/BookFormView 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/HomeView.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI$MyUIServlet 2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/NumberField.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SQLController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/User.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/HelpView.class" afterPath="$PROJECT_DIR$/target/classes/HelpView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/BookFormView.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/BookFormView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/DetailFineView.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/DetailFineView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/FineView.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/FineView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI$MyUIServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/MyUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SQL.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/SQL.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/UserFormView.class" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/UserFormView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/README" afterPath="$PROJECT_DIR$/target/classes/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Signin.html" afterPath="$PROJECT_DIR$/target/classes/Signin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UserForm.html" afterPath="$PROJECT_DIR$/target/classes/UserForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/Home.html" afterPath="$PROJECT_DIR$/target/vaadin-app-1.0-SNAPSHOT/WEB-INF/classes/Home.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,14 +99,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="294">
+              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2028#3694#0" expanded="false" />
+                <element signature="e#2021#3687#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -156,11 +190,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="50" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+            <state relative-caret-position="-2354">
+              <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -300,11 +334,11 @@
         <option value="$PROJECT_DIR$/src/main/java/UserFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/BookFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/DetailFineView.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/HelpDesighn.html" />
         <option value="$PROJECT_DIR$/src/main/java/strings.java" />
         <option value="$PROJECT_DIR$/src/main/java/HelpView.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -327,6 +361,11 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="vaadin-app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="vaadin-app" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
@@ -432,6 +471,11 @@
               <item name="VAADIN" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="mytheme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vaadin-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vaadin-app" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -748,12 +792,12 @@
       <workItem from="1515114966077" duration="6124000" />
       <workItem from="1515202883847" duration="2867000" />
       <workItem from="1515238023314" duration="2166000" />
-      <workItem from="1515285629682" duration="373000" />
+      <workItem from="1515285629682" duration="1588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154922000" />
+    <option name="totallyTimeSpent" value="156137000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -769,19 +813,20 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5115848" sideWeight="0.1826411" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.360519" sideWeight="0.8200213" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5755329" sideWeight="0.19542067" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08253461" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.360519" sideWeight="0.81363153" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5115848" sideWeight="0.8173589" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5755329" sideWeight="0.8045793" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17412141" sideWeight="0.9032258" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17412141" sideWeight="0.09677419" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17412141" sideWeight="0.7423581" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17412141" sideWeight="0.2576419" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.49668247" order="1" side_tool="false" content_ui="tabs" />
@@ -795,7 +840,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.65072465" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.157082" sideWeight="0.34927535" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="100" y="122" width="1720" height="974" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1280,14 +1324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="50" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/HelpDesighn.html">
       <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
         <state />
@@ -1313,12 +1349,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state relative-caret-position="294">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2028#3694#0" expanded="false" />
+            <element signature="e#2021#3687#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2354">
+          <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
