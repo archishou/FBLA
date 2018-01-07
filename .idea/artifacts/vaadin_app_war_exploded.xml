@@ -20,6 +20,7 @@
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-client-compiled:8.1.5" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-themes:8.1.5" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
+          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-continuation:9.3.9.v20160517" />
         </element>
       </element>
       <element id="directory" name="META-INF">
