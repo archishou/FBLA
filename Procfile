@@ -1,1 +1,0 @@
-web: java $JAVA_OPTS -jar target/dependgit ency/jetty-runner.jar --port $PORT target/*.war

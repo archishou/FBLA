@@ -20,6 +20,7 @@ public class BookFormView extends BookForm {
     private SQL.UserType userType;
     private Grid<Book> grid;
     public BookFormView () {
+        //
         cancel.setComponentError(null);
         userId.setVisible(false);
         binder.forField(this.id)
