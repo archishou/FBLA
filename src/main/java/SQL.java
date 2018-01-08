@@ -272,12 +272,14 @@ public class SQL {
     public List<Object> getList(ResultSet rs, int column) {
         List<Object> strings = new ArrayList<>();
         resetResultSet(rs);
-        try {
-            while (rs.next()) {
-                strings.add(String.valueOf(rs.getObject(column)));
+        if (rs != null) {
+            try {
+                while (rs.next()) {
+                    strings.add(String.valueOf(rs.getObject(column)));
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
         return strings;
     }
