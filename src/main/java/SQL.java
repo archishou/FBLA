@@ -3,6 +3,8 @@
 
 import Models.User;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.sql.Date;
 import java.text.DateFormat;
@@ -39,13 +41,23 @@ public class SQL {
         UserType (int userType) {this.userType = userType;}
     }
     public void connect (Database d) {
+        URI dbUri = null;
+        try {
+            dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
         try { Class.forName("com.mysql.jdbc.Driver"); }
         catch (ClassNotFoundException e) {
             e.printStackTrace();
             return;
         }
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + d.database, "root", "R3as0n99");
+            connection = DriverManager.getConnection(dbUrl, username, password);
 
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");
