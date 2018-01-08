@@ -256,7 +256,7 @@ public class SQL {
     }
     public List<Object> getList(SQL.Table table, String coloum) {
         List<Object> list = new ArrayList<>();
-        ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
+        ResultSet resultSet = getResultSet("SELECT * FROM users." + table.table);
         String elements;
         if (resultSet != null) {
             try {
@@ -311,7 +311,7 @@ public class SQL {
     }
     public List<Integer> getIntegerList(SQL.Table table, String coloum) {
         List<Integer> list = new ArrayList<>();
-        ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
+        ResultSet resultSet = getResultSet("SELECT * FROM users." + table.table);
         String elements;
         try {
             while (resultSet.next()) {
