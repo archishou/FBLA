@@ -257,14 +257,15 @@ public class SQL {
         List<Object> list = new ArrayList<>();
         ResultSet resultSet = getResultSet("SELECT * FROM " + table.table);
         String elements;
-        try {
-            while (resultSet.next()) {
-                elements = resultSet.getString(coloum);
-                list.add(elements);
+        if (resultSet != null) {
+            try {
+                while (resultSet.next()) {
+                    elements = resultSet.getString(coloum);
+                    list.add(elements);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
         }
         return list;
     }

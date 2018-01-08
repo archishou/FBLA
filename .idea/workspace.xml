@@ -97,8 +97,8 @@
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            <state relative-caret-position="208">
+              <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
@@ -115,16 +115,16 @@
                 <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
                 <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
                 <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
-                <marker date="1515374779000" expanded="true" signature="1679:1729" ph="Insert into users.missingValue... " />
-                <marker date="1515374779000" expanded="true" signature="2547:2601" ph="Insert into users.missingValue... " />
-                <marker date="1515374779000" expanded="true" signature="3933:3987" ph="Insert into users.missingValue... " />
-                <marker date="1515374779000" expanded="true" signature="4754:4795" ph="SELECT 1 FRO... missingValue" />
-                <marker date="1515374779000" expanded="true" signature="5578:5629" ph="delete from " />
-                <marker date="1515374779000" expanded="true" signature="6301:6380" ph="UPDATE missi... " />
-                <marker date="1515374779000" expanded="true" signature="6619:6639" ph="Select * fro... missingValue" />
-                <marker date="1515374779000" expanded="true" signature="8414:8479" ph="SELECT id fr... missingValue" />
-                <marker date="1515374779000" expanded="true" signature="10313:10345" ph="SELECT * FRO... Transactions" />
-                <marker date="1515374779000" expanded="true" signature="11226:11275" ph="SELECT * fro... Settings" />
+                <marker date="1515374872000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
+                <marker date="1515374872000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
+                <marker date="1515374872000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
+                <marker date="1515374872000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
+                <marker date="1515374872000" expanded="true" signature="6010:6061" ph="delete from " />
+                <marker date="1515374872000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
+                <marker date="1515374872000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
+                <marker date="1515374872000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
+                <marker date="1515374872000" expanded="true" signature="10745:10777" ph="SELECT * FRO... Transactions" />
+                <marker date="1515374872000" expanded="true" signature="11658:11707" ph="SELECT * fro... Settings" />
               </folding>
             </state>
           </provider>
@@ -817,7 +817,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164333000" />
+    <option name="totallyTimeSpent" value="164488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -989,16 +989,16 @@
             <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
             <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
-            <marker date="1515374779000" expanded="true" signature="1679:1729" ph="Insert into users.missingValue... " />
-            <marker date="1515374779000" expanded="true" signature="2547:2601" ph="Insert into users.missingValue... " />
-            <marker date="1515374779000" expanded="true" signature="3933:3987" ph="Insert into users.missingValue... " />
-            <marker date="1515374779000" expanded="true" signature="4754:4795" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1515374779000" expanded="true" signature="5578:5629" ph="delete from " />
-            <marker date="1515374779000" expanded="true" signature="6301:6380" ph="UPDATE missi... " />
-            <marker date="1515374779000" expanded="true" signature="6619:6639" ph="Select * fro... missingValue" />
-            <marker date="1515374779000" expanded="true" signature="8414:8479" ph="SELECT id fr... missingValue" />
-            <marker date="1515374779000" expanded="true" signature="10313:10345" ph="SELECT * FRO... Transactions" />
-            <marker date="1515374779000" expanded="true" signature="11226:11275" ph="SELECT * fro... Settings" />
+            <marker date="1515374872000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
+            <marker date="1515374872000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
+            <marker date="1515374872000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
+            <marker date="1515374872000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1515374872000" expanded="true" signature="6010:6061" ph="delete from " />
+            <marker date="1515374872000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
+            <marker date="1515374872000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
+            <marker date="1515374872000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
+            <marker date="1515374872000" expanded="true" signature="10745:10777" ph="SELECT * FRO... Transactions" />
+            <marker date="1515374872000" expanded="true" signature="11658:11707" ph="SELECT * fro... Settings" />
           </folding>
         </state>
       </provider>
@@ -1348,8 +1348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        <state relative-caret-position="208">
+          <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
@@ -1366,16 +1366,16 @@
             <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
             <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
-            <marker date="1515374779000" expanded="true" signature="1679:1729" ph="Insert into users.missingValue... " />
-            <marker date="1515374779000" expanded="true" signature="2547:2601" ph="Insert into users.missingValue... " />
-            <marker date="1515374779000" expanded="true" signature="3933:3987" ph="Insert into users.missingValue... " />
-            <marker date="1515374779000" expanded="true" signature="4754:4795" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1515374779000" expanded="true" signature="5578:5629" ph="delete from " />
-            <marker date="1515374779000" expanded="true" signature="6301:6380" ph="UPDATE missi... " />
-            <marker date="1515374779000" expanded="true" signature="6619:6639" ph="Select * fro... missingValue" />
-            <marker date="1515374779000" expanded="true" signature="8414:8479" ph="SELECT id fr... missingValue" />
-            <marker date="1515374779000" expanded="true" signature="10313:10345" ph="SELECT * FRO... Transactions" />
-            <marker date="1515374779000" expanded="true" signature="11226:11275" ph="SELECT * fro... Settings" />
+            <marker date="1515374872000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
+            <marker date="1515374872000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
+            <marker date="1515374872000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
+            <marker date="1515374872000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1515374872000" expanded="true" signature="6010:6061" ph="delete from " />
+            <marker date="1515374872000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
+            <marker date="1515374872000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
+            <marker date="1515374872000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
+            <marker date="1515374872000" expanded="true" signature="10745:10777" ph="SELECT * FRO... Transactions" />
+            <marker date="1515374872000" expanded="true" signature="11658:11707" ph="SELECT * fro... Settings" />
           </folding>
         </state>
       </provider>
