@@ -33,7 +33,7 @@ public class FineView extends Grid {
     }
 
     public void refresh() {
-        ResultSet rs = sql.getResultSet("SELECT distinctrow userid FROM users.Transactions WHERE fine >= 0");
+        /*ResultSet rs = sql.getResultSet("SELECT distinctrow userid FROM users.Transactions WHERE fine >= 0");
         List<Object> userIds = sql.getList(rs, 1);
         List<Fine> fines = new ArrayList<>();
         int userId;
@@ -51,7 +51,7 @@ public class FineView extends Grid {
         }
         grid.setItems(fines);
         userIds = null;
-        fines = null;
+        fines = null;*/
     }
 
 
