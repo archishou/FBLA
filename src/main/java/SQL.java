@@ -40,10 +40,11 @@ public class SQL {
         public final int userType;
         UserType (int userType) {this.userType = userType;}
     }
-    public void connect (Database d) {
+    public void connect () {
         URI dbUri = null;
         try {
-            dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+            dbUri = new URI(System.getenv("mysql://be762c6c13bc73:15fe98f8@us-cdbr-iron-east-05." +
+                    "cleardb.net/heroku_51d3c2aab43e90f?reconnect=true"));
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
