@@ -352,10 +352,12 @@ public class SQL {
         return returnS;
     }
     public void resetResultSet(ResultSet rs) {
-        try {
-            rs.beforeFirst();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if (rs != null) {
+            try {
+                rs.beforeFirst();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
     public String getDate() {
