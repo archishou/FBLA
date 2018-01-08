@@ -18,7 +18,7 @@ public class TransactionView {
         this.grid = grid;
     }
     public void refresh () {
-        /*List<Transaction> transactions = new ArrayList<>();
+        List<Transaction> transactions = new ArrayList<>();
         int loopIteration = 0;
         String daysIB, userName, bookName;
         int userId, bookId;
@@ -34,6 +34,6 @@ public class TransactionView {
             loopIteration++;
         }
         grid.setItems(transactions);
-        transactions = null;*/
+        transactions = null;
     }
 }
