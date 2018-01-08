@@ -22,7 +22,7 @@ public class DetailFineView extends Grid {//
     }
 
     public void refresh(int id) {
-       ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id);
+       ResultSet rs = sql.getResultSet("SELECT * FROM heroku_5b007fb897ad2ae.transactions WHERE userId = " + id);
         List<Object> bookIds = sql.getList(rs, 3);
         List<Object> fines = sql.getList(rs, 6);
         List<DetailFine> detailFines = new ArrayList<>();
@@ -34,7 +34,7 @@ public class DetailFineView extends Grid {//
                         BookFormView.getBookData(Integer.parseInt(String.valueOf(bookIds.get(loopIteration))))[0],
                         Double.valueOf(String.valueOf(fines.get(loopIteration))),
                         Integer.parseInt(sql.daysInBetween(sql.getDate(),
-                                sql.getList(sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id), "rDate").get(loopIteration)))));
+                                sql.getList(sql.getResultSet("SELECT * FROM heroku_5b007fb897ad2ae.transactions WHERE userId = " + id), "rDate").get(loopIteration)))));
                 loopIteration++;
             }
         }
