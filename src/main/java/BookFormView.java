@@ -46,19 +46,19 @@ public class BookFormView extends BookForm {
                 else {
                     int id = Integer.parseInt(userId.getValue().replaceAll(",", ""));
                     userId.setValue("");
-                    sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
-                    sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",", "")));
-                    if (UserFormView.getUserById(id).getUserStatus().toLowerCase().contains("u"))
-                        userType = SQL.UserType.STUDENT;
+                    sql.editUserNumBooks(String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
+                    sql.editCheckOut(true, Integer.parseInt(this.id.getValue().replaceAll(",", "")));
+                    if (UserFormView.getUserById(id).getUserStatus().toLowerCase().contains("u")) userType = SQL.UserType.STUDENT;
                     else userType = SQL.UserType.TEACHER;
-                    sql.addTransaction(sql.genID(SQL.Table.TRANSACTION) + 2, id, Integer.parseInt(this.id.getValue()),
-                            sql.getDate(), sql.addDays(Integer.parseInt(sql.getDayLimit(userType))), 0, SQL.Table.TRANSACTION);
-                    sql.commit();
+                    sql.addTransaction(sql.genIDTransactions() + 2, id, Integer.parseInt(this.id.getValue()),
+                            sql.getDate(), sql.addDays(Integer.parseInt(sql.getDayLimit(userType))), 0);
                     transactionView.refresh();
                     fineView.refresh();
                     refresh();
                     userFormView.refresh();
                     userId.setVisible(false);
+                    new Notification("Save Successful", "",
+                            Notification.Type.TRAY_NOTIFICATION, true).show(Page.getCurrent());
                 }
             }
             if (addClicked) {
@@ -69,13 +69,13 @@ public class BookFormView extends BookForm {
                 int id;
                 while (loopIterations < copies) {
                     id = genID();
-                    sql.addBook(id, author, name, false, SQL.Table.BOOK);
+                    sql.addBook(id, author, name, false);
                     loopIterations++;
                 }
                 refresh();
+                new Notification("Save Successful", "",
+                        Notification.Type.TRAY_NOTIFICATION, true).show(Page.getCurrent());
             }
-            new Notification("Save Successful", "",
-                    Notification.Type.TRAY_NOTIFICATION, true).show(Page.getCurrent());
         });
         add.addClickListener((Button.ClickListener) click ->{
            if (addClicked) new Notification("Click Save. ", "",
@@ -131,11 +131,11 @@ public class BookFormView extends BookForm {
                 notification.show(Page.getCurrent());
             }
             else {
-                sql.edit(SQL.Table.BOOK, "checkOut", false, Integer.parseInt(id.getValue().replaceAll(",","")));
-                ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE bookId = " + Integer.parseInt(id.getValue().replaceAll(",","")));
-                int id = Integer.parseInt(sql.getList(rs, "userId").get(0));
-                sql.edit(SQL.Table.USERS, "numbooks", Integer.parseInt(getUserData(id)[2]) - 1 , id);
-                sql.delete(this.id.getValue(), "bookId", SQL.Table.TRANSACTION);
+                sql.editCheckOut( false, Integer.parseInt(id.getValue().replaceAll(",","")));
+                //ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE bookId = " + Integer.parseInt(id.getValue().replaceAll(",","")));
+                //int id = Integer.parseInt(sql.getList(rs, "userId").get(0));
+                //sql.editUserNumBooks(String.valueOf(Integer.parseInt(getUserData(id)[2]) - 1), id);
+                sql.deleteBook(this.id.getValue());
                 transactionView.refresh();
                 userFormView.refresh();
                 refresh();
@@ -149,7 +149,7 @@ public class BookFormView extends BookForm {
                     Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
             else {
                 add.setVisible(true);
-                sql.delete(this.id.getValue().replace(",", ""), SQL.Table.BOOK);
+                sql.deleteBook(this.id.getValue().replace(",", ""));
                 refresh();
                 new Notification("Delete Successful. ", "",
                         Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
@@ -169,13 +169,13 @@ public class BookFormView extends BookForm {
         String[] returnString = new String[]{"","","","","",""};
         returnString[0] = String.valueOf(id);
         int index = 0;
-        for (Integer integer: sql.getIntegerList(SQL.Table.USERS, "id")) {
+        for (Integer integer: SQL.controller.userid) {
             if (integer == id){
-                returnString[1] = String.valueOf(sql.getList(SQL.Table.USERS, "name").get(index));
-                returnString[2] = String.valueOf(sql.getList(SQL.Table.USERS, "numbooks").get(index));
-                returnString[3] = String.valueOf(sql.getList(SQL.Table.USERS, "bookLim").get(index));
-                returnString[4] = String.valueOf(sql.getList(SQL.Table.USERS, "schoolid").get(index));
-                returnString[5] = String.valueOf(sql.getList(SQL.Table.USERS, "teacherYN").get(index));
+                returnString[1] = String.valueOf(SQL.controller.userName.get(index));
+                returnString[2] = String.valueOf(SQL.controller.numbooks.get(index));
+                returnString[3] = String.valueOf(SQL.controller.lim.get(index));
+                returnString[4] = String.valueOf(SQL.controller.userSchoolId.get(index));
+                returnString[5] = String.valueOf(SQL.controller.teacherYN.get(index));
             }
             index++;
         }
@@ -187,11 +187,11 @@ public class BookFormView extends BookForm {
         String[] returnString = new String[]{"","","",""};
         returnString[0] = String.valueOf(id);
         int index = 0;
-        for (Integer integer: sql.getIntegerList(SQL.Table.BOOK, "id")) {
+        for (Integer integer: SQL.controller.bookid) {
             if (integer == id){
-                returnString[1] = String.valueOf(sql.getList(SQL.Table.BOOK, "author").get(index));
-                returnString[2] = String.valueOf(sql.getList(SQL.Table.BOOK, "name").get(index));
-                returnString[3] = String.valueOf(sql.getList(SQL.Table.BOOK, "checkOut").get(index));
+                returnString[1] = String.valueOf(SQL.controller.author.get(index));
+                returnString[2] = String.valueOf(SQL.controller.bookName.get(index));
+                returnString[3] = String.valueOf(SQL.controller.checkOut.get(index));
             }
             index++;
         }
@@ -212,19 +212,19 @@ public class BookFormView extends BookForm {
         this.userFormView = userFormView;
     }
     private int genID (){
-        return sql.genID(SQL.Table.BOOK) + 2;
+        return sql.genBookId()+ 2;
     }
     public void refresh() {
         List<Book> books = new ArrayList<>();
         int loopIteration = 0;
         String checkedOut = "";
-        while (loopIteration < sql.getList(SQL.Table.BOOK, "id").size()) {
-            if (sql.getList(SQL.Table.BOOK, "checkOut").get(loopIteration).toString().equals("1")) checkedOut = "CHECKED OUT";
+        while (loopIteration < SQL.controller.bookid.size()) {
+            if (SQL.controller.checkOut.get(loopIteration).toString().equals("true")) checkedOut = "CHECKED OUT";
             else checkedOut = "AVAILABLE";
             books.add(new Book(
-                    Integer.parseInt(sql.getList(SQL.Table.BOOK, "id").get(loopIteration).toString()),
-                    sql.getList(SQL.Table.BOOK, "author").get(loopIteration).toString(),
-                    sql.getList(SQL.Table.BOOK, "name").get(loopIteration).toString(),
+                    Integer.parseInt(SQL.controller.bookid.get(loopIteration).toString()),
+                    SQL.controller.author.get(loopIteration),
+                    SQL.controller.bookName.get(loopIteration),
                     checkedOut));
             loopIteration++;
         }

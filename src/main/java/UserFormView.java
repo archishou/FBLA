@@ -48,22 +48,25 @@ public class UserFormView extends UserForm {
             }
             else {
                 if (!name.getValue().equals("") && !userType.getValue().equals("")) {
-                    User user = new User(Integer.valueOf(id.getValue()), name.getValue(), Integer.valueOf(checkOutBooks.getValue()),
-                            Integer.valueOf(limitOfBooks.getValue()), Integer.valueOf(idSchool.getValue()), userType.getValue());
-                    sql.addUser(user);
+                    String status;
+                    if (userType.getValue().toLowerCase().contains("s")) status = "false";
+                    else status = "true";
+                    System.out.println("STATUS: " + status);
+                    sql.addUser(new User(Integer.valueOf(id.getValue()), name.getValue(), Integer.valueOf(checkOutBooks.getValue()),
+                            Integer.valueOf(limitOfBooks.getValue()), Integer.valueOf(idSchool.getValue()), status));
                     refresh();
                     addPressed = false;
                     limitOfBooks.setReadOnly(true);
                     name.setReadOnly(true);
                     userType.setReadOnly(true);
+                    new Notification("Save Success. ", "",
+                            Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
                 }
                 else nSave.setVisible(true);
             }
-            new Notification("Save Success. ", "",
-                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
         delete.addClickListener((Button.ClickListener) clickListener ->{
-            sql.delete(id.getValue().replaceAll(",", ""), SQL.Table.USERS);
+            sql.deleteUser(id.getValue().replaceAll(",", ""));
             sql.refresh(this);
             refresh();
             nSave.setVisible(false);
@@ -94,8 +97,6 @@ public class UserFormView extends UserForm {
             limitOfBooks.setValue("10");
             idSchool.setValue("58");
             nSave.setVisible(false);
-            new Notification("User Added. ", "",
-                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
         });
     }
 
@@ -110,34 +111,36 @@ public class UserFormView extends UserForm {
         int idOfUser = 0;
         int index = 0;
         String status = "";
-        for (Integer integer: sql.getIntegerList(SQL.Table.USERS, "id")){
+        for (Integer integer: SQL.controller.userid){
             if (integer == id) break;
             index++;
-            if (sql.getList(SQL.Table.USERS, "teacherYN").get(index).toString().equals("true")) status = "TEACHER";
+            if (SQL.controller.teacherYN.get(index).toString().equals("true")) status = "TEACHER";
             else status = "STUDENT";
         }
         return new User(String.valueOf(idOfUser),
-                sql.getList(SQL.Table.USERS, "name").get(index).toString(),
-                sql.getList(SQL.Table.USERS, "numbooks").get(index).toString(),
-                sql.getList(SQL.Table.USERS, "bookLim").get(index).toString(),
-                sql.getList(SQL.Table.USERS, "schoolid").get(index).toString(),
+                SQL.controller.userName.get(index),
+                SQL.controller.numbooks.get(index).toString(),
+                SQL.controller.lim.get(index).toString(),
+                SQL.controller.userSchoolId.get(index).toString(),
                 status);
     }
     private int genID (){
-        return sql.genID(SQL.Table.USERS) + 2;
+        return sql.genIdUsers() + 2;
     }
     public void refresh() {
         List<User> users = new ArrayList<>();
         int loopIteration = 0;
         String status;
-        while (loopIteration < sql.getList(SQL.Table.USERS, "id").size()) {
-            if (sql.getList(SQL.Table.USERS, "teacherYN").get(loopIteration).toString().equals("1")) status = "TEACHER";
+        while (loopIteration < SQL.controller.userid.size()) {
+            System.out.println("INSIDE THE LIST: " + SQL.controller.teacherYN.get(loopIteration));
+            if (SQL.controller.teacherYN.get(loopIteration).toString().toLowerCase().contains("r")) status = "TEACHER";
             else status = "STUDENT";
-            users.add(new User(sql.getList(SQL.Table.USERS, "id").get(loopIteration).toString(),
-                               sql.getList(SQL.Table.USERS, "name").get(loopIteration).toString(),
-                               sql.getList(SQL.Table.USERS, "numbooks").get(loopIteration).toString(),
-                               sql.getList(SQL.Table.USERS, "bookLim").get(loopIteration).toString(),
-                               sql.getList(SQL.Table.USERS, "schoolid").get(loopIteration).toString(),
+            System.out.println("REFRESH STATUS: " + status);
+            users.add(new User(SQL.controller.userid.get(loopIteration).toString(),
+                               SQL.controller.userName.get(loopIteration),
+                               SQL.controller.numbooks.get(loopIteration).toString(),
+                               SQL.controller.lim.get(loopIteration).toString(),
+                               SQL.controller.userSchoolId.get(loopIteration).toString(),
                                status));
             loopIteration++;
         }

@@ -22,30 +22,31 @@ public class DetailFineView extends Grid {//
     }
 
     public void refresh(int id) {
-       ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id);
-        List<Object> bookIds = sql.getList(rs, 3);
-        List<Object> fines = sql.getList(rs, 6);
         List<DetailFine> detailFines = new ArrayList<>();
         int loopIteration = 0;
-        sql.resetResultSet(rs);
-        try {
-            while (rs.next()) {
-                detailFines.add(new DetailFine(
-                        BookFormView.getBookData(Integer.parseInt(String.valueOf(bookIds.get(loopIteration))))[0],
-                        Double.valueOf(String.valueOf(fines.get(loopIteration))),
-                        Integer.parseInt(sql.daysInBetween(sql.getDate(),
-                                sql.getList(sql.getResultSet("SELECT * FROM users.Transactions WHERE userId = " + id), "rDate").get(loopIteration)))));
-                loopIteration++;
+        List<String> rDates = new ArrayList<>();
+        List<Integer> indexes = new ArrayList<>();
+        List<Integer> userIds = new ArrayList<>();
+        for (Integer i: SQL.controller.transUserId) {
+            if (i == id) {
+                userIds.add(i);
+                indexes.add(sql.genIndex(SQL.controller.transUserId, id));
             }
         }
-        catch (SQLException e) {
-            e.printStackTrace();
+        while (loopIteration < userIds.size()) {
+            rDates.add(String.valueOf(indexes.get(loopIteration)));
+            loopIteration++;
+        }
+        loopIteration = 0;
+        while (loopIteration < SQL.controller.transactionid.size()) {
+            detailFines.add(new DetailFine(
+                    BookFormView.getBookData(Integer.parseInt(String.valueOf(SQL.controller.bookid.get(loopIteration))))[0],
+                    Double.valueOf(String.valueOf(SQL.controller.fine.get(loopIteration))),
+                    Integer.parseInt(sql.daysInBetween(sql.getDate(),
+                            rDates.get(loopIteration)))));
+            loopIteration++;
         }
         detailFineGrid.setItems(detailFines);
-        bookIds = null;
-        fines = null;
-        detailFines = null;
-        detailFines = null;
     }
 
 }

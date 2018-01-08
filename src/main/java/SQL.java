@@ -6,7 +6,6 @@ import Models.User;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
-import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class SQL {
     private Connection connection = null;
     private Statement stmt = null;
-
+    public static SQLController controller = new SQLController();
     private java.util.Date utilDate = new java.util.Date();
     public SQL () {
 
@@ -41,7 +40,7 @@ public class SQL {
         UserType (int userType) {this.userType = userType;}
     }
     public void connect () {
-        URI dbUri = null;
+        /*URI dbUri = null;
         try {
             dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
         } catch (URISyntaxException e) {
@@ -63,305 +62,106 @@ public class SQL {
             System.out.println("Connection Failed! Check output console");
             e.printStackTrace();
             return;
-        }
+        }*/
     }
-    public void addBook(int bookId, String author, String name, boolean checkedOut, Table t) {
-        if (connection != null) {
-            try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?)");
-                preparedStatement.setInt(1, bookId);
-                preparedStatement.setString(2, author);
-                preparedStatement.setString(3, name);
-                preparedStatement.setBoolean(4,checkedOut);
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                System.out.println("Prepared Statement Failed! Check output console");
-                e.printStackTrace();
-                return;
-            }
-        } else {
-            System.out.println("Failed to make connection!");
-        }
+    public void addBook(int bookId, String author, String name, boolean checkedOut) {
+         controller.bookid.add(bookId);
+         controller.author.add(author);
+         controller.bookName.add(name);
+         controller.checkOut.add(checkedOut);
     }
-    public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status, Table t){
-        if (connection != null) {
-            try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
-                preparedStatement.setInt(1, id);
-                preparedStatement.setString(2, name);
-                preparedStatement.setInt(3, numBooks);
-                preparedStatement.setInt(4, limit);
-                preparedStatement.setInt(5,schoolId);
-                if (status.toLowerCase().contains("s")) {
-                    preparedStatement.setBoolean(6, false);
-                }
-                else {
-                    preparedStatement.setBoolean(6, true);
-                }
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                System.out.println("Prepared Statement Failed! Check output console");
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("Failed to make connection!");
-        }
-        commit();
+    public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status){
+        controller.userid.add(id);
+        controller.userName.add(name);
+        controller.numbooks.add(numBooks);
+        controller.lim.add(limit);
+        controller.userSchoolId.add(schoolId);
+        controller.teacherYN.add(Boolean.valueOf(status));
     }
     public void addUser(User user){
         addUser(Integer.valueOf(user.getUserId()), user.getUserName(), user.getCheckedOutBooks(), user.getLimitOfBooks(),
-                user.getSchoolId(), user.getUserStatus(), Table.USERS);
+                user.getSchoolId(), user.getUserStatus());
     }
-    public void addTransaction(int id, int userId, int bookId, String trnDate, String rDate, double fine, Table t){
-        if (connection != null) {
-            try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
-                preparedStatement.setInt(1, id);
-                preparedStatement.setInt(2, userId);
-                preparedStatement.setInt(3, bookId);
-                preparedStatement.setString(4, trnDate);
-                preparedStatement.setString(5, rDate);
-                preparedStatement.setDouble(6, fine);
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                System.out.println("Invalid User or Book ID");
-                return;
-            }
-        } else {
-            System.out.println("Failed to make connection!");
-        }
+    public void addTransaction(int id, int userId, int bookId, String trnDate, String rDate, double fine){
+        controller.transactionid.add(id);
+        controller.transUserId.add(userId);
+        controller.transBookId.add(bookId);
+        controller.trnDate.add(trnDate);
+        controller.rDate.add(rDate);
+        controller.fine.add(fine);
     }
-    public Boolean exists(Table t, int userId){
-        boolean e = false;
-        if (connection != null){
-            try {
-                String SQL = "SELECT 1 FROM " + t.table + " WHERE id = " + String.valueOf(userId);
-                stmt = connection.createStatement();
-                ResultSet rs = stmt.executeQuery(SQL);
-                if (isFilled(rs)) e = true;
-            } catch (SQLException l) {
-                l.printStackTrace();
-            }
-        }
-        return e;
+    public void deleteBook(String key){
+        int index = genIndex(controller.bookid, Integer.valueOf(key));
+        controller.bookid.remove(index);
+        controller.author.remove(index);
+        controller.bookName.remove(index);
+        controller.checkOut.remove(index);
     }
-    public boolean isFilled(ResultSet rs){
-        boolean isEmpty = true;
-        try {
-            while(rs.next()){
-                isEmpty = false;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return !isEmpty;
+    public void deleteUser(String key) {
+        int index = genIndex(controller.userid, Integer.valueOf(key));
+        controller.userid.remove(index);
+        controller.userName.remove(index);
+        controller.numbooks.remove(index);
+        controller.userSchoolId.remove(index);
+        controller.lim.remove(index);
+        controller.teacherYN.remove(index);
     }
-    public void delete(String key, Table t){
-        runStatement("delete from " + t.table + " where id = " + key);
+    public void editUserBookLimit(String edit, int id){
+        int index = genIndex(controller.userid, id);
+        controller.lim.set(index, Integer.valueOf(edit));
     }
-    public void delete(String key, String column, Table t){
-        runStatement("delete from " + t.table + " where " + column + " = " + key);
+    public void editUserName(String edit, int id) {
+        int index = genIndex(controller.userid, id);
+        controller.userName.set(index, edit);
     }
-    public void editUser(Table t, String col, String edit, int id){
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        String sql = "UPDATE " + t.table + " SET "+  col + "= " +  "'" + edit + "'" + " WHERE id="+ String.valueOf(id) + ";";
-        runStatement(sql);
-        commit();
+    public void editUserNumBooks(String edit, int id) {
+        int index = genIndex(controller.userid, id);
+        controller.numbooks.set(index, Integer.parseInt(edit));
     }
-    public void edit(Table t, String col, Object edit, int id) {
-        String sql = "UPDATE " + t.table + " SET "+  col + "= "  + edit.toString()  + " WHERE id="+ String.valueOf(id) + ";";
-        runStatement(sql);
-        commit();
+    public void editCheckOut(Object edit, int id) {
+        int index = genIndex(controller.bookid, id);
+        controller.checkOut.set(index, Boolean.valueOf(edit.toString()));
     }
     public void editTransaction(Table t, String col, Object edit, int id) {
-        String sql = "UPDATE " + t.table + " SET "+  col + "= "  + edit.toString()  + " WHERE bookId="+ String.valueOf(id) + ";";
-        runStatement(sql);
-        commit();
-    }
-    public void print(Table t){
-        PreparedStatement preparedStatement = null;
-        try {
-            preparedStatement = connection.prepareStatement("Select * from users." + t.table);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        ResultSet resultSet = null;
-        try {
-            resultSet = preparedStatement.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if(resultSet != null ){
-            try {
-                while(resultSet.next()){
-                    int i = resultSet.getInt(1);
-                    String user = resultSet.getString(2);
-                    String password = resultSet.getString(3);
-                    System.out.println("RECORD : " + i +" - " + user +" - " + password);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    private void runStatement(String sql){
-        if (connection != null){
-            try {
-                PreparedStatement preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    ResultSet getResultSet(String sql) {
-        ResultSet rs = null;
-        if (connection != null){
-            try {
-                stmt = connection.createStatement();
-                System.out.println("This is the result set SQL code that is running: " + sql);
-                if (stmt != null) rs = stmt.executeQuery(sql);
-            } catch (SQLException l) {
-                l.printStackTrace();
-            }
-        }
-        return rs;
+        int index = genIndex(controller.transBookId, id);
+        controller.fine.set(index, Double.valueOf(edit.toString()));
     }
     void refresh (UserFormView u) {
         int id = Integer.parseInt(u.id.getValue().replaceAll("'",""));
-        editUser(Table.USERS, "bookLim", u.limitOfBooks.getValue(), id);
-        editUser(Table.USERS, "name", u.name.getValue(), id);
-        commit();
+        editUserBookLimit(u.limitOfBooks.getValue(), id);
+        editUserName(u.name.getValue(), id);
     }
-    int genID (Table table) {
-        ResultSet resultSet = getResultSet("SELECT id from users." + table.table + " ORDER BY id DESC LIMIT 1;");
-        int id = 0;
+    int genIDTransactions () {
         try {
-            while (resultSet.next()) {
-                id = resultSet.getInt("id");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+            return controller.transactionid.get(controller.transactionid.size() - 1);
         }
-        return id;
-    }
-    void commit() {
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement("COMMIT;");
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        catch (ArrayIndexOutOfBoundsException e) {
+            return 1;
         }
     }
-    public List<Object> getList(SQL.Table table, String coloum) {
-        List<Object> list = new ArrayList<>();
-        ResultSet resultSet = getResultSet("SELECT * FROM users." + table.table);
-        String elements;
-        if (resultSet != null) {
-            try {
-                while (resultSet.next()) {
-                    elements = resultSet.getString(coloum);
-                    list.add(elements);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return list;
+    int genIdUsers () {
+        return controller.userid.get(controller.userid.size() - 1);
     }
-    public List<Object> getList(ResultSet rs, int column) {
-        List<Object> strings = new ArrayList<>();
-        resetResultSet(rs);
-        if (rs != null) {
-            try {
-                while (rs.next()) {
-                    strings.add(String.valueOf(rs.getObject(column)));
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return strings;
+    int genBookId () {
+        return controller.bookid.get(controller.bookid.size() - 1);
     }
-    public List<String> getList(ResultSet rs, String column) {
-        List<String> strings = new ArrayList<>();
-        resetResultSet(rs);
-        try {
-            while (rs.next()) {
-                strings.add(String.valueOf(rs.getObject(column)));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public int genIndex(List<Integer> l, int key) {
+        int loopIteration = 0;
+        for (Integer i : l) {
+            if (i==key) return loopIteration;
+            loopIteration++;
         }
-        return strings;
+        return loopIteration;
     }
     public double getTotalFine(int id) {
         double total = 0;
-        ResultSet rs = getResultSet("SELECT * FROM users.Transactions");
-        resetResultSet(rs);
-        try {
-            while (rs.next())
-                if (rs.getInt(2) == id) total+= rs.getInt(6);
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+        for (Integer i: controller.transactionid)
+            if (controller.transUserId.get(i) == id) total += controller.fine.get(i);
         return total;
     }
-    public List<Integer> getIntegerList(SQL.Table table, String coloum) {
-        List<Integer> list = new ArrayList<>();
-        ResultSet resultSet = getResultSet("SELECT * FROM users." + table.table);
-        String elements;
-        try {
-            while (resultSet.next()) {
-                elements = resultSet.getString(coloum);
-                list.add(Integer.valueOf(elements));
-            }
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
     public String getDayLimit(UserType userType) {
-        String returnS = "";
-        ResultSet rs = getResultSet("SELECT * from users.Settings WHERE idSettings = 1;");
-        ResultSetMetaData rsmd = null;
-        try {
-            rsmd = rs.getMetaData();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        int columnsNumber = 0;
-        try {
-            columnsNumber = rsmd.getColumnCount();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        try {
-            while (rs.next()) {
-                for (int i = 1; i <= columnsNumber; i++) {
-                    String columnValue = rs.getString(i);
-                    returnS = returnS + (columnValue + " " + rsmd.getColumnName(i));
-                }
-                returnS = returnS + "";
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        returnS = returnS.replaceAll("[^0-9]+", " ");
-        returnS = Arrays.asList(returnS.trim().split(" ")).get(userType.userType);
-        return returnS;
-    }
-    public void resetResultSet(ResultSet rs) {
-        if (rs != null) {
-            try {
-                rs.beforeFirst();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        if (userType.userType == 1) return String.valueOf(10);
+        else return String.valueOf(5);
     }
     public String getDate() {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
