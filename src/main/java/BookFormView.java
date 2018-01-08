@@ -132,11 +132,11 @@ public class BookFormView extends BookForm {
             }
             else {
                 sql.editCheckOut( false, Integer.parseInt(id.getValue().replaceAll(",","")));
-                //ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE bookId = " + Integer.parseInt(id.getValue().replaceAll(",","")));
-                //int id = Integer.parseInt(sql.getList(rs, "userId").get(0));
-                //sql.editUserNumBooks(String.valueOf(Integer.parseInt(getUserData(id)[2]) - 1), id);
-                sql.deleteBook(this.id.getValue());
+                int ids = SQL.controller.transUserId.get(sql.genIndex(SQL.controller.transBookId, Integer.parseInt(id.getValue().replaceAll(",",""))));
+                sql.editUserNumBooks(String.valueOf(Integer.parseInt(getUserData(ids)[2]) - 1), ids);
+                sql.deleteTransaction(this.id.getValue());
                 transactionView.refresh();
+                fineView.refresh();
                 userFormView.refresh();
                 refresh();
                 Notification notification = new Notification("Returned to the library", "",

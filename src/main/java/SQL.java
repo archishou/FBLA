@@ -97,6 +97,15 @@ public class SQL {
         controller.bookName.remove(index);
         controller.checkOut.remove(index);
     }
+    public void deleteTransaction(String bookid) {
+        int index = genIndex(controller.transBookId, Integer.valueOf(bookid));
+        controller.transactionid.remove(index);
+        controller.transUserId.remove(index);
+        controller.transBookId.remove(index);
+        controller.rDate.remove(index);
+        controller.trnDate.remove(index);
+        controller.fine.remove(index);
+    }
     public void deleteUser(String key) {
         int index = genIndex(controller.userid, Integer.valueOf(key));
         controller.userid.remove(index);
@@ -155,8 +164,12 @@ public class SQL {
     }
     public double getTotalFine(int id) {
         double total = 0;
-        for (Integer i: controller.transactionid)
-            if (controller.transUserId.get(i) == id) total += controller.fine.get(i);
+        int loopIteration = 0;
+        System.out.println(controller.transactionid.size());
+        while (loopIteration < controller.transactionid.size()) {
+            if (controller.transUserId.get(loopIteration) == id) total += controller.fine.get(loopIteration);
+            loopIteration++;
+        }
         return total;
     }
     public String getDayLimit(UserType userType) {

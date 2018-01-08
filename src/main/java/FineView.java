@@ -35,16 +35,16 @@ public class FineView extends Grid {
     public void refresh() {
         List<Integer> userIds = new ArrayList<>();
         for (Integer i: SQL.controller.transUserId) {
-            if (!SQL.controller.transUserId.contains(i) && SQL.controller.fine.get(sql.genIndex(SQL.controller.transUserId, i)) > 0) userIds.add(i);
+            if (!userIds.contains(i)) userIds.add(i);
         }
         List<Fine> fines = new ArrayList<>();
         int userId;
         int loopIteration = 0;
-        while (loopIteration < userIds.size()) {
-            userId = Integer.parseInt(BookFormView.getUserData(Integer.parseInt(String.valueOf(userIds.get(loopIteration))))[0]);
-            fines.add(new Fine(String.valueOf(userId), String.valueOf(sql.getTotalFine(userId))));
-            loopIteration++;
-        }
+            while (loopIteration < userIds.size()) {
+                userId = Integer.parseInt(BookFormView.getUserData(Integer.parseInt(String.valueOf(userIds.get(loopIteration))))[0]);
+                fines.add(new Fine(String.valueOf(userId), String.valueOf(sql.getTotalFine(userId))));
+                loopIteration++;
+            }
         grid.setItems(fines);
         userIds = null;
         fines = null;
