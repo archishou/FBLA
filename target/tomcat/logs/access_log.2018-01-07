@@ -1,7 +1,0 @@
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:04 -0500] "GET /App/ HTTP/1.1" 200 2156 http-bio-8080-exec-1 148
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:04 -0500] "GET /App/VAADIN/widgetsets/com.vaadin.DefaultWidgetSet/com.vaadin.DefaultWidgetSet.nocache.js?1515368764671 HTTP/1.1" 200 2962 http-bio-8080-exec-7 3
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:05 -0500] "POST /App/?v-1515368764671 HTTP/1.1" 200 2838 http-bio-8080-exec-8 655
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:05 -0500] "POST /App/UIDL/?v-uiId=0 HTTP/1.1" 200 159 http-bio-8080-exec-9 4
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:06 -0500] "POST /App/UIDL/?v-uiId=0 HTTP/1.1" 200 170 http-bio-8080-exec-10 3
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:07 -0500] "POST /App/UIDL/?v-uiId=0 HTTP/1.1" 200 170 http-bio-8080-exec-10 1
-0:0:0:0:0:0:0:1 - - [07/Jan/2018:18:46:07 -0500] "POST /App/UIDL/?v-uiId=0 HTTP/1.1" 200 1926 http-bio-8080-exec-10 148

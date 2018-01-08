@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-horizontal-layout size-full margin>
+   <vaadin-vertical-layout size-full margin="false" :expand>
+    <vaadin-form-layout size-auto margin="false" _id="layout">
+     <vaadin-text-field caption="Book ID" readonly _id="id"></vaadin-text-field>
+     <vaadin-text-field caption="Book Name" readonly _id="name"></vaadin-text-field>
+     <vaadin-text-field caption="Author" readonly _id="author"></vaadin-text-field>
+     <vaadin-text-field caption="Checked Out" _id="checkedOut"></vaadin-text-field>
+     <vaadin-text-field caption="User ID" _id="userId"></vaadin-text-field>
+    </vaadin-form-layout>
+    <vaadin-absolute-layout margin="">
+     <vaadin-button style-name="danger" width="99px" plain-text _id="delete" :top="132px" :left="0px">
+       Delete 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e75b" style-name="primary" plain-text _id="save" :top="0px" :left="0px">
+       Save 
+     </vaadin-button>
+     <vaadin-button style-name="link" width="108px" plain-text _id="cancel" :top="66px" :left="-9px">
+       Cancel 
+     </vaadin-button>
+     <vaadin-button style-name="button" width="108px" plain-text _id="checkOut" :top="0px" :left="225px">
+       Check Out 
+     </vaadin-button>
+     <vaadin-label visible="false" plain-text _id="nSave" :top="141px" :left="0px">
+       UNABLE TO SAVE 
+     </vaadin-label>
+     <vaadin-button style-name="button" width="108px" plain-text _id="add" :top="66px" :left="225px">
+       Add Books 
+     </vaadin-button>
+     <vaadin-button style-name="button" width="108px" plain-text _id="returnBook" :top="132px" :left="225px">
+       Return 
+     </vaadin-button>
+    </vaadin-absolute-layout>
+   </vaadin-vertical-layout>
+  </vaadin-horizontal-layout>
+ </body>
+</html>
