@@ -27,10 +27,10 @@ public class SQL {
         Database (String database) {this.database = database;}
     }
     public enum Table{
-        USERS("Users"),
-        BOOK("Books"),
-        SCHOOOL("School"),
-        TRANSACTION("Transactions");
+        USERS("users"),
+        BOOK("books"),
+        SCHOOOL("school"),
+        TRANSACTION("transactions");
         public final String table;
         Table (String table) {this.table = table;}
     }
