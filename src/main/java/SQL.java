@@ -220,7 +220,8 @@ public class SQL {
         if (connection != null){
             try {
                 stmt = connection.createStatement();
-                rs = stmt.executeQuery(sql);
+                System.out.println("This is the result set SQL code that is running: " + sql);
+                if (stmt != null) rs = stmt.executeQuery(sql);
             } catch (SQLException l) {
                 l.printStackTrace();
             }
