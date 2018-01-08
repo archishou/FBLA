@@ -70,24 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2021#3687#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="360" column="9" lean-forward="false" selection-start-line="360" selection-start-column="9" selection-end-line="360" selection-end-column="9" />
+            <state relative-caret-position="467">
+              <caret line="300" column="27" lean-forward="true" selection-start-line="300" selection-start-column="27" selection-end-line="300" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
@@ -103,19 +90,29 @@
                 <element signature="method#getList#0;class#SQL#0" expanded="true" />
                 <element signature="method#getList#1;class#SQL#0" expanded="true" />
                 <element signature="method#getList#2;class#SQL#0" expanded="true" />
-                <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
                 <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
-                <marker date="1515375486000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
-                <marker date="1515375486000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
-                <marker date="1515375486000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
-                <marker date="1515375486000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
-                <marker date="1515375486000" expanded="true" signature="6010:6061" ph="delete from " />
-                <marker date="1515375486000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
-                <marker date="1515375486000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
-                <marker date="1515375486000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
-                <marker date="1515375486000" expanded="true" signature="10812:10844" ph="SELECT * FRO... Transactions" />
-                <marker date="1515375486000" expanded="true" signature="11725:11774" ph="SELECT * fro... Settings" />
+                <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
+                <marker date="1515375748000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
+                <marker date="1515375748000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
+                <marker date="1515375748000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
+                <marker date="1515375748000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
+                <marker date="1515375748000" expanded="true" signature="6010:6061" ph="delete from " />
+                <marker date="1515375748000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
+                <marker date="1515375748000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
+                <marker date="1515375748000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
+                <marker date="1515375748000" expanded="true" signature="10876:10908" ph="SELECT * FRO... Transactions" />
+                <marker date="1515375748000" expanded="true" signature="11789:11838" ph="SELECT * fro... Settings" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FineView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -812,7 +809,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165082000" />
+    <option name="totallyTimeSpent" value="165358000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,11 +835,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.7529287" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46246526" sideWeight="0.9217252" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46802595" sideWeight="0.9217252" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.9086207" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.09137931" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.9076655" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.092334494" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.49668247" order="1" side_tool="false" content_ui="tabs" />
@@ -983,18 +980,18 @@
             <element signature="method#getList#0;class#SQL#0" expanded="true" />
             <element signature="method#getList#1;class#SQL#0" expanded="true" />
             <element signature="method#getList#2;class#SQL#0" expanded="true" />
-            <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
-            <marker date="1515375486000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
-            <marker date="1515375486000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
-            <marker date="1515375486000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
-            <marker date="1515375486000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1515375486000" expanded="true" signature="6010:6061" ph="delete from " />
-            <marker date="1515375486000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
-            <marker date="1515375486000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
-            <marker date="1515375486000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
-            <marker date="1515375486000" expanded="true" signature="10812:10844" ph="SELECT * FRO... Transactions" />
-            <marker date="1515375486000" expanded="true" signature="11725:11774" ph="SELECT * fro... Settings" />
+            <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
+            <marker date="1515375748000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
+            <marker date="1515375748000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
+            <marker date="1515375748000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
+            <marker date="1515375748000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1515375748000" expanded="true" signature="6010:6061" ph="delete from " />
+            <marker date="1515375748000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
+            <marker date="1515375748000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
+            <marker date="1515375748000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
+            <marker date="1515375748000" expanded="true" signature="10876:10908" ph="SELECT * FRO... Transactions" />
+            <marker date="1515375748000" expanded="true" signature="11789:11838" ph="SELECT * fro... Settings" />
           </folding>
         </state>
       </provider>
@@ -1207,13 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1346,10 +1336,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FineView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="360" column="9" lean-forward="false" selection-start-line="360" selection-start-column="9" selection-end-line="360" selection-end-column="9" />
+        <state relative-caret-position="467">
+          <caret line="300" column="27" lean-forward="true" selection-start-line="300" selection-start-column="27" selection-end-line="300" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Table#0;class#Table#0;class#SQL#0" expanded="true" />
@@ -1365,18 +1363,18 @@
             <element signature="method#getList#0;class#SQL#0" expanded="true" />
             <element signature="method#getList#1;class#SQL#0" expanded="true" />
             <element signature="method#getList#2;class#SQL#0" expanded="true" />
-            <element signature="method#getTotalFine#0;class#SQL#0" expanded="true" />
             <element signature="method#getDayLimit#0;class#SQL#0" expanded="true" />
-            <marker date="1515375486000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
-            <marker date="1515375486000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
-            <marker date="1515375486000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
-            <marker date="1515375486000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
-            <marker date="1515375486000" expanded="true" signature="6010:6061" ph="delete from " />
-            <marker date="1515375486000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
-            <marker date="1515375486000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
-            <marker date="1515375486000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
-            <marker date="1515375486000" expanded="true" signature="10812:10844" ph="SELECT * FRO... Transactions" />
-            <marker date="1515375486000" expanded="true" signature="11725:11774" ph="SELECT * fro... Settings" />
+            <element signature="method#resetResultSet#0;class#SQL#0" expanded="true" />
+            <marker date="1515375748000" expanded="true" signature="2111:2161" ph="Insert into users.missingValue... " />
+            <marker date="1515375748000" expanded="true" signature="2979:3033" ph="Insert into users.missingValue... " />
+            <marker date="1515375748000" expanded="true" signature="4365:4419" ph="Insert into users.missingValue... " />
+            <marker date="1515375748000" expanded="true" signature="5186:5227" ph="SELECT 1 FRO... missingValue" />
+            <marker date="1515375748000" expanded="true" signature="6010:6061" ph="delete from " />
+            <marker date="1515375748000" expanded="true" signature="6733:6812" ph="UPDATE missi... " />
+            <marker date="1515375748000" expanded="true" signature="7051:7071" ph="Select * fro... missingValue" />
+            <marker date="1515375748000" expanded="true" signature="8846:8911" ph="SELECT id fr... missingValue" />
+            <marker date="1515375748000" expanded="true" signature="10876:10908" ph="SELECT * FRO... Transactions" />
+            <marker date="1515375748000" expanded="true" signature="11789:11838" ph="SELECT * fro... Settings" />
           </folding>
         </state>
       </provider>
