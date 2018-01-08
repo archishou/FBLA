@@ -326,7 +326,7 @@ public class SQL {
     }
     public String getDayLimit(UserType userType) {
         String returnS = "";
-        ResultSet rs = getResultSet("SELECT * from heroku_5b007fb897ad2ae.Settings WHERE idSettings = 1;");
+        ResultSet rs = getResultSet("SELECT * from heroku_5b007fb897ad2ae.settings WHERE idSettings = 1;");
         ResultSetMetaData rsmd = null;
         try {
             rsmd = rs.getMetaData();
