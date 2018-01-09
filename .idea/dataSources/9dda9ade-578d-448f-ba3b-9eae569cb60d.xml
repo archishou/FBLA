@@ -69,7 +69,7 @@
       <ColNames>idSettings</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="23" parent="9" name="transactId">
+    <column id="23" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -82,33 +82,29 @@
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="26" parent="9" name="fine">
+    <column id="26" parent="9" name="trnDate">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(45)|0</DataType>
     </column>
-    <index id="27" parent="9" name="bookId">
+    <column id="27" parent="9" name="rDate">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="28" parent="9" name="fine">
+      <Position>6</Position>
+      <DataType>decimal(10)|0</DataType>
+    </column>
+    <index id="29" parent="9" name="bookId">
       <ColNames>bookId</ColNames>
     </index>
-    <index id="28" parent="9" name="userId">
+    <index id="30" parent="9" name="userId">
       <ColNames>userId</ColNames>
     </index>
-    <key id="29" parent="9" name="PRIMARY">
+    <key id="31" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>transactId</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="30" parent="9" name="transactions_ibfk_1">
-      <ColNames>userId</ColNames>
-      <RefSchemaName>users</RefSchemaName>
-      <RefTableName>Users</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="31" parent="9" name="transactions_ibfk_2">
-      <ColNames>bookId</ColNames>
-      <RefSchemaName>users</RefSchemaName>
-      <RefTableName>Books</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
     <column id="32" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
@@ -142,11 +138,5 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="40" parent="10" name="users_ibfk_1">
-      <ColNames>schoolid</ColNames>
-      <RefSchemaName>users</RefSchemaName>
-      <RefTableName>Schools</RefTableName>
-      <RefColNames>schoolid</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>
