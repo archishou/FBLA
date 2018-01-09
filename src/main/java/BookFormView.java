@@ -38,7 +38,6 @@ public class BookFormView extends BookForm {
         binder.bindInstanceFields(this);
         save.addClickListener((Button.ClickListener) click -> {
             if (checkOutClicked) {
-                try {
                     if (Integer.valueOf(getUserData(Integer.parseInt(this.userId.getValue()))[2])
                             >= Integer.valueOf(getUserData(Integer.parseInt(this.userId.getValue()))[3])) {
                         new Notification("This user has reached their limit. Ask that they return books before checking out any new ones", "",
@@ -60,24 +59,6 @@ public class BookFormView extends BookForm {
                         userFormView.refresh();
                         userId.setVisible(false);
                     }
-                }
-                catch (NumberFormatException e) {
-                    int id = Integer.parseInt(userId.getValue().replaceAll(",", ""));
-                    userId.setValue("");
-                    sql.editUser(SQL.Table.USERS, "numbooks", String.valueOf(Integer.parseInt(getUserData(id)[2]) + 1), id);
-                    sql.edit(SQL.Table.BOOK, "checkOut", true, Integer.parseInt(this.id.getValue().replaceAll(",", "")));
-                    if (UserFormView.getUserById(id).getUserStatus().toLowerCase().contains("u"))
-                        userType = SQL.UserType.STUDENT;
-                    else userType = SQL.UserType.TEACHER;
-                    sql.addTransaction(sql.genID(SQL.Table.TRANSACTION) + 2, id, Integer.parseInt(this.id.getValue()),
-                            sql.getDate(), sql.addDays(Integer.parseInt(sql.getDayLimit(userType))), 0, SQL.Table.TRANSACTION);
-                    sql.commit();
-                    transactionView.refresh();
-                    fineView.refresh();
-                    refresh();
-                    userFormView.refresh();
-                    userId.setVisible(false);
-                }
             }
             if (addClicked) {
                 int copies = Integer.parseInt(userId.getValue());
