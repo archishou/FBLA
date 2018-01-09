@@ -58,7 +58,7 @@ public class MyUI extends UI {
                 createFinePanel();
                 createDetailFinePanel();
                 home.setCaption("Home");
-                transactionGrid.setCaption("Transactions");
+                transactionGrid.setCaption("Overview");
                 helpView.setCaption("Help");
                 tabSheet.addComponent(home);
                 tabSheet.addComponent(usersSplitPanel);
@@ -67,13 +67,6 @@ public class MyUI extends UI {
                 tabSheet.addComponent(finesSplitPanel);
                 tabSheet.addComponent(helpView);
                 helpView.setSizeFull();
-                tabSheet.addSelectedTabChangeListener(selectedTabChangeEvent -> {
-                    if (selectedTabChangeEvent.getComponent() == helpView) {
-                        System.out.println();
-                        System.out.println("GotHere");
-                        new Notification("Hello", Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
-                    }
-                });
                 setContent(tabSheet);
             }
             else {

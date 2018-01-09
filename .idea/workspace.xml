@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82e33b4e-c50b-4a92-8657-32cb167369a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/UserForm.html" afterPath="$PROJECT_DIR$/src/main/resources/UserForm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MyUI.java" afterPath="$PROJECT_DIR$/src/main/java/MyUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,23 +53,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+            <state relative-caret-position="310">
+              <caret line="68" column="39" lean-forward="false" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#init#0;class#MyUI#0" expanded="true" />
-                <marker date="1515458110000" expanded="true" signature="5023:5921" ph="{...}" />
-                <marker date="1515458110000" expanded="true" signature="5712:5913" ph="{...}" />
-                <marker date="1515458110000" expanded="false" signature="5964:6303" ph="{...}" />
-                <marker date="1515458110000" expanded="true" signature="6339:6746" ph="{...}" />
-                <marker date="1515458110000" expanded="true" signature="6635:6738" ph="{...}" />
-                <marker date="1515458110000" expanded="false" signature="6788:7119" ph="{...}" />
-                <marker date="1515458110000" expanded="true" signature="7156:7861" ph="{...}" />
-                <marker date="1515458110000" expanded="true" signature="7600:7853" ph="{...}" />
-                <marker date="1515458110000" expanded="true" signature="7867:8016" ph="@{...}" />
+                <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
+                <element signature="method#createUserPanel#0;class#MyUI#0" expanded="true" />
+                <element signature="method#createFinePanel#0;class#MyUI#0" expanded="true" />
+                <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
+                <marker date="1515460703000" expanded="false" signature="5546:5885" ph="{...}" />
+                <marker date="1515460703000" expanded="false" signature="6370:6701" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -87,7 +84,7 @@
       <file leaf-file-name="SQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="835">
+            <state relative-caret-position="757">
               <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -129,13 +126,6 @@
                 <marker date="1515458110000" expanded="false" signature="13277:13444" ph="{...}" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserForm.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
-          <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -328,13 +318,13 @@
         <option value="$PROJECT_DIR$/src/main/java/HelpView.java" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/BookFormView.java" />
         <option value="$PROJECT_DIR$/src/main/java/FineView.java" />
         <option value="$PROJECT_DIR$/src/main/java/SQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/TransactionView.java" />
         <option value="$PROJECT_DIR$/src/main/java/DetailFineView.java" />
         <option value="$PROJECT_DIR$/src/main/resources/UserForm.html" />
+        <option value="$PROJECT_DIR$/src/main/java/MyUI.java" />
       </list>
     </option>
   </component>
@@ -883,7 +873,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175543000" />
+    <option name="totallyTimeSpent" value="175949000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,9 +894,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08998935" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2028754" sideWeight="0.65737516" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="com.vaadin.designer2.intellij.outline.OutlineToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2028754" sideWeight="0.65789473" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49668247" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2028754" sideWeight="0.34262484" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="com.vaadin.designer2.intellij.palette.PaletteToolWindowManager.toolWindow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2028754" sideWeight="0.34210527" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.49668247" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -919,9 +909,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993513" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8489342" sideWeight="0.78168267" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20203893" sideWeight="0.7406816" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22683705" sideWeight="0.92102206" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22683705" sideWeight="0.078977935" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4012975" sideWeight="0.7406816" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22683705" sideWeight="0.91795665" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22683705" sideWeight="0.08204334" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1378,9 +1368,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
+      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
+        <state relative-caret-position="757">
           <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1424,45 +1435,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DetailFineView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MyUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+        <state relative-caret-position="310">
+          <caret line="68" column="39" lean-forward="false" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#MyUI#0" expanded="true" />
-            <marker date="1515458110000" expanded="true" signature="5023:5921" ph="{...}" />
-            <marker date="1515458110000" expanded="true" signature="5712:5913" ph="{...}" />
-            <marker date="1515458110000" expanded="false" signature="5964:6303" ph="{...}" />
-            <marker date="1515458110000" expanded="true" signature="6339:6746" ph="{...}" />
-            <marker date="1515458110000" expanded="true" signature="6635:6738" ph="{...}" />
-            <marker date="1515458110000" expanded="false" signature="6788:7119" ph="{...}" />
-            <marker date="1515458110000" expanded="true" signature="7156:7861" ph="{...}" />
-            <marker date="1515458110000" expanded="true" signature="7600:7853" ph="{...}" />
-            <marker date="1515458110000" expanded="true" signature="7867:8016" ph="@{...}" />
+            <element signature="method#initializeSQL#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createUserPanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createFinePanel#0;class#MyUI#0" expanded="true" />
+            <element signature="method#createBookPanel#0;class#MyUI#0" expanded="true" />
+            <marker date="1515460703000" expanded="false" signature="5546:5885" ph="{...}" />
+            <marker date="1515460703000" expanded="false" signature="6370:6701" ph="{...}" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/UserForm.html">
-      <provider selected="true" editor-type-id="com.vaadin.designer2.intellij.webEditor">
-        <state />
       </provider>
     </entry>
   </component>
