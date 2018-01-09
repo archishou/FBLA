@@ -92,10 +92,6 @@ public class BookFormView extends BookForm {
            name.setReadOnly(false);
         });
         checkOut.addClickListener((Button.ClickListener) clickListener -> {
-            if (addClicked) new Notification("Click Save. ", "",
-                    Notification.Type.TRAY_NOTIFICATION).show(Page.getCurrent());
-
-            else {
                 if (checkedOut.getValue().toLowerCase().contains("u")) {
                     Notification notification = new Notification("This books is already checked out", "",
                             Notification.Type.WARNING_MESSAGE, true);
@@ -111,7 +107,6 @@ public class BookFormView extends BookForm {
                     userId.setVisible(true);
                     checkedOut.setReadOnly(true);
                 }
-            }
         });
         cancel.addClickListener((Button.ClickListener) clickListener -> {
             add.setVisible(true);
