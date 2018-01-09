@@ -22,7 +22,7 @@ public class DetailFineView extends Grid {//
     }
 
     public void refresh(int id) {
-        System.out.println("THE ID THAT IS REFRESHED: " + id)gi;
+        System.out.println("THE ID THAT IS REFRESHED: " + id);
         ResultSet rs = sql.getResultSet("SELECT * FROM heroku_5b007fb897ad2ae.transactions WHERE userId = " + id);
         List<Object> bookIds = sql.getList(rs, 3);
         List<Object> fines = sql.getList(rs, 6);
