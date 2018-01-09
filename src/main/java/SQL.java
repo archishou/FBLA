@@ -27,10 +27,10 @@ public class SQL {
         Database (String database) {this.database = database;}
     }
     public enum Table{
-        USERS("users"),
-        BOOK("books"),
-        SCHOOOL("school"),
-        TRANSACTION("transactions");
+        USERS("Users"),
+        BOOK("Books"),
+        SCHOOOL("School"),
+        TRANSACTION("Transactions");
         public final String table;
         Table (String table) {this.table = table;}
     }
@@ -40,24 +40,14 @@ public class SQL {
         public final int userType;
         UserType (int userType) {this.userType = userType;}
     }
-    public void connect () {
-        URI dbUri = null;
-        try {
-            dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+    public void connect (Database d) {
         try { Class.forName("com.mysql.jdbc.Driver"); }
         catch (ClassNotFoundException e) {
             e.printStackTrace();
             return;
         }
         try {
-            connection = DriverManager.getConnection(dbUrl, username, password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + d.database, "root", "R3as0n99");
 
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");
@@ -68,7 +58,7 @@ public class SQL {
     public void addBook(int bookId, String author, String name, boolean checkedOut, Table t) {
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into heroku_5b007fb897ad2ae." + t.table + " values (?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?)");
                 preparedStatement.setInt(1, bookId);
                 preparedStatement.setString(2, author);
                 preparedStatement.setString(3, name);
@@ -86,7 +76,7 @@ public class SQL {
     public void addUser(int id, String name, int numBooks, int limit, int schoolId, String status, Table t){
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into heroku_5b007fb897ad2ae." + t.table + " values (?,?,?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
                 preparedStatement.setInt(1, id);
                 preparedStatement.setString(2, name);
                 preparedStatement.setInt(3, numBooks);
@@ -115,7 +105,7 @@ public class SQL {
     public void addTransaction(int id, int userId, int bookId, String trnDate, String rDate, double fine, Table t){
         if (connection != null) {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("Insert into heroku_5b007fb897ad2ae." + t.table + " values (?,?,?,?,?,?)");
+                PreparedStatement preparedStatement = connection.prepareStatement("Insert into users." + t.table + " values (?,?,?,?,?,?)");
                 preparedStatement.setInt(1, id);
                 preparedStatement.setInt(2, userId);
                 preparedStatement.setInt(3, bookId);
@@ -181,7 +171,7 @@ public class SQL {
     public void print(Table t){
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement("Select * from heroku_5b007fb897ad2ae." + t.table);
+            preparedStatement = connection.prepareStatement("Select * from users." + t.table);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -235,7 +225,7 @@ public class SQL {
         commit();
     }
     int genID (Table table) {
-        ResultSet resultSet = getResultSet("SELECT id from heroku_5b007fb897ad2ae." + table.table + " ORDER BY id DESC LIMIT 1;");
+        ResultSet resultSet = getResultSet("SELECT id from users." + table.table + " ORDER BY id DESC LIMIT 1;");
         int id = 0;
         try {
             while (resultSet.next()) {
@@ -256,7 +246,7 @@ public class SQL {
     }
     public List<Object> getList(SQL.Table table, String coloum) {
         List<Object> list = new ArrayList<>();
-        ResultSet resultSet = getResultSet("SELECT * FROM heroku_5b007fb897ad2ae." + table.table);
+        ResultSet resultSet = getResultSet("SELECT * FROM users." + table.table);
         String elements;
         if (resultSet != null) {
             try {
@@ -298,7 +288,7 @@ public class SQL {
     }
     public double getTotalFine(int id) {
         double total = 0;
-        ResultSet rs = getResultSet("SELECT * FROM heroku_5b007fb897ad2ae.Transactions");
+        ResultSet rs = getResultSet("SELECT * FROM users.Transactions");
         resetResultSet(rs);
         try {
             while (rs.next())
@@ -311,7 +301,7 @@ public class SQL {
     }
     public List<Integer> getIntegerList(SQL.Table table, String coloum) {
         List<Integer> list = new ArrayList<>();
-        ResultSet resultSet = getResultSet("SELECT * FROM heroku_5b007fb897ad2ae." + table.table);
+        ResultSet resultSet = getResultSet("SELECT * FROM users." + table.table);
         String elements;
         try {
             while (resultSet.next()) {
@@ -326,7 +316,7 @@ public class SQL {
     }
     public String getDayLimit(UserType userType) {
         String returnS = "";
-        ResultSet rs = getResultSet("SELECT * from heroku_5b007fb897ad2ae.settings WHERE idSettings = 1;");
+        ResultSet rs = getResultSet("SELECT * from users.Settings WHERE idSettings = 1;");
         ResultSetMetaData rsmd = null;
         try {
             rsmd = rs.getMetaData();

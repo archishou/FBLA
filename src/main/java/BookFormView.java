@@ -132,7 +132,7 @@ public class BookFormView extends BookForm {
             }
             else {
                 sql.edit(SQL.Table.BOOK, "checkOut", false, Integer.parseInt(id.getValue().replaceAll(",","")));
-                ResultSet rs = sql.getResultSet("SELECT * FROM heroku_5b007fb897ad2ae.transactions WHERE bookId = " + Integer.parseInt(id.getValue().replaceAll(",","")));
+                ResultSet rs = sql.getResultSet("SELECT * FROM users.Transactions WHERE bookId = " + Integer.parseInt(id.getValue().replaceAll(",","")));
                 int id = Integer.parseInt(sql.getList(rs, "userId").get(0));
                 sql.edit(SQL.Table.USERS, "numbooks", Integer.parseInt(getUserData(id)[2]) - 1 , id);
                 sql.delete(this.id.getValue(), "bookId", SQL.Table.TRANSACTION);
